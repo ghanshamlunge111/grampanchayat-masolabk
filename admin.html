@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="mr" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ग्रामपंचायत मसोला (खुर्द) - प्रशासन पॅनेल (Admin Console)</title>
+    
+    <!-- Tailwind CSS & DaisyUI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1f3a5f',
+                        secondary: '#3a6b5c',
+                        accent: '#8b5cf6',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Tiro+Devanagari+Marathi:ital@0;1&family=Yatra+One&display=swap" rel="stylesheet" />
+
+    <style>
+        .marathi-font { font-family: 'Tiro Devanagari Marathi', serif; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .tab-active-custom {
+            border-bottom-color: #10b981 !important;
+            color: #10b981 !important;
+            font-weight: 800 !important;
+        }
+    </style>
+</head>
+<body class="bg-slate-100 flex flex-col min-h-screen marathi-font text-slate-800">
+
+    <!-- Shared Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="flex-grow py-8 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+
+            <!-- Auth Guard Login Card (Hidden when authenticated) -->
+            <div id="login-container" class="max-w-md mx-auto my-12 card bg-white border border-slate-200 shadow-2xl p-6 sm:p-8 rounded-2xl">
+                <div class="text-center mb-6">
+                    <div class="w-16 h-16 bg-blue-100 text-primary rounded-full flex items-center justify-center text-3xl mx-auto mb-3">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h2 class="text-xl sm:text-2xl font-extrabold text-[#1f3a5f]">प्रशासक लॉगिन (Admin)</h2>
+                    <p class="text-slate-500 text-xs sm:text-sm mt-1">डॅशबोर्डमध्ये प्रवेश करण्यासाठी आपले क्रिडेंशियल प्रविष्ट करा.</p>
+                </div>
+                
+                <form id="page-login-form" onsubmit="handlePageLogin(event)" class="space-y-4">
+                    <div class="form-control">
+                        <label class="label font-bold text-xs uppercase text-slate-500">वापरकर्ता नाव (Username)</label>
+                        <input type="text" id="pageUsername" required placeholder="admin" class="input input-bordered w-full bg-slate-50 text-slate-800 border-gray-300 focus:border-emerald-500 focus:outline-none text-sm" />
+                    </div>
+                    <div class="form-control">
+                        <label class="label font-bold text-xs uppercase text-slate-500">पासवर्ड (Password)</label>
+                        <input type="password" id="pagePassword" required placeholder="••••••••" class="input input-bordered w-full bg-slate-50 text-slate-800 border-gray-300 focus:border-emerald-500 focus:outline-none text-sm" />
+                    </div>
+                    <button type="submit" class="btn bg-gradient-to-r from-[#1f3a5f] to-[#234a7d] text-white w-full border-none shadow-md font-bold mt-2 py-3 rounded-xl">
+                        लॉगिन करा
+                    </button>
+                    <p class="text-[10px] text-center text-slate-400 font-bold mt-2">डेमो युझरनेम: <span class="underline">admin</span> | पासवर्ड: <span class="underline">gp2025!</span></p>
+                </form>
+            </div>
+
+            <!-- Dashboard Panel (Visible when authenticated) -->
+            <div id="dashboard-container" class="hidden space-y-8">
+                
+                <!-- Welcome Strip -->
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-gradient-to-r from-slate-900 to-[#1f3a5f] text-white p-6 rounded-2xl shadow-xl">
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="bg-emerald-500 text-white font-bold text-2xs uppercase px-2.5 py-0.5 rounded-full" id="user-role-badge">Admin</span>
+                            <h1 class="text-xl sm:text-2xl font-extrabold tracking-tight">नमस्कार, <span id="user-display-name">प्रशासक</span>!</h1>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-1">ग्रामपंचायत <span id="user-gp-name" class="font-bold underline text-emerald-400">मसोला (खुर्द)</span> डिजिटल नियंत्रण कक्ष</p>
+                    </div>
+                    <div class="flex items-center gap-3 w-full md:w-auto">
+                        <button onclick="handleLogout()" class="btn btn-sm btn-outline text-white hover:bg-red-600 hover:text-white border-white/20 w-full md:w-auto font-bold"><i class="fa-solid fa-power-off mr-2"></i>लॉगआउट (Logout)</button>
+                    </div>
+                </div>
+
+                <!-- Dashboard Statistics Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Stat 1 -->
+                    <div class="card bg-white border border-slate-200 p-5 rounded-2xl flex flex-row items-center gap-4 shadow-sm hover:shadow-md transition">
+                        <div class="w-12 h-12 bg-blue-100 text-blue-700 rounded-xl flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-list-check"></i></div>
+                        <div>
+                            <span class="text-xs text-slate-500 font-bold block">एकूण ई-सेवा अर्ज</span>
+                            <span class="font-extrabold text-slate-800 text-2xl" id="stat-eseva-total">0</span>
+                        </div>
+                    </div>
+                    <!-- Stat 2 -->
+                    <div class="card bg-white border border-slate-200 p-5 rounded-2xl flex flex-row items-center gap-4 shadow-sm hover:shadow-md transition">
+                        <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-hourglass-half"></i></div>
+                        <div>
+                            <span class="text-xs text-slate-500 font-bold block">प्रलंबित ई-सेवा अर्ज</span>
+                            <span class="font-extrabold text-slate-800 text-2xl text-amber-600" id="stat-eseva-pending">0</span>
+                        </div>
+                    </div>
+                    <!-- Stat 3 -->
+                    <div class="card bg-white border border-slate-200 p-5 rounded-2xl flex flex-row items-center gap-4 shadow-sm hover:shadow-md transition">
+                        <div class="w-12 h-12 bg-red-100 text-red-600 rounded-xl flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-circle-exclamation"></i></div>
+                        <div>
+                            <span class="text-xs text-slate-500 font-bold block">एकूण तक्रारी (Complaints)</span>
+                            <span class="font-extrabold text-slate-800 text-2xl text-red-600" id="stat-complaints-total">0</span>
+                        </div>
+                    </div>
+                    <!-- Stat 4 -->
+                    <div class="card bg-white border border-slate-200 p-5 rounded-2xl flex flex-row items-center gap-4 shadow-sm hover:shadow-md transition">
+                        <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center text-xl shrink-0"><i class="fa-solid fa-shield-halved"></i></div>
+                        <div>
+                            <span class="text-xs text-slate-500 font-bold block">सक्रिय योजना (Yojanas)</span>
+                            <span class="font-extrabold text-slate-800 text-2xl text-emerald-600" id="stat-yojanas-total">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tabs Navigation -->
+                <div class="tabs tabs-boxed bg-white border p-1.5 rounded-2xl shadow-sm flex flex-wrap justify-start gap-1">
+                    <button class="tab tab-active-custom text-sm font-bold transition duration-200 px-4 py-2" id="tab-eseva" onclick="switchTab('eseva')"><i class="fa-solid fa-file-invoice mr-2"></i>ई-सेवा अर्ज</button>
+                    <button class="tab text-sm font-semibold transition duration-200 px-4 py-2" id="tab-complaints" onclick="switchTab('complaints')"><i class="fa-solid fa-comments-dollar mr-2"></i>तक्रार निवारण</button>
+                    <button class="tab text-sm font-semibold transition duration-200 px-4 py-2" id="tab-yojanas" onclick="switchTab('yojanas')"><i class="fa-solid fa-landmark mr-2"></i>योजना व्यवस्थापन</button>
+                    <button class="tab text-sm font-semibold transition duration-200 px-4 py-2" id="tab-rtc" onclick="switchTab('rtc')"><i class="fa-solid fa-file-pdf mr-2"></i>७/१२ उतारा (RTC)</button>
+                </div>
+
+                <!-- TAB CONTENT: E-SEVA -->
+                <div id="content-eseva" class="tab-content-panel space-y-4">
+                    <div class="card bg-white border border-slate-200 p-6 rounded-2xl shadow-sm">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+                            <div>
+                                <h3 class="font-extrabold text-[#1f3a5f] text-lg">ई-सेवा नागरिक अर्ज यादी</h3>
+                                <p class="text-xs text-slate-500 mt-1">नागरिकांनी ऑनलाईन सादर केलेल्या दाखले व प्रमाणपत्रांचे अर्ज.</p>
+                            </div>
+                            <!-- Status filter -->
+                            <div class="flex items-center gap-2">
+                                <span class="text-xs font-bold text-slate-500">स्थिती (Status):</span>
+                                <select id="eseva-filter" onchange="filterEsevaRequests()" class="select select-bordered select-sm bg-slate-50 text-slate-800 font-bold text-xs">
+                                    <option value="All">सर्व (All)</option>
+                                    <option value="Pending">प्रलंबित (Pending)</option>
+                                    <option value="In Progress">प्रक्रियेत (In Progress)</option>
+                                    <option value="Approved">मंजूर (Approved)</option>
+                                    <option value="Rejected">अस्वीकृत (Rejected)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Requests Table -->
+                        <div class="overflow-x-auto border rounded-xl bg-slate-50">
+                            <table class="table w-full text-xs sm:text-sm text-slate-800">
+                                <thead>
+                                    <tr class="bg-slate-100 text-slate-700">
+                                        <th>नाव व ओळखपत्र</th>
+                                        <th>हवे असलेले दस्तऐवज</th>
+                                        <th>मोबाईल व व्हॉट्सअॅप</th>
+                                        <th>अर्ज तारीख</th>
+                                        <th>स्थिती</th>
+                                        <th>कृती (Actions)</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="eseva-table-body">
+                                    <tr>
+                                        <td colspan="6" class="text-center py-8 text-slate-500 font-bold">माहिती लोड होत आहे...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB CONTENT: COMPLAINTS -->
+                <div id="content-complaints" class="tab-content-panel space-y-4 hidden">
+                    <div class="card bg-white border border-slate-200 p-6 rounded-2xl shadow-sm">
+                        <div class="mb-6">
+                            <h3 class="font-extrabold text-[#1f3a5f] text-lg">तक्रार निवारण नियंत्रण</h3>
+                            <p class="text-xs text-slate-500 mt-1">गावातील रस्ते, पाणी, स्वच्छता किंवा इतर समस्यांबाबत नागरिकांच्या तक्रारी.</p>
+                        </div>
+
+                        <!-- Complaints Table -->
+                        <div class="overflow-x-auto border rounded-xl bg-slate-50">
+                            <table class="table w-full text-xs sm:text-sm text-slate-800">
+                                <thead>
+                                    <tr class="bg-slate-100 text-slate-700">
+                                        <th>तक्रारदार / संपर्क</th>
+                                        <th>तपशील</th>
+                                        <th>प्रकार व ठिकाण</th>
+                                        <th>नोंदणी तारीख</th>
+                                        <th>सद्य स्थिती</th>
+                                        <th>कृती (Actions)</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="complaints-table-body">
+                                    <tr>
+                                        <td colspan="6" class="text-center py-8 text-slate-500 font-bold">माहिती लोड होत आहे...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB CONTENT: YOJANAS -->
+                <div id="content-yojanas" class="tab-content-panel space-y-4 hidden">
+                    <div class="card bg-white border border-slate-200 p-6 rounded-2xl shadow-sm">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+                            <div>
+                                <h3 class="font-extrabold text-[#1f3a5f] text-lg">शासकीय योजना व्यवस्थापन</h3>
+                                <p class="text-xs text-slate-500 mt-1">वेबसाईटवरील शासकीय योजना आणि माहिती जोडणे किंवा बदलणे.</p>
+                            </div>
+                            <button onclick="openYojanaModal()" class="btn btn-sm bg-gradient-to-r from-emerald-600 to-teal-700 text-white border-none font-bold"><i class="fa-solid fa-plus mr-1"></i>नवीन योजना जोडा</button>
+                        </div>
+
+                        <!-- Yojanas Grid -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="yojanas-admin-grid">
+                            <!-- Loaded Dynamically -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB CONTENT: RTC -->
+                <div id="content-rtc" class="tab-content-panel space-y-4 hidden">
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        
+                        <!-- Left: Upload new RTC Form -->
+                        <div class="lg:col-span-1">
+                            <div class="card bg-white border border-slate-200 p-6 rounded-2xl shadow-sm space-y-4">
+                                <h3 class="font-extrabold text-[#1f3a5f] text-lg border-b pb-2"><i class="fa-solid fa-cloud-arrow-up text-emerald-600 mr-1"></i>७/१२ उतारा अपलोड</h3>
+                                <form id="rtc-upload-form" onsubmit="handleRtcUpload(event)" class="space-y-4">
+                                    <div class="form-control">
+                                        <label class="label font-bold text-xs text-slate-600">गट / सर्व्हे क्रमांक *</label>
+                                        <input type="text" id="rtcSurvey" required placeholder="उदा. १०१/अ किंवा १५४" class="input input-bordered w-full bg-slate-50 text-slate-800 border-gray-300 text-sm focus:border-emerald-500 focus:outline-none" />
+                                    </div>
+                                    <div class="form-control">
+                                        <label class="label font-bold text-xs text-slate-600">खातेदार / मालकाचे नाव *</label>
+                                        <input type="text" id="rtcOwner" required placeholder="उदा. रामराव नामदेवराव ठोंबरे" class="input input-bordered w-full bg-slate-50 text-slate-800 border-gray-300 text-sm focus:border-emerald-500 focus:outline-none" />
+                                    </div>
+                                    <div class="form-control">
+                                        <label class="label font-bold text-xs text-slate-600">गाव *</label>
+                                        <select id="rtcVillage" required class="select select-bordered w-full bg-slate-50 text-slate-800 border-gray-300 text-sm font-semibold focus:outline-none">
+                                            <option value="मसोला बुद्रुक">मसोला बुद्रुक</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-control">
+                                        <label class="label font-bold text-xs text-slate-600">७/१२ डिजिटल स्कॅन फाईल (PDF) *</label>
+                                        <input type="file" id="rtcFile" accept="application/pdf" required class="file-input file-input-bordered file-input-success w-full bg-slate-50 text-slate-800" />
+                                    </div>
+                                    <button type="submit" class="btn bg-[#1f3a5f] hover:bg-[#234a7d] text-white w-full border-none font-bold rounded-xl shadow-md py-2.5">
+                                        रेकॉर्ड जतन करा
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Right: List / Search RTC Records -->
+                        <div class="lg:col-span-2">
+                            <div class="card bg-white border border-slate-200 p-6 rounded-2xl shadow-sm space-y-4">
+                                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                                    <h3 class="font-extrabold text-[#1f3a5f] text-lg">डिजिटल भूमी अभिलेख (७/१२) साठा</h3>
+                                    <!-- Search input -->
+                                    <div class="relative w-full sm:w-64">
+                                        <span class="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400"><i class="fa-solid fa-magnifying-glass"></i></span>
+                                        <input type="text" id="rtc-search" oninput="searchRtc()" placeholder="गट क्र. किंवा नावाने शोधा..." class="input input-bordered input-sm pl-9 w-full bg-slate-50 text-slate-800 border-gray-300 focus:border-emerald-500 focus:outline-none text-xs" />
+                                    </div>
+                                </div>
+
+                                <div class="overflow-x-auto border rounded-xl bg-slate-50">
+                                    <table class="table w-full text-xs sm:text-sm text-slate-800">
+                                        <thead>
+                                            <tr class="bg-slate-100 text-slate-700">
+                                                <th>सर्व्हे / गट क्रमांक</th>
+                                                <th>खातेदार नाव</th>
+                                                <th>गाव</th>
+                                                <th>अपलोड तारीख</th>
+                                                <th>फाईल</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="rtc-table-body">
+                                            <tr>
+                                                <td colspan="5" class="text-center py-8 text-slate-500 font-bold">माहिती लोड होत आहे...</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- ==========================================
+    MODALS SECTION
+    ========================================== -->
+
+    <!-- E-SEVA REQUEST APPROVAL MODAL -->
+    <dialog id="esevaActionModal" class="modal">
+        <div class="modal-box bg-white text-slate-800 max-w-lg rounded-2xl p-6 relative">
+            <button onclick="document.getElementById('esevaActionModal').close()" class="btn btn-sm btn-circle btn-ghost absolute right-3 top-3">✕</button>
+            <h3 class="font-extrabold text-lg text-primary mb-4" id="action-modal-title">ई-सेवा अर्ज पडताळणी</h3>
+            
+            <div class="space-y-4" id="eseva-action-details">
+                <!-- Loaded via JS -->
+            </div>
+        </div>
+    </dialog>
+
+    <!-- COMPLAINT RESOLUTION MODAL -->
+    <dialog id="complaintActionModal" class="modal">
+        <div class="modal-box bg-white text-slate-800 max-w-lg rounded-2xl p-6 relative">
+            <button onclick="document.getElementById('complaintActionModal').close()" class="btn btn-sm btn-circle btn-ghost absolute right-3 top-3">✕</button>
+            <h3 class="font-extrabold text-lg text-primary mb-4">तक्रार निवारण कारवाई</h3>
+            
+            <form id="complaint-action-form" onsubmit="saveComplaintAction(event)" class="space-y-4">
+                <input type="hidden" id="action-complaint-id" />
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-100 text-xs text-slate-700 leading-relaxed space-y-1">
+                    <div><strong>तक्रारदार:</strong> <span id="action-c-name"></span></div>
+                    <div><strong>तक्रार प्रकार:</strong> <span id="action-c-category"></span></div>
+                    <div><strong>सविस्तर वर्णन:</strong> <p class="mt-1 bg-white p-2 border rounded italic" id="action-c-details"></p></div>
+                </div>
+                <div class="form-control">
+                    <label class="label font-bold text-xs text-slate-600">सद्य स्थिती निवडा *</label>
+                    <select id="action-c-status" required class="select select-bordered w-full bg-slate-50 text-slate-800 border-gray-300 focus:outline-none">
+                        <option value="Received">प्राप्त (Received)</option>
+                        <option value="In Progress">प्रक्रियेत (In Progress)</option>
+                        <option value="Resolved">निवारण झाले (Resolved)</option>
+                    </select>
+                </div>
+                <div class="form-control">
+                    <label class="label font-bold text-xs text-slate-600">ग्रामपंचायत अधिकृत प्रतिसाद (Response) *</label>
+                    <textarea id="action-c-response" required rows="4" placeholder="तक्रारीवर काय कारवाई केली किंवा तोडगा काढला याबद्दल लिहा..." class="textarea textarea-bordered w-full bg-slate-50 text-slate-800 border-gray-300 focus:outline-none text-sm"></textarea>
+                </div>
+                <button type="submit" class="btn bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-700 hover:to-teal-800 text-white w-full border-none font-bold rounded-xl shadow-md py-2.5">
+                    कारवाई जतन करा
+                </button>
+            </form>
+        </div>
+    </dialog>
+
+    <!-- YOJANA EDIT/ADD MODAL -->
+    <dialog id="yojanaActionModal" class="modal">
+        <div class="modal-box bg-white text-slate-800 max-w-xl rounded-2xl p-6 relative">
+            <button onclick="document.getElementById('yojanaActionModal').close()" class="btn btn-sm btn-circle btn-ghost absolute right-3 top-3">✕</button>
+            <h3 class="font-extrabold text-lg text-primary mb-4" id="yojana-modal-title">नवीन योजना जोडा</h3>
+            
+            <form id="yojana-form" onsubmit="saveYojana(event)" class="space-y-4">
+                <input type="hidden" id="edit-yojana-id" />
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="form-control sm:col-span-2">
+                        <label class="label font-bold text-xs text-slate-600">योजनेचे नाव *</label>
+                        <input type="text" id="yTitle" required placeholder="उदा. महात्मा गांधी राष्ट्रीय ग्रामीण रोजगार हमी योजना" class="input input-bordered w-full bg-slate-50 text-slate-800 border-gray-300 text-sm focus:outline-none" />
+                    </div>
+                    <div class="form-control sm:col-span-2">
+                        <label class="label font-bold text-xs text-slate-600">योजनेची माहिती (Description) *</label>
+                        <textarea id="yDescription" required rows="3" placeholder="योजनेबद्दल सविस्तर माहिती..." class="textarea textarea-bordered w-full bg-slate-50 text-slate-800 border-gray-300 text-sm focus:outline-none"></textarea>
+                    </div>
+                    <div class="form-control">
+                        <label class="label font-bold text-xs text-slate-600">योजनेचा प्रकार (Category) *</label>
+                        <select id="yCategory" class="select select-bordered w-full bg-slate-50 text-slate-800 border-gray-300 text-sm focus:outline-none">
+                            <option value="Health">आरोग्य (Health)</option>
+                            <option value="Agriculture">कृषी (Agriculture)</option>
+                            <option value="Education">शिक्षण (Education)</option>
+                            <option value="General">सामान्य योजना</option>
+                        </select>
+                    </div>
+                    <div class="form-control">
+                        <label class="label font-bold text-xs text-slate-600">स्थिती (Status) *</label>
+                        <select id="yStatus" class="select select-bordered w-full bg-slate-50 text-slate-800 border-gray-300 text-sm focus:outline-none">
+                            <option value="Active">सुरू आहे (Active)</option>
+                            <option value="Inactive">बंद आहे (Inactive)</option>
+                        </select>
+                    </div>
+                    <div class="form-control sm:col-span-2">
+                        <label class="label font-bold text-xs text-slate-600">योजनेचे मुख्य लाभ (Benefits) *</label>
+                        <input type="text" id="yBenefits" required placeholder="उदा. वर्षाला ₹ ५ लाख मोफत आरोग्य विमा" class="input input-bordered w-full bg-slate-50 text-slate-800 border-gray-300 text-sm focus:outline-none" />
+                    </div>
+                    <div class="form-control sm:col-span-2">
+                        <label class="label font-bold text-xs text-slate-600">पात्रतेचे निकष (Eligibility) *</label>
+                        <input type="text" id="yEligibility" required placeholder="उदा. पिवळे किंवा केषरी शिधापत्रिकाधारक कुटुंब" class="input input-bordered w-full bg-slate-50 text-slate-800 border-gray-300 text-sm focus:outline-none" />
+                    </div>
+                    <div class="form-control sm:col-span-2">
+                        <label class="label font-bold text-xs text-slate-600">आवश्यक कागदपत्रे (Required Documents) *</label>
+                        <input type="text" id="yDocuments" required placeholder="उदा. आधार कार्ड, शिधापत्रिका, उत्पन्न दाखला" class="input input-bordered w-full bg-slate-50 text-slate-800 border-gray-300 text-sm focus:outline-none" />
+                    </div>
+                </div>
+                <button type="submit" class="btn bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-700 hover:to-teal-800 text-white w-full border-none font-bold rounded-xl shadow-md py-2.5">
+                    योजना सेव्ह करा
+                </button>
+            </form>
+        </div>
+    </dialog>
+
+    <!-- Shared Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="js/navigation.js"></script>
+    <script>
+        const API_URL = 'http://localhost:5001/api';
+        let currentUser = null;
+        let esevaRequests = [];
+        let complaints = [];
+        let rtcRecords = [];
+        let yojanas = [];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            checkAuth();
+        });
+
+        // ==========================================
+        // AUTHENTICATION GUARD
+        // ==========================================
+        function getHeaders() {
+            const token = localStorage.getItem('gpToken');
+            return {
+                'Authorization': `Bearer ${token}`
+            };
+        }
+
+        async function checkAuth() {
+            const token = localStorage.getItem('gpToken');
+            const userStr = localStorage.getItem('gpUser');
+            
+            if (!token || !userStr) {
+                showLoginForm();
+                return;
+            }
+
+            try {
+                const response = await fetch(`${API_URL}/auth/me`, {
+                    headers: getHeaders()
+                });
+                
+                if (response.ok) {
+                    currentUser = JSON.parse(userStr);
+                    showDashboard();
+                } else {
+                    handleLogout();
+                }
+            } catch (error) {
+                console.error('Auth verification error:', error);
+                // offline fallback or backend offline
+                alert('डेटा लोड करता आला नाही. बॅकएंड सर्व्हर चालू असल्याची खात्री करा.');
+                showLoginForm();
+            }
+        }
+
+        function showLoginForm() {
+            document.getElementById('login-container').classList.remove('hidden');
+            document.getElementById('dashboard-container').classList.add('hidden');
+        }
+
+        function showDashboard() {
+            document.getElementById('login-container').classList.add('hidden');
+            document.getElementById('dashboard-container').classList.remove('hidden');
+            
+            // Set User info
+            document.getElementById('user-display-name').textContent = currentUser.username;
+            if (document.getElementById('user-gp-name') && currentUser.gpName) {
+                document.getElementById('user-gp-name').textContent = currentUser.gpName;
+            }
+            const badge = document.getElementById('user-role-badge');
+            badge.textContent = currentUser.role === 'admin' ? 'Administrator' : 'Staff / कर्मचारी';
+            badge.className = currentUser.role === 'admin' ? 
+                'bg-red-500 text-white font-bold text-2xs uppercase px-2.5 py-0.5 rounded-full' : 
+                'bg-blue-500 text-white font-bold text-2xs uppercase px-2.5 py-0.5 rounded-full';
+
+            // Refresh data
+            loadAllData();
+        }
+
+        async function handlePageLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById('pageUsername').value.trim();
+            const password = document.getElementById('pagePassword').value.trim();
+
+            try {
+                const response = await fetch(`${API_URL}/auth/login`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password })
+                });
+
+                const data = await response.json();
+                if (response.ok) {
+                    localStorage.setItem('gpToken', data.token);
+                    localStorage.setItem('gpUser', JSON.stringify(data.user));
+                    currentUser = data.user;
+                    showDashboard();
+                    // Update header if exists
+                    if (typeof injectHeader === 'function') injectHeader();
+                } else {
+                    alert(data.error || 'चुकीचे वापरकर्ता नाव किंवा पासवर्ड!');
+                }
+            } catch (error) {
+                console.error('Login page error:', error);
+                alert('सर्व्हरशी संपर्क जोडता आला नाही. बॅकएंड चालू असल्याची खात्री करा.');
+            }
+        }
+
+        function handleLogout() {
+            localStorage.removeItem('gpToken');
+            localStorage.removeItem('gpUser');
+            currentUser = null;
+            showLoginForm();
+            // Update header if exists
+            if (typeof injectHeader === 'function') injectHeader();
+        }
+
+        // ==========================================
+        // DATA LOADERS
+        // ==========================================
+        async function loadAllData() {
+            await Promise.all([
+                fetchEsevaRequests(),
+                fetchComplaints(),
+                fetchYojanas(),
+                fetchRtcRecords()
+            ]);
+            renderStats();
+        }
+
+        function renderStats() {
+            // E-Seva requests stats
+            document.getElementById('stat-eseva-total').textContent = esevaRequests.length;
+            const pending = esevaRequests.filter(r => r.status === 'Pending').length;
+            document.getElementById('stat-eseva-pending').textContent = pending;
+
+            // Complaints stats
+            document.getElementById('stat-complaints-total').textContent = complaints.length;
+
+            // Yojanas stats
+            const activeYojanas = yojanas.filter(y => y.status === 'Active').length;
+            document.getElementById('stat-yojanas-total').textContent = activeYojanas;
+        }
+
+        // ==========================================
+        // TAB SWITCHER
+        // ==========================================
+        function switchTab(tabName) {
+            // Remove active classes
+            const tabs = document.querySelectorAll('.tabs .tab');
+            tabs.forEach(tab => tab.classList.remove('tab-active-custom', 'font-bold'));
+            
+            // Add active class
+            document.getElementById(`tab-${tabName}`).classList.add('tab-active-custom', 'font-bold');
+
+            // Hide all panels
+            const panels = document.querySelectorAll('.tab-content-panel');
+            panels.forEach(p => p.classList.add('hidden'));
+
+            // Show selected panel
+            document.getElementById(`content-${tabName}`).classList.remove('hidden');
+        }
+
+        // ==========================================
+        // E-SEVA REQUEST ACTIONS
+        // ==========================================
+        async function fetchEsevaRequests() {
+            try {
+                const response = await fetch(`${API_URL}/eseva/requests`, { headers: getHeaders() });
+                if (response.ok) {
+                    esevaRequests = await response.json();
+                    renderEsevaTable(esevaRequests);
+                }
+            } catch (error) {
+                console.error('Error fetching E-Seva requests:', error);
+            }
+        }
+
+        function renderEsevaTable(requests) {
+            const tbody = document.getElementById('eseva-table-body');
+            if (!tbody) return;
+
+            if (requests.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="6" class="text-center py-6 text-slate-500 font-bold">अजून एकही अर्ज आलेला नाही.</td></tr>`;
+                return;
+            }
+
+            tbody.innerHTML = requests.map(req => {
+                let badgeClass = 'badge-ghost';
+                let statusText = req.status;
+                if (req.status === 'Pending') { badgeClass = 'badge-warning'; statusText = 'प्रलंबित'; }
+                if (req.status === 'In Progress') { badgeClass = 'badge-info'; statusText = 'प्रक्रियेत'; }
+                if (req.status === 'Approved') { badgeClass = 'badge-success text-white'; statusText = 'मंजूर'; }
+                if (req.status === 'Rejected') { badgeClass = 'badge-error text-white'; statusText = 'अस्वीकृत'; }
+
+                return `
+                    <tr class="border-b hover:bg-slate-100 transition duration-150">
+                        <td>
+                            <div class="font-bold text-slate-800">${req.fullName}</div>
+                            <span class="text-2xs text-slate-500 block font-semibold">${req.idType}: ${req.idNumber}</span>
+                        </td>
+                        <td class="font-bold text-slate-700">${req.documentType}</td>
+                        <td>
+                            <div class="font-bold">${req.mobile}</div>
+                            <span class="text-2xs text-emerald-600 block font-bold"><i class="fa-brands fa-whatsapp"></i> WA: ${req.whatsapp}</span>
+                        </td>
+                        <td class="font-semibold text-slate-500">${req.createdAt}</td>
+                        <td>
+                            <span class="badge ${badgeClass} font-bold text-2xs">${statusText}</span>
+                        </td>
+                        <td>
+                            <div class="flex gap-1">
+                                <button onclick="openEsevaActionModal('${req.id}')" class="btn btn-xs btn-primary font-bold text-white"><i class="fa-solid fa-file-pen mr-1"></i>तपासणी</button>
+                                ${req.status === 'Approved' ? `
+                                    <button onclick="sendWhatsAppApproval('${req.id}')" class="btn btn-xs btn-success text-white font-bold"><i class="fa-brands fa-whatsapp mr-1"></i>पाठवा</button>
+                                ` : ''}
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function filterEsevaRequests() {
+            const filterValue = document.getElementById('eseva-filter').value;
+            if (filterValue === 'All') {
+                renderEsevaTable(esevaRequests);
+            } else {
+                const filtered = esevaRequests.filter(req => req.status === filterValue);
+                renderEsevaTable(filtered);
+            }
+        }
+
+        function openEsevaActionModal(id) {
+            const req = esevaRequests.find(r => r.id.toString() === id.toString());
+            if (!req) return;
+
+            const modalDetails = document.getElementById('eseva-action-details');
+            modalDetails.innerHTML = `
+                <div class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs bg-slate-50 p-4 border rounded-xl leading-relaxed">
+                        <div><strong class="text-slate-500">नाव:</strong> <span class="font-bold text-slate-800">${req.fullName}</span></div>
+                        <div><strong class="text-slate-500">दस्तऐवज:</strong> <span class="font-bold text-emerald-700">${req.documentType}</span></div>
+                        <div><strong class="text-slate-500">मोबाईल:</strong> <span class="font-bold text-slate-800">${req.mobile}</span></div>
+                        <div><strong class="text-slate-500">व्हॉट्सअॅप:</strong> <span class="font-bold text-emerald-700">${req.whatsapp}</span></div>
+                        <div><strong class="text-slate-500">ओळखपत्र:</strong> <span class="font-bold text-slate-800">${req.idType} (${req.idNumber})</span></div>
+                        <div class="sm:col-span-2"><strong class="text-slate-500">नोंद/टिप्पणी:</strong> <span class="font-semibold text-slate-600">${req.remarks || '—'}</span></div>
+                        <div class="sm:col-span-2"><strong class="text-slate-500">नोंदणी तारीख:</strong> <span class="font-semibold text-slate-500">${req.createdAt}</span></div>
+                    </div>
+
+                    <!-- Uploaded IDs preview -->
+                    <div class="space-y-1">
+                        <label class="label font-bold text-xs text-slate-600">नागरिकाने अपलोड केलेले ओळखपत्र:</label>
+                        <div class="flex gap-4">
+                            <a href="http://localhost:5001${req.idFrontUrl}" target="_blank" class="flex-1 btn btn-sm btn-outline border-emerald-600 text-emerald-700 font-bold"><i class="fa-solid fa-id-card mr-1"></i>समोरची बाजू (Front)</a>
+                            <a href="http://localhost:5001${req.idBackUrl}" target="_blank" class="flex-1 btn btn-sm btn-outline border-emerald-600 text-emerald-700 font-bold"><i class="fa-solid fa-id-card-clip mr-1"></i>मागील बाजू (Back)</a>
+                        </div>
+                    </div>
+
+                    <!-- Approval Form -->
+                    <form id="eseva-action-form" onsubmit="saveEsevaAction(event, '${req.id}')" class="space-y-3 pt-3 border-t">
+                        <div class="form-control">
+                            <label class="label font-bold text-xs text-slate-600">स्थिती बदला (Status) *</label>
+                            <select id="actionStatus" required onchange="toggleApprovedDocField()" class="select select-bordered select-sm bg-slate-50 text-slate-800 border-gray-300 font-bold text-xs focus:outline-none">
+                                <option value="Pending" ${req.status === 'Pending' ? 'selected' : ''}>प्रलंबित (Pending)</option>
+                                <option value="In Progress" ${req.status === 'In Progress' ? 'selected' : ''}>प्रक्रियेत (In Progress)</option>
+                                <option value="Approved" ${req.status === 'Approved' ? 'selected' : ''}>मंजूर (Approved)</option>
+                                <option value="Rejected" ${req.status === 'Rejected' ? 'selected' : ''}>अस्वीकृत (Rejected)</option>
+                            </select>
+                        </div>
+
+                        <!-- Approved Document Upload (visible only if Approved selected) -->
+                        <div class="form-control hidden" id="approved-doc-upload-container">
+                            <label class="label font-bold text-xs text-slate-600">मंजूर केलेले प्रमाणपत्र / ७/१२ पीडीएफ फाईल अपलोड करा *</label>
+                            <input type="file" id="actionApprovedDoc" accept="application/pdf" class="file-input file-input-bordered file-input-success file-input-sm w-full bg-slate-50 text-slate-800" />
+                            ${req.approvedDocUrl ? `
+                                <div class="text-2xs text-slate-500 font-bold mt-1">
+                                    सध्याची फाईल: <a href="http://localhost:5001${req.approvedDocUrl}" target="_blank" class="text-blue-600 hover:underline">प्रमाणपत्र पाहा (View Certificate)</a>
+                                </div>
+                            ` : ''}
+                        </div>
+
+                        <div class="form-control">
+                            <label class="label font-bold text-xs text-slate-600">प्रशासकीय शेरा (Remarks)</label>
+                            <textarea id="actionRemarks" rows="2" placeholder="कारवाई बाबत टिप्पणी किंवा नाकारण्याचे कारण येथे लिहा..." class="textarea textarea-bordered textarea-sm w-full bg-slate-50 text-slate-800 border-gray-300 focus:outline-none text-xs">${req.adminRemarks || ''}</textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-sm bg-[#1f3a5f] hover:bg-[#234a7d] text-white w-full border-none font-bold rounded-xl mt-2 py-2">
+                            बदल जतन करा
+                        </button>
+                    </form>
+                </div>
+            `;
+
+            document.getElementById('esevaActionModal').showModal();
+            toggleApprovedDocField();
+        }
+
+        function toggleApprovedDocField() {
+            const statusSelect = document.getElementById('actionStatus');
+            const docField = document.getElementById('approved-doc-upload-container');
+            if (statusSelect && docField) {
+                if (statusSelect.value === 'Approved') {
+                    docField.classList.remove('hidden');
+                    document.getElementById('actionApprovedDoc').setAttribute('required', 'true');
+                } else {
+                    docField.classList.add('hidden');
+                    document.getElementById('actionApprovedDoc').removeAttribute('required');
+                }
+            }
+        }
+
+        async function saveEsevaAction(event, id) {
+            event.preventDefault();
+            const status = document.getElementById('actionStatus').value;
+            const adminRemarks = document.getElementById('actionRemarks').value.trim();
+            const fileInput = document.getElementById('actionApprovedDoc');
+
+            const formData = new FormData();
+            formData.append('status', status);
+            formData.append('adminRemarks', adminRemarks);
+            
+            if (status === 'Approved' && fileInput.files.length > 0) {
+                formData.append('approvedDoc', fileInput.files[0]);
+            }
+
+            try {
+                const response = await fetch(`${API_URL}/eseva/requests/${id}`, {
+                    method: 'PATCH',
+                    headers: getHeaders(),
+                    body: formData
+                });
+
+                if (response.ok) {
+                    document.getElementById('esevaActionModal').close();
+                    await fetchEsevaRequests();
+                    renderStats();
+                } else {
+                    const err = await response.json();
+                    alert(err.error || 'बदल जतन करताना त्रुटी आली.');
+                }
+            } catch (error) {
+                console.error('Error updating E-Seva action:', error);
+                alert('सर्व्हरशी संपर्क साधता आला नाही.');
+            }
+        }
+
+        // WhatsApp Click to Chat Link
+        function sendWhatsAppApproval(id) {
+            const req = esevaRequests.find(r => r.id.toString() === id.toString());
+            if (!req || !req.approvedDocUrl) {
+                alert('या अर्जासाठी मंजूर दाखला सापडला नाही. कृपया फाईल अपलोड करून मंजुरी द्या.');
+                return;
+            }
+
+            const downloadLink = `http://localhost:5001${req.approvedDocUrl}`;
+            
+            // Compose Marathi text
+            const gpNameText = currentUser.gpName ? `ग्रामपंचायत ${currentUser.gpName}` : 'ग्रामपंचायत';
+            const textMessage = `नमस्कार ${req.fullName},\n\n${gpNameText} कार्यालयाकडून आपला ऑनलाईन ई-सेवा अंतर्गत ${req.documentType} करिता अर्ज मंजूर झाला आहे.\n\nआपले डिजिटल प्रमाणपत्र डाऊनलोड करण्यासाठी खालील लिंकवर क्लिक करा:\n👉 ${downloadLink}\n\nधन्यवाद!\n- ${gpNameText} प्रशासन.`;
+            const encodedText = encodeURIComponent(textMessage);
+            const waLink = `https://wa.me/91${req.whatsapp}?text=${encodedText}`;
+            
+            // Open in new tab
+            window.open(waLink, '_blank');
+        }
+
+        // ==========================================
+        // COMPLAINT ACTIONS
+        // ==========================================
+        async function fetchComplaints() {
+            try {
+                const response = await fetch(`${API_URL}/complaints`, { headers: getHeaders() });
+                if (response.ok) {
+                    complaints = await response.json();
+                    renderComplaintsTable(complaints);
+                }
+            } catch (error) {
+                console.error('Error fetching complaints:', error);
+            }
+        }
+
+        function renderComplaintsTable(data) {
+            const tbody = document.getElementById('complaints-table-body');
+            if (!tbody) return;
+
+            if (data.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="6" class="text-center py-6 text-slate-500 font-bold">एकही तक्रार नोंदविली गेली नाही.</td></tr>`;
+                return;
+            }
+
+            tbody.innerHTML = data.map(c => {
+                let badgeClass = 'badge-ghost';
+                let statusText = c.status;
+                if (c.status === 'Received') { badgeClass = 'badge-warning'; statusText = 'प्राप्त'; }
+                if (c.status === 'In Progress') { badgeClass = 'badge-info'; statusText = 'प्रक्रियेत'; }
+                if (c.status === 'Resolved') { badgeClass = 'badge-success text-white'; statusText = 'निवारण झाले'; }
+
+                return `
+                    <tr class="border-b hover:bg-slate-100 transition duration-150 text-xs sm:text-sm">
+                        <td>
+                            <div class="font-bold text-slate-800">${c.fullName}</div>
+                            <span class="text-2xs text-slate-500 block font-semibold"><i class="fa-solid fa-phone"></i> ${c.mobileNo}</span>
+                        </td>
+                        <td>
+                            <p class="max-w-[200px] truncate font-semibold" title="${c.details}">${c.details}</p>
+                            <span class="text-3xs text-primary font-bold block">तक्रार क्र: #${c.ticketNo}</span>
+                        </td>
+                        <td>
+                            <div class="font-bold text-emerald-700">${c.category}</div>
+                            <span class="text-2xs text-slate-500 block font-bold">${c.village} - वार्ड ${c.ward}</span>
+                        </td>
+                        <td class="font-semibold text-slate-500">${c.createdAt}</td>
+                        <td>
+                            <span class="badge ${badgeClass} font-bold text-2xs">${statusText}</span>
+                        </td>
+                        <td>
+                            <button onclick="openComplaintActionModal('${c.id}')" class="btn btn-xs bg-slate-800 text-white hover:bg-slate-900 border-none font-bold"><i class="fa-solid fa-reply mr-1"></i>तपासणी</button>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function openComplaintActionModal(id) {
+            const c = complaints.find(item => item.id.toString() === id.toString());
+            if (!c) return;
+
+            document.getElementById('action-complaint-id').value = c.id;
+            document.getElementById('action-c-name').textContent = c.fullName;
+            document.getElementById('action-c-category').textContent = c.category;
+            document.getElementById('action-c-details').textContent = c.details;
+            document.getElementById('action-c-status').value = c.status;
+            document.getElementById('action-c-response').value = c.response || '';
+
+            document.getElementById('complaintActionModal').showModal();
+        }
+
+        async function saveComplaintAction(event) {
+            event.preventDefault();
+            const id = document.getElementById('action-complaint-id').value;
+            const status = document.getElementById('action-c-status').value;
+            const responseText = document.getElementById('action-c-response').value.trim();
+
+            try {
+                const response = await fetch(`${API_URL}/complaints/${id}`, {
+                    method: 'PATCH',
+                    headers: {
+                        ...getHeaders(),
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ status, response: responseText })
+                });
+
+                if (response.ok) {
+                    document.getElementById('complaintActionModal').close();
+                    await fetchComplaints();
+                    renderStats();
+                } else {
+                    alert('बदल जतन करताना त्रुटी आली.');
+                }
+            } catch (error) {
+                console.error('Error saving complaint response:', error);
+                alert('सर्व्हरशी संपर्क साधता आला नाही.');
+            }
+        }
+
+        // ==========================================
+        // YOJANA ACTIONS
+        // ==========================================
+        async function fetchYojanas() {
+            try {
+                const response = await fetch(`${API_URL}/yojanas/all`, { headers: getHeaders() });
+                if (response.ok) {
+                    yojanas = await response.json();
+                    renderYojanasGrid(yojanas);
+                }
+            } catch (error) {
+                console.error('Error fetching Yojanas:', error);
+            }
+        }
+
+        function renderYojanasGrid(data) {
+            const grid = document.getElementById('yojanas-admin-grid');
+            if (!grid) return;
+
+            if (data.length === 0) {
+                grid.innerHTML = `<p class="col-span-2 text-center py-6 text-slate-500 font-bold">एकही योजना नोंदविली नाही.</p>`;
+                return;
+            }
+
+            grid.innerHTML = data.map(y => {
+                return `
+                    <div class="card bg-white border border-slate-200 shadow-md p-5 rounded-2xl flex flex-col justify-between gap-4">
+                        <div>
+                            <div class="flex items-center justify-between border-b pb-2">
+                                <h4 class="font-extrabold text-primary text-sm sm:text-base">${y.title}</h4>
+                                <span class="badge ${y.status === 'Active' ? 'badge-success' : 'badge-ghost'} text-white font-bold text-2xs">${y.status === 'Active' ? 'सुरू' : 'बंद'}</span>
+                            </div>
+                            <p class="text-xs text-slate-500 mt-2 font-medium">${y.description}</p>
+                            <div class="mt-3 text-xs space-y-1 bg-slate-50 p-3 rounded-xl border border-slate-100 leading-relaxed font-bold">
+                                <div class="text-emerald-700">लाभ: <span class="text-slate-600 font-medium">${y.benefits}</span></div>
+                                <div class="text-emerald-700">पात्रता: <span class="text-slate-600 font-medium">${y.eligibility}</span></div>
+                                <div class="text-emerald-700">कागदपत्रे: <span class="text-slate-600 font-medium">${y.documents}</span></div>
+                                <div class="text-purple-700">श्रेणी (Category): <span class="text-slate-600 font-medium">${y.category}</span></div>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 justify-end border-t pt-3">
+                            <button onclick="openYojanaModal('${y.id}')" class="btn btn-xs btn-outline border-slate-500 text-slate-700 font-bold"><i class="fa-solid fa-pen-to-square"></i> संपादन</button>
+                            <button onclick="deleteYojana('${y.id}')" class="btn btn-xs bg-red-600 text-white hover:bg-red-700 border-none font-bold"><i class="fa-solid fa-trash"></i> हटवा</button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function openYojanaModal(id = null) {
+            const form = document.getElementById('yojana-form');
+            form.reset();
+
+            if (id) {
+                // Edit mode
+                const y = yojanas.find(item => item.id.toString() === id.toString());
+                if (!y) return;
+
+                document.getElementById('edit-yojana-id').value = y.id;
+                document.getElementById('yTitle').value = y.title;
+                document.getElementById('yDescription').value = y.description;
+                document.getElementById('yCategory').value = y.category;
+                document.getElementById('yStatus').value = y.status;
+                document.getElementById('yBenefits').value = y.benefits;
+                document.getElementById('yEligibility').value = y.eligibility;
+                document.getElementById('yDocuments').value = y.documents;
+
+                document.getElementById('yojana-modal-title').textContent = 'योजना संपादन करा';
+            } else {
+                // Add mode
+                document.getElementById('edit-yojana-id').value = '';
+                document.getElementById('yojana-modal-title').textContent = 'नवीन योजना जोडा';
+            }
+
+            document.getElementById('yojanaActionModal').showModal();
+        }
+
+        async function saveYojana(event) {
+            event.preventDefault();
+            const id = document.getElementById('edit-yojana-id').value;
+            const title = document.getElementById('yTitle').value.trim();
+            const description = document.getElementById('yDescription').value.trim();
+            const category = document.getElementById('yCategory').value;
+            const status = document.getElementById('yStatus').value;
+            const benefits = document.getElementById('yBenefits').value.trim();
+            const eligibility = document.getElementById('yEligibility').value.trim();
+            const documents = document.getElementById('yDocuments').value.trim();
+
+            const yData = { title, description, category, status, benefits, eligibility, documents };
+            
+            const isEdit = id !== '';
+            const url = isEdit ? `${API_URL}/yojanas/${id}` : `${API_URL}/yojanas`;
+            const method = isEdit ? 'PUT' : 'POST';
+
+            try {
+                const response = await fetch(url, {
+                    method: method,
+                    headers: {
+                        ...getHeaders(),
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(yData)
+                });
+
+                if (response.ok) {
+                    document.getElementById('yojanaActionModal').close();
+                    await fetchYojanas();
+                    renderStats();
+                } else {
+                    const err = await response.json();
+                    alert(err.error || 'योजना सेव्ह करताना एरर आली.');
+                }
+            } catch (error) {
+                console.error('Error saving yojana:', error);
+                alert('सर्व्हर जोडणी अपयशी ठरली.');
+            }
+        }
+
+        async function deleteYojana(id) {
+            if (!confirm('आपणास ही योजना खरोखर हटवायची आहे का?')) return;
+
+            try {
+                const response = await fetch(`${API_URL}/yojanas/${id}`, {
+                    method: 'DELETE',
+                    headers: getHeaders()
+                });
+
+                if (response.ok) {
+                    await fetchYojanas();
+                    renderStats();
+                } else {
+                    alert('योजना हटवताना त्रुटी आली.');
+                }
+            } catch (error) {
+                console.error('Error deleting yojana:', error);
+                alert('सर्व्हर जोडणी अपयशी ठरली.');
+            }
+        }
+
+        // ==========================================
+        // RTC RECORDS ACTIONS
+        // ==========================================
+        async function fetchRtcRecords() {
+            try {
+                const response = await fetch(`${API_URL}/rtc`, {
+                    headers: {
+                        'X-GP-ID': currentUser.gpId
+                    }
+                });
+                if (response.ok) {
+                    rtcRecords = await response.json();
+                    renderRtcTable(rtcRecords);
+                }
+            } catch (error) {
+                console.error('Error fetching RTC records:', error);
+            }
+        }
+
+        function renderRtcTable(data) {
+            const tbody = document.getElementById('rtc-table-body');
+            if (!tbody) return;
+
+            if (data.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="5" class="text-center py-6 text-slate-500 font-bold">एकही ७/१२ उतारा रेकॉर्ड सापडला नाही.</td></tr>`;
+                return;
+            }
+
+            tbody.innerHTML = data.map(r => {
+                return `
+                    <tr class="border-b hover:bg-slate-100 transition duration-150">
+                        <td class="font-bold text-slate-800">${r.surveyNumber}</td>
+                        <td class="font-semibold text-slate-700">${r.ownerName}</td>
+                        <td class="font-bold text-emerald-700">${r.village}</td>
+                        <td class="font-medium text-slate-500">${r.createdAt}</td>
+                        <td>
+                            <a href="http://localhost:5001${r.fileUrl}" target="_blank" class="btn btn-xs bg-red-100 hover:bg-red-200 border-none text-red-700 font-bold"><i class="fa-solid fa-file-pdf mr-1"></i>डाऊनलोड</a>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        async function handleRtcUpload(event) {
+            event.preventDefault();
+            const surveyNumber = document.getElementById('rtcSurvey').value.trim();
+            const ownerName = document.getElementById('rtcOwner').value.trim();
+            const village = document.getElementById('rtcVillage').value;
+            const fileInput = document.getElementById('rtcFile');
+
+            if (fileInput.files.length === 0) return;
+
+            const formData = new FormData();
+            formData.append('surveyNumber', surveyNumber);
+            formData.append('ownerName', ownerName);
+            formData.append('village', village);
+            formData.append('rtcFile', fileInput.files[0]);
+
+            try {
+                const response = await fetch(`${API_URL}/rtc`, {
+                    method: 'POST',
+                    headers: getHeaders(),
+                    body: formData
+                });
+
+                const data = await response.json();
+                if (response.ok) {
+                    document.getElementById('rtc-upload-form').reset();
+                    alert('७/१२ रेकॉर्ड यशस्वीरित्या अपलोड झाला आहे.');
+                    await fetchRtcRecords();
+                } else {
+                    alert(data.error || 'रेकॉर्ड सेव्ह करताना त्रुटी आली.');
+                }
+            } catch (error) {
+                console.error('Error uploading RTC:', error);
+                alert('सर्व्हर जोडणी अपयशी ठरली.');
+            }
+        }
+
+        async function searchRtc() {
+            const query = document.getElementById('rtc-search').value.trim();
+            try {
+                const response = await fetch(`${API_URL}/rtc?surveyNumber=${query}&ownerName=${query}`, {
+                    headers: {
+                        'X-GP-ID': currentUser.gpId
+                    }
+                });
+                if (response.ok) {
+                    const results = await response.json();
+                    renderRtcTable(results);
+                }
+            } catch (error) {
+                console.error('Search RTC error:', error);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="mr" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ग्रामपंचायत मसोला (खुर्द) - निधी उत्पन्न व खर्च (Fund Details)</title>
+    
+    <!-- Tailwind CSS & DaisyUI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1f3a5f',
+                        secondary: '#3a6b5c',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Tiro+Devanagari+Marathi:ital@0;1&family=Yatra+One&display=swap" rel="stylesheet" />
+
+    <style>
+        .marathi-font { font-family: 'Tiro Devanagari Marathi', serif; }
+    </style>
+</head>
+<body class="bg-slate-50 flex flex-col min-h-screen marathi-font text-slate-800">
+
+    <!-- Shared Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="flex-grow py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Page Header -->
+            <div class="text-center mb-12">
+                <span class="bg-emerald-100 text-emerald-800 font-bold text-xs uppercase px-3 py-1 rounded-full mb-3 inline-block">पारदर्शक कारभार</span>
+                <h1 class="text-2xl sm:text-4xl font-extrabold text-[#1f3a5f] mb-4">निधी उत्पन्न व खर्च तपशील</h1>
+                <p class="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base">ग्रामपंचायतीचे आर्थिक वर्ष २०२५-२६ चे शासकीय अनुदान, स्वनिधी कर वसुली व विविध विकास कामांवरील खर्च.</p>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <!-- Stat 1 -->
+                <div class="card bg-white border border-slate-200 shadow-md p-6 rounded-2xl flex flex-row items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-wallet"></i>
+                    </div>
+                    <div>
+                        <span class="text-slate-500 text-xs font-bold block">एकूण जमा निधी (Income)</span>
+                        <span class="text-xl sm:text-2xl font-black text-blue-900">₹२५,५७,६४८.९३</span>
+                    </div>
+                </div>
+                <!-- Stat 2 -->
+                <div class="card bg-white border border-slate-200 shadow-md p-6 rounded-2xl flex flex-row items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-red-100 text-red-700 flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-receipt"></i>
+                    </div>
+                    <div>
+                        <span class="text-slate-500 text-xs font-bold block">एकूण खर्च (Expenditure)</span>
+                        <span class="text-xl sm:text-2xl font-black text-red-900">₹२१,९३,४६९.५०</span>
+                    </div>
+                </div>
+                <!-- Stat 3 -->
+                <div class="card bg-white border border-slate-200 shadow-md p-6 rounded-2xl flex flex-row items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <div>
+                        <span class="text-slate-500 text-xs font-bold block">शिल्लक निधी (Balance)</span>
+                        <span class="text-xl sm:text-2xl font-black text-emerald-800">₹३,६४,१७९.४३</span>
+                    </div>
+                </div>
+                <!-- Stat 4 -->
+                <div class="card bg-white border border-slate-200 shadow-md p-6 rounded-2xl flex flex-row items-center gap-4">
+                    <div class="w-12 h-12 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center text-xl shrink-0">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <div>
+                        <span class="text-slate-500 text-xs font-bold block">कर वसुली प्रमाण (Taxes %)</span>
+                        <span class="text-lg sm:text-xl font-black text-amber-800">माहिती नाही</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Breakdowns -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+                
+                <!-- Income Details Table -->
+                <div class="card bg-white border border-slate-200 shadow-lg rounded-2xl p-6">
+                    <h3 class="font-extrabold text-[#1f3a5f] text-lg mb-6 border-b pb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-circle-down text-emerald-600"></i>
+                        <span>उत्पन्न स्रोत तपशील (Sources of Revenue)</span>
+                    </h3>
+                    <div class="overflow-x-auto my-scrollbar-thickness">
+                        <table class="table w-full text-sm text-slate-800">
+                            <thead>
+                                <tr class="bg-slate-100 text-slate-700">
+                                    <th>अनुदान / उत्पन्न प्रकार</th>
+                                    <th class="text-right">प्राप्त रक्कम</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-bold">१५ वा वित्त आयोग ग्रामपंचायत मसोला बुद्रुक बु. मसोला बुद्रुक (सन २०२५-२६) जमा</td>
+                                    <td class="text-right font-semibold text-[#1f3a5f]">₹१७,३८,६४६.००</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-bold">बँक व्याज जमा (बँक व्याज दर)</td>
+                                    <td class="text-right font-semibold text-[#1f3a5f]">₹४,५१,१००.००</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-bold">संकीर्ण जमा</td>
+                                    <td class="text-right font-semibold text-[#1f3a5f]">₹८,३६९.००</td>
+                                </tr>
+                                <tr class="bg-slate-50 font-bold border-t border-slate-200">
+                                    <td>वर्षभरातील एकूण जमा</td>
+                                    <td class="text-right text-[#1f3a5f]">₹२२,४१,११५.००</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-bold text-slate-600">आरंभीची जुनी शिल्लक (मागील शिल्लक)</td>
+                                    <td class="text-right font-semibold text-slate-600">₹३,१६,५३३.९३</td>
+                                </tr>
+                                <tr class="bg-emerald-50 font-black border-t border-emerald-200 text-base">
+                                    <td class="text-emerald-900">सर्व एकत्रित एकूण जमा निधी</td>
+                                    <td class="text-right text-emerald-700">₹२५,५७,६४८.९३</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Expenditure Details Chart/Bars -->
+                <div class="card bg-white border border-slate-200 shadow-lg rounded-2xl p-6">
+                    <h3 class="font-extrabold text-[#1f3a5f] text-lg mb-6 border-b pb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-circle-up text-red-600"></i>
+                        <span>खर्च विभागणी (Expenditure Breakdown)</span>
+                    </h3>
+                    <div class="space-y-5">
+                        
+                        <!-- Water & Hygiene -->
+                        <div>
+                            <div class="flex justify-between text-xs sm:text-sm font-bold mb-1.5">
+                                <span class="text-slate-700">१. पाणी पुरवठा, स्वच्छता व सार्वजनिक शौचालय दुरुस्ती</span>
+                                <span class="text-[#1f3a5f]">₹५,७१,५२८.०० (२२%)</span>
+                            </div>
+                            <progress class="progress progress-primary w-full" value="22" max="100"></progress>
+                        </div>
+
+                        <!-- Roads & Infrastructure -->
+                        <div>
+                            <div class="flex justify-between text-xs sm:text-sm font-bold mb-1.5">
+                                <span class="text-slate-700">२. नागरी बांधकाम, सिमेंट काँक्रीटीकरण व दुरुस्ती</span>
+                                <span class="text-[#1f3a5f]">₹१६,३९,९९१.७० (६३%)</span>
+                            </div>
+                            <progress class="progress progress-primary w-full" value="63" max="100"></progress>
+                        </div>
+
+                        <!-- Lighting -->
+                        <div>
+                            <div class="flex justify-between text-xs sm:text-sm font-bold mb-1.5">
+                                <span class="text-slate-700">३. सौर ऊर्जा, पथदिवे व इतर साहित्य</span>
+                                <span class="text-[#1f3a5f]">₹९०,२००.०० (३%)</span>
+                            </div>
+                            <progress class="progress progress-primary w-full" value="3" max="100"></progress>
+                        </div>
+
+                        <!-- Office Adm & Services -->
+                        <div>
+                            <div class="flex justify-between text-xs sm:text-sm font-bold mb-1.5">
+                                <span class="text-slate-700">४. कार्यालयीन खर्च, नागरी सेवा व संकीर्ण</span>
+                                <span class="text-[#1f3a5f]">₹३,१३,५७४.७० (१२%)</span>
+                            </div>
+                            <progress class="progress progress-primary w-full" value="12" max="100"></progress>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Itemized Expenditure Details (New Section) -->
+            <div class="card bg-white border border-slate-200 shadow-lg rounded-2xl p-6 mt-8">
+                <h3 class="font-extrabold text-[#1f3a5f] text-lg mb-6 border-b pb-2 flex items-center gap-2">
+                    <i class="fa-solid fa-list-check text-indigo-600"></i>
+                    <span>तपशीलवार खर्च विवरण (Itemized Expenditure Details)</span>
+                </h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Category 1 -->
+                    <div class="bg-slate-50 rounded-xl p-5 border border-slate-100 flex flex-col justify-between shadow-sm">
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-sm sm:text-base border-b pb-2 mb-3">
+                                <span class="flex items-center gap-2 text-indigo-900">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-blue-500 shrink-0"></span>
+                                    १. पाणी पुरवठा, स्वच्छता व शौचालय दुरुस्ती
+                                </span>
+                            </h4>
+                            <div class="overflow-x-auto my-scrollbar-thickness">
+                                <table class="table table-sm w-full text-xs text-slate-700">
+                                    <thead>
+                                        <tr class="text-slate-500">
+                                            <th>कामाचा / खर्चाचा तपशील</th>
+                                            <th class="text-right">खर्च रक्कम</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>टाकीला तार कुंपण करणे</td>
+                                            <td class="text-right font-semibold text-slate-800">₹८२,६६६.००</td>
+                                        </tr>
+                                        <tr>
+                                            <td>सार्वजनिक शौचालय दुरुस्ती (१५)</td>
+                                            <td class="text-right font-semibold text-slate-800">₹३,८९,९००.००</td>
+                                        </tr>
+                                        <tr>
+                                            <td>सार्वजनिक शौचालय दुरुस्ती (१६)</td>
+                                            <td class="text-right font-semibold text-slate-800">₹९८,९६२.००</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="border-t border-slate-200 mt-4 pt-3 flex justify-between items-center text-xs font-bold text-indigo-900">
+                            <span>एकूण खर्च:</span>
+                            <span class="text-sm font-black text-blue-900">₹५,७१,५२८.००</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 2 -->
+                    <div class="bg-slate-50 rounded-xl p-5 border border-slate-100 flex flex-col justify-between shadow-sm">
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-sm sm:text-base border-b pb-2 mb-3">
+                                <span class="flex items-center gap-2 text-indigo-900">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 shrink-0"></span>
+                                    २. नागरी बांधकाम, सिमेंट काँक्रीटीकरण व दुरुस्ती
+                                </span>
+                            </h4>
+                            <div class="overflow-x-auto my-scrollbar-thickness">
+                                <table class="table table-sm w-full text-xs text-slate-700">
+                                    <thead>
+                                        <tr class="text-slate-500">
+                                            <th>कामाचा / खर्चाचा तपशील</th>
+                                            <th class="text-right">खर्च रक्कम</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>नळ मीटर (कोटेशन)</td>
+                                            <td class="text-right font-semibold text-slate-800">₹३,८०,५६५.२०</td>
+                                        </tr>
+                                        <tr>
+                                            <td>नळ मीटर (कोटेशन)</td>
+                                            <td class="text-right font-semibold text-slate-800">₹३२,८४४.००</td>
+                                        </tr>
+                                        <tr>
+                                            <td>काँक्रीटीकरण नाली बांधकाम (२.८९)</td>
+                                            <td class="text-right font-semibold text-slate-800">₹२,६३,११४.००</td>
+                                        </tr>
+                                        <tr>
+                                            <td>काँक्रीटीकरण नाली बांधकाम (२.४७)</td>
+                                            <td class="text-right font-semibold text-slate-800">₹२,२३,१०५.००</td>
+                                        </tr>
+                                        <tr>
+                                            <td>नळ मीटर (कोटेशन) ४.६२</td>
+                                            <td class="text-right font-semibold text-slate-800">₹४,२३,००८.००</td>
+                                        </tr>
+                                        <tr>
+                                            <td>अंगणवाडी रंगरंगोटी व दुरुस्ती (मसोला बुद्रुक)</td>
+                                            <td class="text-right font-semibold text-slate-800">₹४४,२५३.००</td>
+                                        </tr>
+                                        <tr>
+                                            <td>मागासवर्गीय नाली बांधकाम २०१</td>
+                                            <td class="text-right font-semibold text-slate-800">₹९८,३०१.६०</td>
+                                        </tr>
+                                        <tr>
+                                            <td>मागासवर्गीय समाज मंदिर दुरुस्ती</td>
+                                            <td class="text-right font-semibold text-slate-800">₹१,७४,८००.९०</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="border-t border-slate-200 mt-4 pt-3 flex justify-between items-center text-xs font-bold text-indigo-900">
+                            <span>एकूण खर्च:</span>
+                            <span class="text-sm font-black text-emerald-900">₹१६,३९,९९१.७०</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 3 -->
+                    <div class="bg-slate-50 rounded-xl p-5 border border-slate-100 flex flex-col justify-between shadow-sm">
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-sm sm:text-base border-b pb-2 mb-3">
+                                <span class="flex items-center gap-2 text-indigo-900">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-amber-500 shrink-0"></span>
+                                    ३. सौर ऊर्जा, पथदिवे व इतर साहित्य
+                                </span>
+                            </h4>
+                            <div class="overflow-x-auto my-scrollbar-thickness">
+                                <table class="table table-sm w-full text-xs text-slate-700">
+                                    <thead>
+                                        <tr class="text-slate-500">
+                                            <th>कामाचा / खर्चाचा तपशील</th>
+                                            <th class="text-right">खर्च रक्कम</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>पेव्हर ब्लॉक (दुरुस्ती/खरेदी) ९५०</td>
+                                            <td class="text-right font-semibold text-slate-800">₹९०,२००.००</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="border-t border-slate-200 mt-4 pt-3 flex justify-between items-center text-xs font-bold text-indigo-900">
+                            <span>एकूण खर्च:</span>
+                            <span class="text-sm font-black text-amber-900">₹९०,२००.००</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 4 -->
+                    <div class="bg-slate-50 rounded-xl p-5 border border-slate-100 flex flex-col justify-between shadow-sm">
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-sm sm:text-base border-b pb-2 mb-3">
+                                <span class="flex items-center gap-2 text-indigo-900">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-rose-500 shrink-0"></span>
+                                    ४. कार्यालयीन खर्च, नागरी सेवा व संकीर्ण
+                                </span>
+                            </h4>
+                            <div class="overflow-x-auto my-scrollbar-thickness">
+                                <table class="table table-sm w-full text-xs text-slate-700">
+                                    <thead>
+                                        <tr class="text-slate-500">
+                                            <th>कामाचा / खर्चाचा तपशील</th>
+                                            <th class="text-right">खर्च रक्कम</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>स्टेशनरी/साहित्य खरेदी</td>
+                                            <td class="text-right font-semibold text-slate-800">₹२२,६२०.००</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ग्रामपंचायत मसोला बुद्रुक बु. पेन्टर्स काम</td>
+                                            <td class="text-right font-semibold text-slate-800">₹२९,५००.००</td>
+                                        </tr>
+                                        <tr>
+                                            <td>धूर फवारणी (जंतूनाशक खरेदी)</td>
+                                            <td class="text-right font-semibold text-slate-800">₹५,००४.५०</td>
+                                        </tr>
+                                        <tr>
+                                            <td>आपले सरकार सेवा केंद्र मानधन/खर्च</td>
+                                            <td class="text-right font-semibold text-slate-800">₹९६,२५५.००</td>
+                                        </tr>
+                                        <tr>
+                                            <td>अंगणवाडी डिजिटल काम</td>
+                                            <td class="text-right font-semibold text-slate-800">₹४४,९५४.००</td>
+                                        </tr>
+                                        <tr>
+                                            <td>जि. प. शाळा दुरुस्ती/साहित्य कोरेडा</td>
+                                            <td class="text-right font-semibold text-slate-800">₹६६,६४१.२०</td>
+                                        </tr>
+                                        <tr>
+                                            <td>सीसीटीव्ही कॅमेरा/इतर खर्च</td>
+                                            <td class="text-right font-semibold text-slate-800">₹२८,६००.००</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="border-t border-slate-200 mt-4 pt-3 flex justify-between items-center text-xs font-bold text-indigo-900">
+                            <span>एकूण खर्च:</span>
+                            <span class="text-sm font-black text-rose-900">₹३,१३,५७४.७०</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Shared Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="js/navigation.js"></script>
+</body>
+</html>

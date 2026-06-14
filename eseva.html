@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="mr" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ग्रामपंचायत मसोला (खुर्द) - ई-सेवा केंद्र (E-Services)</title>
+    
+    <!-- Tailwind CSS & DaisyUI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1f3a5f',
+                        secondary: '#3a6b5c',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Tiro+Devanagari+Marathi:ital@0;1&family=Yatra+One&display=swap" rel="stylesheet" />
+
+    <style>
+        .marathi-font { font-family: 'Tiro Devanagari Marathi', serif; }
+    </style>
+</head>
+<body class="bg-slate-50 flex flex-col min-h-screen marathi-font text-slate-800">
+
+    <!-- Shared Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="flex-grow py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Page Header -->
+            <div class="text-center mb-12">
+                <span class="bg-emerald-100 text-emerald-800 font-bold text-xs uppercase px-3 py-1 rounded-full mb-3 inline-block">डिजिटल महाराष्ट्र</span>
+                <h1 class="text-2xl sm:text-4xl font-extrabold text-[#1f3a5f] mb-4">ई-सेवा मार्गदर्शन व अर्ज प्रणाली</h1>
+                <p class="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base">ग्रामपंचायत कार्यालयातील दस्तऐवज आता ऑनलाइन मिळवा. घरबसल्या अर्ज करा आणि प्रमाणपत्रे प्राप्त करा.</p>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12 max-w-3xl mx-auto">
+                <div class="card bg-white border p-4 rounded-xl flex flex-row items-center gap-3 shadow-sm">
+                    <div class="text-blue-600 text-2xl"><i class="fa-solid fa-list-check"></i></div>
+                    <div>
+                        <span class="text-xs text-slate-500 block">एकूण प्राप्त अर्ज</span>
+                        <span class="font-bold text-slate-800 text-lg" id="total-requests">0</span>
+                    </div>
+                </div>
+                <div class="card bg-white border p-4 rounded-xl flex flex-row items-center gap-3 shadow-sm">
+                    <div class="text-amber-600 text-2xl"><i class="fa-solid fa-hourglass-half"></i></div>
+                    <div>
+                        <span class="text-xs text-slate-500 block">प्रलंबित (Pending)</span>
+                        <span class="font-bold text-slate-800 text-lg" id="pending-requests">0</span>
+                    </div>
+                </div>
+                <div class="card bg-white border p-4 rounded-xl flex flex-row items-center gap-3 shadow-sm">
+                    <div class="text-emerald-600 text-2xl"><i class="fa-solid fa-check-double"></i></div>
+                    <div>
+                        <span class="text-xs text-slate-500 block">वितरित (Delivered)</span>
+                        <span class="font-bold text-slate-800 text-lg" id="delivered-requests">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Split -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+                
+                <!-- Left: Info & Documents list (4 columns) -->
+                <div class="lg:col-span-4 space-y-6">
+                    <div class="card bg-white border border-slate-200 p-6 rounded-2xl shadow-sm">
+                        <h3 class="font-bold text-[#1f3a5f] text-base sm:text-lg mb-4 border-b pb-2">उपलब्ध प्रमाणपत्रे यादी</h3>
+                        <ul class="space-y-2 text-xs sm:text-sm text-slate-700 font-semibold">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> घर पट्टी पावती</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> पाणी पट्टी पावती</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> रहिवासी दाखला</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> जन्म / मृत्यू दाखला</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> हयात प्रमाणपत्र</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> लग्न नोंदणी प्रमाणपत्र</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> डिजिटल ७/१२ व ८-अ उतारा</li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500"></i> नाहरकत प्रमाणपत्र (NOC)</li>
+                        </ul>
+                    </div>
+
+                    <div class="card bg-white border border-slate-200 p-6 rounded-2xl shadow-sm text-center">
+                        <h4 class="font-bold text-slate-800 text-base mb-2">कर्मचारी लॉगिन</h4>
+                        <p class="text-xs text-slate-500 mb-4">अधिकृत ग्रामपंचायत कर्मचाऱ्यांसाठी अर्ज पडताळणी डॅशबोर्ड.</p>
+                        <a href="#eseva-admin" class="btn btn-sm bg-[#1f3a5f] text-white border-none font-bold w-full">लॉगिन करा</a>
+                    </div>
+                </div>
+
+                <!-- Right: Online Request Form (8 columns) -->
+                <div class="lg:col-span-8">
+                    <div class="card bg-white border border-slate-200 p-6 sm:p-8 rounded-2xl shadow-md" id="eseva-apply">
+                        <h3 class="font-extrabold text-[#1f3a5f] text-lg sm:text-xl mb-4 border-b pb-2 flex items-center justify-between">
+                            <span>ई-सेवा अर्ज फॉर्म</span>
+                            <span class="badge badge-primary font-bold text-xs">ऑनलाईन अर्ज</span>
+                        </h3>
+                        
+                        <form id="eseva-request-form" class="space-y-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <!-- Name -->
+                                <div class="form-control w-full sm:col-span-2">
+                                    <label class="label font-bold text-slate-700 text-sm">पूर्ण नाव *</label>
+                                    <input type="text" name="fullName" required placeholder="पहिले नाव, वडिलांचे नाव, आडनाव" class="input input-bordered w-full bg-slate-50 text-slate-800 border-gray-300 focus:border-emerald-500 focus:outline-none" />
+                                </div>
+                                <!-- Mobile -->
+                                <div class="form-control w-full">
+                                    <label class="label font-bold text-slate-700 text-sm">मोबाईल क्रमांक *</label>
+                                    <input type="tel" name="mobile" required pattern="[0-9]{10}" placeholder="१० अंकी मोबाईल नंबर" class="input input-bordered w-full bg-slate-50 text-slate-800 border-gray-300 focus:border-emerald-500 focus:outline-none" />
+                                </div>
+                                <!-- WhatsApp -->
+                                <div class="form-control w-full">
+                                    <label class="label font-bold text-slate-700 text-sm">व्हॉट्सअॅप क्रमांक *</label>
+                                    <input type="tel" name="whatsapp" required pattern="[0-9]{10}" placeholder="WhatsApp नंबर" class="input input-bordered w-full bg-slate-50 text-slate-800 border-gray-300 focus:border-emerald-500 focus:outline-none" />
+                                </div>
+                                <!-- Email -->
+                                <div class="form-control w-full">
+                                    <label class="label font-bold text-slate-700 text-sm">ई-मेल (ऐच्छिक)</label>
+                                    <input type="email" name="email" placeholder="email@domain.com" class="input input-bordered w-full bg-slate-50 text-slate-800 border-gray-300 focus:border-emerald-500 focus:outline-none" />
+                                </div>
+                                <!-- ID Type -->
+                                <div class="form-control w-full">
+                                    <label class="label font-bold text-slate-700 text-sm">ओळखपत्र प्रकार *</label>
+                                    <select name="idType" required class="select select-bordered w-full bg-slate-50 text-slate-800 border-gray-300 focus:border-emerald-500 focus:outline-none font-semibold">
+                                        <option value="" disabled selected>निवडा...</option>
+                                        <option value="Aadhaar">आधार कार्ड</option>
+                                        <option value="PAN">पॅन कार्ड</option>
+                                        <option value="Voter ID">मतदार ओळखपत्र</option>
+                                        <option value="Driving Licence">वाहन चालक परवाना</option>
+                                    </select>
+                                </div>
+                                <!-- ID Number -->
+                                <div class="form-control w-full">
+                                    <label class="label font-bold text-slate-700 text-sm">ओळखपत्र क्रमांक *</label>
+                                    <input type="text" name="idNumber" required placeholder="कार्ड नंबर प्रविष्ट करा" class="input input-bordered w-full bg-slate-50 text-slate-800 border-gray-300 focus:border-emerald-500 focus:outline-none" />
+                                </div>
+                                <!-- Document type requested -->
+                                <div class="form-control w-full">
+                                    <label class="label font-bold text-slate-700 text-sm">हवे असलेले दस्तऐवज *</label>
+                                    <select name="documentType" required class="select select-bordered w-full bg-slate-50 text-slate-800 border-gray-300 focus:border-emerald-500 focus:outline-none font-semibold">
+                                        <option value="" disabled selected>निवडा...</option>
+                                        <option value="Ghar patti">घर पट्टी</option>
+                                        <option value="Pani patti">पाणी पट्टी</option>
+                                        <option value="Rahivasi Dakhala">रहिवासी दाखला</option>
+                                        <option value="Janma Dakhala">जन्म दाखला</option>
+                                        <option value="Hayat Pramanpatra">हयात प्रमाणपत्र</option>
+                                        <option value="Death Certificate">मृत्यू प्रमाणपत्र</option>
+                                        <option value="Digital 7/12 Utara">डिजिटल ७/१२ उतारा</option>
+                                        <option value="Character Certificate">चरित्र प्रमाणपत्र</option>
+                                        <option value="Marriage Registration Certificate">लग्न नोंदणी प्रमाणपत्र</option>
+                                        <option value="Income Certificate">उत्पन्न प्रमाणपत्र</option>
+                                        <option value="Property Records 8A">मालमत्ता नोंद (८अ)</option>
+                                        <option value="NOC">एनओसी</option>
+                                        <option value="Berojgar Pramanpatra">बेरोजगार प्रमाणपत्र</option>
+                                        <option value="Widow/Divorced Women Certificate">विधवा/घटस्फोटीत महिला प्रमाणपत्र</option>
+                                    </select>
+                                </div>
+                                <!-- Upload Front -->
+                                <div class="form-control w-full">
+                                    <label class="label font-bold text-slate-700 text-sm">ओळखपत्र (समोर बाजू) *</label>
+                                    <input type="file" name="idFront" accept="image/*,application/pdf" required class="file-input file-input-bordered file-input-success w-full bg-slate-50 text-slate-800" />
+                                </div>
+                                <!-- Upload Back -->
+                                <div class="form-control w-full">
+                                    <label class="label font-bold text-slate-700 text-sm">ओळखपत्र (मागील बाजू) *</label>
+                                    <input type="file" name="idBack" accept="image/*,application/pdf" required class="file-input file-input-bordered file-input-success w-full bg-slate-50 text-slate-800" />
+                                </div>
+                                <!-- Remarks -->
+                                <div class="form-control w-full sm:col-span-2">
+                                    <label class="label font-bold text-slate-700 text-sm">अतिरिक्त माहिती</label>
+                                    <textarea name="remarks" rows="3" placeholder="काही विशिष्ट नोंदी असल्यास येथे लिहा..." class="textarea textarea-bordered bg-slate-50 text-slate-800 border-gray-300 focus:border-emerald-500 focus:outline-none"></textarea>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-700 hover:to-teal-800 text-white w-full border-none font-bold py-3 mt-4 rounded-xl shadow-md">अर्ज सबमिट करा</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Admin Section (Staff dashboard) -->
+            <div class="card bg-white border border-slate-200 p-6 sm:p-8 rounded-2xl shadow-lg max-w-4xl mx-auto" id="eseva-admin">
+                <h3 class="font-extrabold text-[#1f3a5f] text-lg sm:text-xl mb-4 border-b pb-2 flex items-center gap-2">
+                    <i class="fa-solid fa-lock text-emerald-600"></i>
+                    <span>प्रशासन पॅनेल (Admin Console)</span>
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-500 mb-6">ग्रामपंचायत कर्मचाऱ्यांसाठी प्राप्त अर्ज व्यवस्थापन पोर्टल.</p>
+                
+                <!-- Login form -->
+                <form id="admin-login-form" class="space-y-4 max-w-md mx-auto">
+                    <div class="form-control">
+                        <label class="label font-bold text-xs uppercase text-slate-500">वापरकर्ता नाव (Username)</label>
+                        <input type="text" name="username" placeholder="admin" required class="input input-bordered w-full bg-slate-50 text-slate-800 border-gray-300 focus:border-emerald-500 focus:outline-none text-sm" />
+                    </div>
+                    <div class="form-control">
+                        <label class="label font-bold text-xs uppercase text-slate-500">पासवर्ड (Password)</label>
+                        <input type="password" name="password" placeholder="gp2025!" required class="input input-bordered w-full bg-slate-50 text-slate-800 border-gray-300 focus:border-emerald-500 focus:outline-none text-sm" />
+                    </div>
+                    <button type="submit" class="btn bg-gradient-to-r from-[#1f3a5f] to-[#234a7d] text-white w-full border-none shadow-md font-bold mt-2 py-2">लॉग-इन करा</button>
+                    <p class="text-2xs text-center text-slate-400 font-bold mt-2">डेमो युझरनेम: <span class="underline">admin</span> | पासवर्ड: <span class="underline">gp2025!</span></p>
+                </form>
+
+                <!-- Dashboard (Hidden initially) -->
+                <div id="admin-dashboard" class="mt-8 space-y-6" hidden>
+                    <div class="alert alert-success bg-emerald-50 border-emerald-200 text-emerald-800 font-bold text-sm">
+                        <i class="fa-solid fa-circle-check text-xl"></i>
+                        <span>लॉगिन यशस्वी! आपण डॅशबोर्ड पाहू शकता.</span>
+                    </div>
+
+                    <div class="overflow-x-auto my-scrollbar-thickness border rounded-xl bg-slate-50">
+                        <table class="table w-full text-xs sm:text-sm text-slate-800">
+                            <thead>
+                                <tr class="bg-slate-100 text-slate-700">
+                                    <th>नाव व ओळखपत्र</th>
+                                    <th>दस्तऐवज</th>
+                                    <th>संपर्क</th>
+                                    <th>अर्ज स्थिती</th>
+                                    <th>फाईल्स</th>
+                                    <th>तपशील</th>
+                                </tr>
+                            </thead>
+                            <tbody id="requests-table-body">
+                                <tr class="empty-row">
+                                    <td colspan="6" class="text-center py-6 text-slate-500">अजून कोणताही अर्ज प्राप्त झालेला नाही.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Success Modal -->
+    <dialog id="eseva-success-modal" class="modal">
+        <div class="modal-box bg-white max-w-sm rounded-2xl p-6 text-center shadow-2xl relative text-slate-800">
+            <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-3xl mx-auto mb-4 animate-bounce">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 class="text-xl font-extrabold text-[#1f3a5f] mb-2" id="eseva-modal-title">अर्ज यशस्वी!</h3>
+            <p class="text-xs sm:text-sm text-slate-500 leading-relaxed mb-4" id="eseva-modal-desc">
+                आपला ऑनलाईन ई-सेवा अर्ज प्राप्त झाला आहे. कर्मचाऱ्यांद्वारे पडताळणी झाल्यावर WhatsApp द्वारे प्रमाणपत्र पाठविले जाईल.
+            </p>
+            <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100 text-xs text-slate-600 font-bold mb-6">
+                दस्तऐवज: <span data-doc-name class="text-emerald-700">—</span>
+            </div>
+            <form method="dialog">
+                <button class="btn bg-[#1f3a5f] hover:bg-[#234a7d] text-white w-full border-none shadow-md font-bold py-2.5" id="close-modal-btn">
+                    ठीक आहे
+                </button>
+            </form>
+        </div>
+    </dialog>
+
+    <!-- Shared Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="js/navigation.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('eseva-request-form');
+            const modal = document.getElementById('eseva-success-modal');
+            const modalDoc = modal ? modal.querySelector('[data-doc-name]') : null;
+            const adminLoginForm = document.getElementById('admin-login-form');
+            const totalCount = document.getElementById('total-requests');
+            const pendingCount = document.getElementById('pending-requests');
+            const deliveredCount = document.getElementById('delivered-requests');
+        
+            // Fetch and render statistics from backend
+            const loadStats = async () => {
+                try {
+                    const response = await fetch('http://localhost:5001/api/eseva/stats', {
+                        headers: {
+                            'X-GP-ID': GP_CONFIG.id
+                        }
+                    });
+                    if (response.ok) {
+                        const stats = await response.json();
+                        if (totalCount) totalCount.textContent = stats.total;
+                        if (pendingCount) pendingCount.textContent = stats.pending;
+                        if (deliveredCount) deliveredCount.textContent = stats.delivered;
+                    }
+                } catch (error) {
+                    console.error('Error fetching stats:', error);
+                }
+            };
+        
+            // Submit form to backend
+            if (form) {
+                form.addEventListener('submit', async (event) => {
+                    event.preventDefault();
+                    if (!form.checkValidity()) {
+                        form.reportValidity();
+                        return;
+                    }
+        
+                    const submitBtn = form.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.textContent;
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<i class="fa-solid fa-spinner animate-spin mr-2"></i>अर्ज सबमिट होत आहे...';
+        
+                    const formData = new FormData(form);
+        
+                    try {
+                        const response = await fetch('http://localhost:5001/api/eseva/request', {
+                            method: 'POST',
+                            headers: {
+                                'X-GP-ID': GP_CONFIG.id
+                            },
+                            body: formData
+                        });
+        
+                        const data = await response.json();
+                        if (response.ok) {
+                            form.reset();
+                            if (modalDoc) modalDoc.textContent = data.documentType;
+                            modal.showModal();
+                            loadStats();
+                        } else {
+                            alert(data.error || 'अर्ज सबमिट करताना त्रुटी आली. कृपया सर्व माहिती भरा.');
+                        }
+                    } catch (error) {
+                        console.error('E-seva submit error:', error);
+                        alert('सर्व्हरशी संपर्क जोडता आला नाही. कृपया बॅकएंड चालू असल्याची खात्री करा.');
+                    } finally {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalText;
+                    }
+                });
+            }
+        
+            // Staff / Employee Login to admin dashboard
+            if (adminLoginForm) {
+                adminLoginForm.addEventListener('submit', async (event) => {
+                    event.preventDefault();
+                    const username = adminLoginForm.querySelector('[name="username"]').value.trim();
+                    const password = adminLoginForm.querySelector('[name="password"]').value.trim();
+        
+                    try {
+                        const response = await fetch('http://localhost:5001/api/auth/login', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ username, password })
+                        });
+        
+                        const data = await response.json();
+                        if (response.ok) {
+                            localStorage.setItem('gpToken', data.token);
+                            localStorage.setItem('gpUser', JSON.stringify(data.user));
+                            window.location.href = 'admin.html';
+                        } else {
+                            alert(data.error || 'चुकीचे वापरकर्ता नाव किंवा पासवर्ड!');
+                        }
+                    } catch (error) {
+                        console.error('Login error:', error);
+                        alert('सर्व्हरशी संपर्क साधता आला नाही. कृपया बॅकएंड चालू असल्याची खात्री करा.');
+                    }
+                });
+            }
+        
+            // Render initial stats
+            loadStats();
+        });
+    </script>
+</body>
+</html>

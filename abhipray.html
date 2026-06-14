@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="mr" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ग्रामपंचायत मसोला (खुर्द) - अभिप्राय नोंदवा (Feedback)</title>
+    
+    <!-- Tailwind CSS & DaisyUI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1f3a5f',
+                        secondary: '#3a6b5c',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Tiro+Devanagari+Marathi:ital@0;1&family=Yatra+One&display=swap" rel="stylesheet" />
+
+    <style>
+        .marathi-font { font-family: 'Tiro Devanagari Marathi', serif; }
+    </style>
+</head>
+<body class="bg-slate-50 flex flex-col min-h-screen marathi-font text-slate-800">
+
+    <!-- Shared Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="flex-grow py-12">
+        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Page Header -->
+            <div class="text-center mb-10">
+                <span class="bg-emerald-100 text-emerald-800 font-bold text-xs uppercase px-3 py-1 rounded-full mb-3 inline-block">आपला अभिप्राय महत्त्वाचा</span>
+                <h1 class="text-2xl sm:text-4xl font-extrabold text-[#1f3a5f] mb-3">आपला मौल्यवान अभिप्राय नोंदवा</h1>
+                <p class="text-slate-500 text-xs sm:text-sm">आमच्या सेवा आणि प्रशासकीय कारभाराबद्दल आपले मत नोंदवून आम्हाला सुधारणा करण्यास मदत करा.</p>
+            </div>
+
+            <!-- Feedback Form Card -->
+            <div class="card bg-white border border-slate-200 shadow-xl rounded-2xl p-6 sm:p-8">
+                <form id="feedbackForm" onsubmit="submitFeedback(event)" class="space-y-6">
+                    
+                    <!-- Name -->
+                    <div class="form-control w-full">
+                        <label class="label font-bold text-slate-700 text-sm">पूर्ण नाव *</label>
+                        <input type="text" id="fullname" placeholder="आपले नाव प्रविष्ट करा" class="input input-bordered w-full bg-slate-50 text-slate-800 border-gray-300 focus:border-emerald-500 focus:outline-none" required />
+                    </div>
+
+                    <!-- Email & Mobile -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="form-control w-full">
+                            <label class="label font-bold text-slate-700 text-sm">मोबाईल क्रमांक *</label>
+                            <input type="tel" id="mobile" maxlength="10" placeholder="१० अंकी क्रमांक" class="input input-bordered w-full bg-slate-50 text-slate-800 border-gray-300 focus:border-emerald-500 focus:outline-none" required />
+                        </div>
+                        <div class="form-control w-full">
+                            <label class="label font-bold text-slate-700 text-sm">ई-मेल (ऐच्छिक)</label>
+                            <input type="email" id="email" placeholder="उदा. email@domain.com" class="input input-bordered w-full bg-slate-50 text-slate-800 border-gray-300 focus:border-emerald-500 focus:outline-none" />
+                        </div>
+                    </div>
+
+                    <!-- Star Rating (DaisyUI Rating) -->
+                    <div class="form-control w-full">
+                        <label class="label font-bold text-slate-700 text-sm">पोर्टलबद्दल आपले गुणंकन (Rating) *</label>
+                        <div class="rating rating-md sm:rating-lg gap-1 mt-1">
+                            <input type="radio" name="rating-star" class="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rating-star" class="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rating-star" class="mask mask-star-2 bg-orange-400" />
+                            <input type="radio" name="rating-star" class="mask mask-star-2 bg-orange-400" checked />
+                            <input type="radio" name="rating-star" class="mask mask-star-2 bg-orange-400" />
+                        </div>
+                    </div>
+
+                    <!-- Subject -->
+                    <div class="form-control w-full">
+                        <label class="label font-bold text-slate-700 text-sm">विषय *</label>
+                        <input type="text" id="subject" placeholder="अभिप्राय कशाबद्दल आहे? (उदा. पाणी पुरवठा, वेबसाईट डिझाईन)" class="input input-bordered w-full bg-slate-50 text-slate-800 border-gray-300 focus:border-emerald-500 focus:outline-none" required />
+                    </div>
+
+                    <!-- Message -->
+                    <div class="form-control w-full">
+                        <label class="label font-bold text-slate-700 text-sm">अभिप्राय / संदेश *</label>
+                        <textarea id="message" rows="5" placeholder="आपले सविस्तर मत येथे लिहा..." class="textarea textarea-bordered bg-slate-50 text-slate-800 border-gray-300 focus:border-emerald-500 focus:outline-none" required></textarea>
+                    </div>
+
+                    <!-- Submit Buttons -->
+                    <div class="flex gap-4 pt-2">
+                        <button type="submit" class="btn bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-700 hover:to-teal-800 text-white border-none shadow-md font-bold py-3 px-6 rounded-xl flex-grow">अभिप्राय नोंदवा</button>
+                        <button type="reset" class="btn btn-outline border-slate-300 hover:bg-slate-100 text-slate-600 rounded-xl font-bold">रीसेट</button>
+                    </div>
+
+                </form>
+            </div>
+
+            <!-- Confirmation Modal (DaisyUI dialog) -->
+            <dialog id="successModal" class="modal">
+                <div class="modal-box bg-white max-w-sm rounded-2xl p-6 text-center shadow-2xl relative text-slate-800">
+                    <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-3xl mx-auto mb-4 animate-bounce">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-[#1f3a5f] mb-2">धन्यवाद!</h3>
+                    <p class="text-xs sm:text-sm text-slate-500 leading-relaxed mb-6">
+                        आपला अभिप्राय यशस्वीरीत्या नोंदवला गेला आहे. आपल्या मौल्यवान सूचनांवर आम्ही नक्की विचार करू.
+                    </p>
+                    <form method="dialog">
+                        <button class="btn bg-[#1f3a5f] hover:bg-[#234a7d] text-white w-full border-none shadow-md font-bold py-2.5">
+                            बंद करा
+                        </button>
+                    </form>
+                </div>
+            </dialog>
+
+        </div>
+    </main>
+
+    <!-- Shared Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="js/navigation.js"></script>
+    <script>
+        function submitFeedback(event) {
+            event.preventDefault();
+            const mobile = document.getElementById("mobile").value;
+            if (mobile.length !== 10 || isNaN(mobile)) {
+                alert("कृपया वैध १० अंकी मोबाईल क्रमांक प्रविष्ट करा.");
+                return;
+            }
+
+            // Show DaisyUI confirmation modal
+            document.getElementById("successModal").showModal();
+            document.getElementById("feedbackForm").reset();
+        }
+    </script>
+</body>
+</html>

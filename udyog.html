@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="mr" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ग्रामपंचायत मसोला (खुर्द) - गावातील उद्योग (Village Industries)</title>
+    
+    <!-- Tailwind CSS & DaisyUI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1f3a5f',
+                        secondary: '#3a6b5c',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Tiro+Devanagari+Marathi:ital@0;1&family=Yatra+One&display=swap" rel="stylesheet" />
+
+    <style>
+        .marathi-font { font-family: 'Tiro Devanagari Marathi', serif; }
+    </style>
+</head>
+<body class="bg-slate-50 flex flex-col min-h-screen marathi-font text-slate-800">
+
+    <!-- Shared Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="flex-grow py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Page Header -->
+            <div class="text-center mb-12">
+                <span class="bg-emerald-100 text-emerald-800 font-bold text-xs uppercase px-3 py-1 rounded-full mb-3 inline-block">रोजगार व व्यवसाय</span>
+                <h1 class="text-2xl sm:text-4xl font-extrabold text-[#1f3a5f] mb-4">गावातील लघु उद्योग व व्यवसाय</h1>
+                <p class="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base">मसोला बुद्रुक आणि परिसरातील ग्रामस्थांच्या हाताला काम देणारे आणि स्थानिक आर्थिक विकासात हातभार लावणारे लघु व गृहउद्योग.</p>
+            </div>
+
+            <!-- Industries Directory -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                
+                <!-- Industry 1 -->
+                <div class="card bg-white border border-slate-200 shadow-sm p-6 rounded-2xl flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <span class="bg-emerald-50 text-emerald-800 text-3xs font-bold px-2 py-0.5 rounded-full uppercase">कृषी उद्योग</span>
+                        <h3 class="font-bold text-slate-800 text-lg mt-2">जय भवानी कृषी सेवा केंद्र</h3>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">शेतीसाठी लागणारे दर्जेदार बियाणे, खते व औषधे यांचे खात्रीशीर केंद्र. शेतकर्‍यांना आधुनिक सल्ला पुरवला जातो.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-xs">
+                        <span class="font-bold text-slate-700">प्रोप्रायटर: रामराव ठोंबरे</span>
+                        <span class="text-slate-400">मो: ९८XXXXXX३०</span>
+                    </div>
+                </div>
+
+                <!-- Industry 2 -->
+                <div class="card bg-white border border-slate-200 shadow-sm p-6 rounded-2xl flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <span class="bg-amber-50 text-amber-800 text-3xs font-bold px-2 py-0.5 rounded-full uppercase">डेअरी व दूध व्यवसाय</span>
+                        <h3 class="font-bold text-slate-800 text-lg mt-2">माऊली दूध संकलन व प्रक्रिया केंद्र</h3>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">गावातील शेतकऱ्यांकडून दुधाचे संकलन करून प्रक्रिया व अकोला/वाशिम बाजारपेठेत पाठवण्याचे केंद्र.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-xs">
+                        <span class="font-bold text-slate-700">प्रोप्रायटर: श्याम वि. लुंगे</span>
+                        <span class="text-slate-400">मो: ९८XXXXXX३१</span>
+                    </div>
+                </div>
+
+                <!-- Industry 3 -->
+                <div class="card bg-white border border-slate-200 shadow-sm p-6 rounded-2xl flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <span class="bg-blue-50 text-blue-800 text-3xs font-bold px-2 py-0.5 rounded-full uppercase">कुटीर उद्योग</span>
+                        <h3 class="font-bold text-slate-800 text-lg mt-2">मसोला बुद्रुक गृह उद्योग व मसाले निर्मिती</h3>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">महिला बचत गटाद्वारे संचलित अस्सल घरगुती मसाल्यांची निर्मिती व पॅकेजिंग उद्योग.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-xs">
+                        <span class="font-bold text-slate-700">संचलित: भवानी बचत गट</span>
+                        <span class="text-slate-400">मो: ९८XXXXXX३२</span>
+                    </div>
+                </div>
+
+                <!-- Industry 4: Sheli Palan -->
+                <div class="card bg-white border border-slate-200 shadow-sm p-6 rounded-2xl flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <span class="bg-emerald-50 text-emerald-800 text-3xs font-bold px-2 py-0.5 rounded-full uppercase">पशुपालन</span>
+                        <h3 class="font-bold text-slate-800 text-lg mt-2">शेळीपालन व्यवसाय (महिला बचत गट)</h3>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">महिला बचत गटाच्या माध्यमातून शेळीपालन व्यवसायाला चालना देणे आणि त्याद्वारे महिलांचे आर्थिक सक्षमीकरण करणे.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-xs">
+                        <span class="font-bold text-slate-700">संचलित: महिला बचत गट</span>
+                        <span class="text-slate-400">मो: ९८XXXXXX३३</span>
+                    </div>
+                </div>
+
+                <!-- Industry 5: Patrawali -->
+                <div class="card bg-white border border-slate-200 shadow-sm p-6 rounded-2xl flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <span class="bg-amber-50 text-amber-800 text-3xs font-bold px-2 py-0.5 rounded-full uppercase">कुटीर उद्योग</span>
+                        <h3 class="font-bold text-slate-800 text-lg mt-2">पत्रावळी निर्मिती केंद्र (महिला बचत गट)</h3>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">पर्यावरणपूरक पत्रावळी व द्रोण निर्मिती केंद्र, ज्याद्वारे गावातील महिलांना शाश्वत गृह रोजगार उपलब्ध करून दिला जातो.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-xs">
+                        <span class="font-bold text-slate-700">संचलित: महिला बचत गट</span>
+                        <span class="text-slate-400">मो: ९८XXXXXX३४</span>
+                    </div>
+                </div>
+
+                <!-- Industry 6: Papad and Shevya -->
+                <div class="card bg-white border border-slate-200 shadow-sm p-6 rounded-2xl flex flex-col justify-between hover:shadow-md transition">
+                    <div>
+                        <span class="bg-blue-50 text-blue-800 text-3xs font-bold px-2 py-0.5 rounded-full uppercase">गृह उद्योग</span>
+                        <h3 class="font-bold text-slate-800 text-lg mt-2">पापड आणि शेवया निर्मिती केंद्र (महिला बचत गट)</h3>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">महिला बचत गटाद्वारे पारंपरिक पद्धतीने दर्जेदार पापड, शेवया व कुर्डयांची घरगुती उत्पादने आणि पॅकेजिंग.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-xs">
+                        <span class="font-bold text-slate-700">संचलित: महिला बचत गट</span>
+                        <span class="text-slate-400">मो: ९८XXXXXX३५</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Shared Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="js/navigation.js"></script>
+</body>
+</html>

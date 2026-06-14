@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="mr" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ग्रामपंचायत मसोला (खुर्द) - माहितीचा अधिकार (RTI)</title>
+    
+    <!-- Tailwind CSS & DaisyUI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1f3a5f',
+                        secondary: '#3a6b5c',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Tiro+Devanagari+Marathi:ital@0;1&family=Yatra+One&display=swap" rel="stylesheet" />
+
+    <style>
+        .marathi-font { font-family: 'Tiro Devanagari Marathi', serif; }
+    </style>
+</head>
+<body class="bg-slate-50 flex flex-col min-h-screen marathi-font text-slate-800">
+
+    <!-- Shared Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="flex-grow py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Page Header -->
+            <div class="text-center mb-12">
+                <span class="bg-emerald-100 text-emerald-800 font-bold text-xs uppercase px-3 py-1 rounded-full mb-3 inline-block">पारदर्शकता</span>
+                <h1 class="text-2xl sm:text-4xl font-extrabold text-[#1f3a5f] mb-4">माहितीचा अधिकार (RTI)</h1>
+                <p class="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base">माहितीचा अधिकार अधिनियम, २००५ नुसार ग्रामपंचायत मसोला (खुर्द)चा कारभार पारदर्शक आणि उत्तरदायी ठेवण्यासाठी उपलब्ध मार्गदर्शक तत्त्वे.</p>
+            </div>
+
+            <!-- Tabs Section -->
+            <div class="bg-white border border-slate-200 shadow-xl rounded-2xl overflow-hidden mb-12">
+                
+                <!-- Tab Headers -->
+                <div class="tabs tabs-boxed bg-slate-100 p-2 gap-1 rounded-t-2xl flex flex-wrap">
+                    <a id="tab-gen" onclick="switchRtiTab('gen')" class="tab tab-active flex-1 font-bold text-xs sm:text-sm">समग्र माहिती</a> 
+                    <a id="tab-acts" onclick="switchRtiTab('acts')" class="tab flex-1 font-bold text-xs sm:text-sm">अर्ज नमुने व कायदा</a> 
+                    <a id="tab-mude" onclick="switchRtiTab('mude')" class="tab flex-1 font-bold text-xs sm:text-sm">कलम ४(१)(ब) अंतर्गत मुद्दे</a> 
+                    <a id="tab-off" onclick="switchRtiTab('off')" class="tab flex-1 font-bold text-xs sm:text-sm">माहिती अधिकारी</a>
+                </div>
+
+                <!-- Tab Panes -->
+                <div class="p-6 sm:p-8">
+                    
+                    <!-- Pane 1: General Info -->
+                    <div id="content-gen" class="rti-pane space-y-4">
+                        <div class="join join-vertical w-full bg-slate-50 border border-slate-100 rounded-xl">
+                            
+                            <!-- Accordion 1 -->
+                            <div class="collapse collapse-arrow join-item border-b">
+                                <input type="radio" name="rti-accordion" checked="checked" /> 
+                                <div class="collapse-title text-base font-bold text-[#1f3a5f]">
+                                    माहिती म्हणजे नक्की काय?
+                                </div>
+                                <div class="collapse-content text-slate-600 text-sm leading-relaxed">
+                                    <p>माहिती म्हणजे नोंदी, कागदपत्रे, शेरे, मेमो, ई-मेल्स, सल्ले, मते, प्रसिद्धीपत्रके, आदेश, परिपत्रके, रोजनिशी, करारनामा, अहवाल, कागद, उदाहरणे, नमुने या आणि अशा स्वरूपातील कोणतेही साहित्य तसेच इलेक्ट्रॉनिक माध्यमात असलेली माहिती होय.</p>
+                                </div>
+                            </div>
+
+                            <!-- Accordion 2 -->
+                            <div class="collapse collapse-arrow join-item border-b">
+                                <input type="radio" name="rti-accordion" /> 
+                                <div class="collapse-title text-base font-bold text-[#1f3a5f]">
+                                    माहितीचा अधिकार म्हणजे काय?
+                                </div>
+                                <div class="collapse-content text-slate-600 text-sm leading-relaxed">
+                                    <p>भारताच्या प्रत्येक नागरिकाला शासकीय व निमशासकीय कार्यालयांच्या कामात पारदर्शकता आणि उत्तरदायित्व वाढवण्याकरिता माहिती मिळवण्याचा मूलभूत हक्क कायद्याने दिला आहे. लोकशाहीत जनता ही खरी मालक असल्याने, प्रशासनाचे काम कसे चालते हे पाहण्याचा नागरिकांना हक्क आहे.</p>
+                                </div>
+                            </div>
+
+                            <!-- Accordion 3 -->
+                            <div class="collapse collapse-arrow join-item border-b">
+                                <input type="radio" name="rti-accordion" /> 
+                                <div class="collapse-title text-base font-bold text-[#1f3a5f]">
+                                    या अधिकारात समाविष्ट बाबी
+                                </div>
+                                <div class="collapse-content text-slate-600 text-sm leading-relaxed">
+                                    <ul class="list-disc pl-4 space-y-1">
+                                        <li>कामांची, कागदपत्रांची आणि नोंदींची तपासणी करणे.</li>
+                                        <li>कागदपत्रे किंवा नोंदी यांच्या प्रमाणित प्रती मिळवणे.</li>
+                                        <li>साहित्याचे प्रमाणित नमुने मिळवणे.</li>
+                                        <li>माहिती इलेक्ट्रॉनिक माध्यमात (उदा. फ्लॉपी, सीडी, प्रिंटआऊट) मिळवणे.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Pane 2: Forms & Acts -->
+                    <div id="content-acts" class="rti-pane hidden space-y-6">
+                        <h3 class="text-lg font-bold text-slate-800 mb-3"><i class="fa-solid fa-file-pdf text-red-600 mr-2"></i>RTI अर्ज नमुने व अधिनियम</h3>
+                        <p class="text-sm text-slate-500">माहितीचा अधिकार अधिनियम २००५ अन्वये अर्ज करण्यासाठी खालील नमुने डाऊनलोड करा व विहित शुल्कासह माहिती अधिकार्यांकडे सादर करा.</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="p-4 bg-slate-50 border rounded-xl flex items-center justify-between">
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-sm">नमुना 'अ' (माहिती मिळवण्यासाठी अर्ज)</h4>
+                                    <p class="text-xs text-slate-400">PDF फाईल | १२० KB</p>
+                                </div>
+                                <a href="#" onclick="alert('नमुना डाऊनलोड सुरू झाला आहे.')" class="btn btn-sm btn-emerald text-white border-none"><i class="fa-solid fa-download"></i></a>
+                            </div>
+
+                            <div class="p-4 bg-slate-50 border rounded-xl flex items-center justify-between">
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-sm">प्रथम अपील अर्ज नमुना</h4>
+                                    <p class="text-xs text-slate-400">PDF फाईल | १४० KB</p>
+                                </div>
+                                <a href="#" onclick="alert('नमुना डाऊनलोड सुरू झाला आहे.')" class="btn btn-sm btn-emerald text-white border-none"><i class="fa-solid fa-download"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pane 3: disclosures under 4(1)(b) -->
+                    <div id="content-mude" class="rti-pane hidden space-y-4">
+                        <h3 class="text-lg font-bold text-slate-800 mb-3">कलम ४(१)(ब) अंतर्गत १७ माहितीचे मुद्दे</h3>
+                        <p class="text-sm text-slate-500 mb-4">सार्वजनिक प्राधिकरणाने स्वतःहून प्रसिद्ध करावयाची १७ मुद्यांची माहिती खालीलप्रमाणे आहे:</p>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm font-semibold">
+                            <div class="p-3 bg-slate-50 border rounded-lg">१. कार्यालयाची रचना, कार्ये व कर्तव्ये</div>
+                            <div class="p-3 bg-slate-50 border rounded-lg">२. अधिकारी व कर्मचारी यांचे अधिकार व कर्तव्ये</div>
+                            <div class="p-3 bg-slate-50 border rounded-lg">३. निर्णय घेण्याच्या प्रक्रियेतील पर्यवेक्षण</div>
+                            <div class="p-3 bg-slate-50 border rounded-lg">४. कामाच्या पूर्ततेसाठी निश्चित केलेले निकष</div>
+                            <div class="p-3 bg-slate-50 border rounded-lg">५. नियम, नियमावली, निर्देश व हस्तपुस्तिका</div>
+                            <div class="p-3 bg-slate-50 border rounded-lg">६. ताब्यात असलेल्या कागदपत्रांच्या वर्गांचे विवरणपत्र</div>
+                            <div class="p-3 bg-slate-50 border rounded-lg">७. लोकांशी विचारविनिमय करण्याची व्यवस्था</div>
+                            <div class="p-3 bg-slate-50 border rounded-lg">८. समित्या, परिषदा व इतर मंडळांची माहिती</div>
+                            <div class="p-3 bg-slate-50 border rounded-lg">९. अधिकारी व कर्मचारी यांची निर्देशिका</div>
+                            <div class="p-3 bg-slate-50 border rounded-lg">१०. प्रत्येक अधिकारी व कर्मचारी यांचे मासिक वेतन</div>
+                            <div class="p-3 bg-slate-50 border rounded-lg">११. सर्व वाटप केलेला निधी व अंदाजपत्रक</div>
+                            <div class="p-3 bg-slate-50 border rounded-lg">१२. अनुदान कार्यक्रमांच्या अंमलबजावणीची पद्धत</div>
+                            <div class="p-3 bg-slate-50 border rounded-lg">१३. सवलती किंवा परवानग्या मिळणाऱ्यांची माहिती</div>
+                            <div class="p-3 bg-slate-50 border rounded-lg">१४. इलेक्ट्रॉनिक स्वरूपात उपलब्ध असलेली माहिती</div>
+                            <div class="p-3 bg-slate-50 border rounded-lg">१५. माहिती मिळवण्यासाठी नागरिकांना उपलब्ध सुविधा</div>
+                            <div class="p-3 bg-slate-50 border rounded-lg">१६. जन माहिती अधिकार्‍यांची नावे व पदे</div>
+                            <div class="p-3 bg-slate-50 border rounded-lg">१७. इतर विहित केलेली माहिती</div>
+                        </div>
+                    </div>
+
+                    <!-- Pane 4: RTI Officers -->
+                    <div id="content-off" class="rti-pane hidden space-y-6">
+                        <h3 class="text-lg font-bold text-slate-800 border-b pb-2 mb-4">माहितीचा अधिकार - नामनिर्देशित अधिकारी</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            
+                            <!-- APIO -->
+                            <div class="card bg-slate-50 border p-5 rounded-2xl text-center">
+                                <span class="bg-[#1f3a5f] text-white text-3xs font-bold uppercase px-2 py-0.5 rounded-full mx-auto w-fit mb-3">सहाय्यक जन माहिती अधिकारी</span>
+                                <h4 class="font-bold text-slate-800 text-base">श्री. संतोष काळे</h4>
+                                <p class="text-xs text-slate-500 mt-1">ग्रामसेवक, मसोला बुद्रुक</p>
+                                <p class="text-2xs text-slate-400 mt-2">पत्ता: ग्रामपंचायत कार्यालय, मसोला बुद्रुक</p>
+                            </div>
+
+                            <!-- PIO -->
+                            <div class="card bg-slate-50 border p-5 rounded-2xl text-center">
+                                <span class="bg-[#1f3a5f] text-white text-3xs font-bold uppercase px-2 py-0.5 rounded-full mx-auto w-fit mb-3">जन माहिती अधिकारी</span>
+                                <h4 class="font-bold text-slate-800 text-base">श्री. संतोष काळे</h4>
+                                <p class="text-xs text-slate-500 mt-1">ग्रामसेवक, मसोला बुद्रुक</p>
+                                <p class="text-2xs text-slate-400 mt-2">पत्ता: ग्रामपंचायत कार्यालय, मसोला बुद्रुक</p>
+                            </div>
+
+                            <!-- Appellate Authority -->
+                            <div class="card bg-slate-50 border p-5 rounded-2xl text-center">
+                                <span class="bg-red-600 text-white text-3xs font-bold uppercase px-2 py-0.5 rounded-full mx-auto w-fit mb-3">प्रथम अपिलीय अधिकारी</span>
+                                <h4 class="font-bold text-slate-800 text-base">गट विकास अधिकारी (BDO)</h4>
+                                <p class="text-xs text-slate-500 mt-1">पंचायत समिती, मंगरुळपीर</p>
+                                <p class="text-2xs text-slate-400 mt-2">पत्ता: पंचायत समिती कार्यालय, मंगरुळपीर</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Shared Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="js/navigation.js"></script>
+    <script>
+        function switchRtiTab(tabId) {
+            // Remove active classes
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('tab-active'));
+            document.querySelectorAll('.rti-pane').forEach(p => p.classList.add('hidden'));
+            
+            // Add active class to clicked tab and show corresponding pane
+            document.getElementById('tab-' + tabId).classList.add('tab-active');
+            document.getElementById('content-' + tabId).classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>

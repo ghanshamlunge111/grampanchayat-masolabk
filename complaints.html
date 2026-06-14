@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="mr" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ग्रामपंचायत मसोला (खुर्द) - तक्रार निवारण पोर्टल</title>
+    
+    <!-- Tailwind CSS & DaisyUI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1f3a5f',
+                        secondary: '#3a6b5c',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Tiro+Devanagari+Marathi:ital@0;1&family=Yatra+One&display=swap" rel="stylesheet" />
+
+    <style>
+        .marathi-font { font-family: 'Tiro Devanagari Marathi', serif; }
+    </style>
+</head>
+<body class="bg-slate-50 flex flex-col min-h-screen marathi-font text-slate-800">
+
+    <!-- Shared Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="flex-grow py-12">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6">
+            
+            <!-- Page Header -->
+            <div class="text-center mb-10">
+                <span class="bg-red-100 text-red-800 font-bold text-xs uppercase px-3 py-1 rounded-full mb-3 inline-block">तक्रार निवारण</span>
+                <h1 class="text-2xl sm:text-4xl font-extrabold text-[#1f3a5f] mb-3">ऑनलाईन तक्रार नोंदणी पोर्टल</h1>
+                <p class="text-slate-500 text-sm sm:text-base">गावातील रस्ते, पाणी, वीज, किंवा इतर समस्यांबाबत आपली तक्रार ऑनलाईन नोंदवा. आम्ही त्यावर त्वरित कारवाई करू.</p>
+            </div>
+
+            <!-- Complaint Form Card -->
+            <div class="card bg-white border border-slate-200 shadow-xl rounded-2xl p-6 sm:p-8">
+                <form id="complaintForm" onsubmit="handleComplaintSubmit(event)" class="space-y-6">
+                    
+                    <!-- Row 1: Name -->
+                    <div class="form-control w-full">
+                        <label class="label font-bold text-slate-700 text-sm">तक्रारदाराचे नाव (Full Name) <span class="text-red-500">*</span></label>
+                        <input type="text" id="fullName" required placeholder="उदा. रामराव नामदेवराव ठोंबरे" class="input input-bordered w-full bg-slate-50 text-slate-800 border-gray-300 focus:border-emerald-500 focus:outline-none text-sm sm:text-base" />
+                    </div>
+
+                    <!-- Row 2: Contact Details -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="form-control w-full">
+                            <label class="label font-bold text-slate-700 text-sm">भ्रमणध्वनी (Mobile No.) <span class="text-red-500">*</span></label>
+                            <input type="tel" id="mobileNo" required pattern="[0-9]{10}" placeholder="उदा. ९८७६५४३२१०" class="input input-bordered w-full bg-slate-50 text-slate-800 border-gray-300 focus:border-emerald-500 focus:outline-none text-sm sm:text-base" />
+                        </div>
+                        <div class="form-control w-full">
+                            <label class="label font-bold text-slate-700 text-sm">ईमेल आयडी (Email ID - ऐच्छिक)</label>
+                            <input type="email" id="email" placeholder="उदा. ram@example.com" class="input input-bordered w-full bg-slate-50 text-slate-800 border-gray-300 focus:border-emerald-500 focus:outline-none text-sm sm:text-base" />
+                        </div>
+                    </div>
+
+                    <!-- Row 3: Address and Location Details -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="form-control w-full">
+                            <label class="label font-bold text-slate-700 text-sm">गाव निवडा (Village) <span class="text-red-500">*</span></label>
+                            <select id="village" required class="select select-bordered w-full bg-slate-50 text-slate-800 border-gray-300 focus:border-emerald-500 focus:outline-none text-sm">
+                                <option value="" disabled selected>गाव निवडा</option>
+                                <option value="मसोला बुद्रुक">मसोला बुद्रुक</option>
+                            </select>
+                        </div>
+                        <div class="form-control w-full">
+                            <label class="label font-bold text-slate-700 text-sm">वार्ड क्रमांक (Ward No.) <span class="text-red-500">*</span></label>
+                            <select id="ward" required class="select select-bordered w-full bg-slate-50 text-slate-800 border-gray-300 focus:border-emerald-500 focus:outline-none text-sm">
+                                <option value="" disabled selected>वार्ड निवडा</option>
+                                <option value="1">वार्ड १</option>
+                                <option value="2">वार्ड २</option>
+                                <option value="3">वार्ड ३</option>
+                                <option value="4">वार्ड ४</option>
+                            </select>
+                        </div>
+                        <div class="form-control w-full">
+                            <label class="label font-bold text-slate-700 text-sm">तक्रार प्रकार (Category) <span class="text-red-500">*</span></label>
+                            <select id="category" required class="select select-bordered w-full bg-slate-50 text-slate-800 border-gray-300 focus:border-emerald-500 focus:outline-none text-sm">
+                                <option value="" disabled selected>प्रकार निवडा</option>
+                                <option value="दिवाबत्ती / पथदिवे">दिवाबत्ती / पथदिवे</option>
+                                <option value="पाणी पुरवठा">पाणी पुरवठा</option>
+                                <option value="सांडपाणी व कचरा व्यवस्थापन">सांडपाणी व कचरा व्यवस्थापन</option>
+                                <option value="रस्ते व नाल्या बांधकाम">रस्ते व नाल्या बांधकाम</option>
+                                <option value="आरोग्य व स्वच्छता">आरोग्य व स्वच्छता</option>
+                                <option value="इतर">इतर समस्या</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Row 4: Address -->
+                    <div class="form-control w-full">
+                        <label class="label font-bold text-slate-700 text-sm">पत्ता (Address) <span class="text-red-500">*</span></label>
+                        <input type="text" id="address" required placeholder="उदा. हनुमान मंदीर जवळ, मसोला बुद्रुक" class="input input-bordered w-full bg-slate-50 text-slate-800 border-gray-300 focus:border-emerald-500 focus:outline-none text-sm sm:text-base" />
+                    </div>
+
+                    <!-- Row 5: Detailed Description -->
+                    <div class="form-control w-full">
+                        <label class="label font-bold text-slate-700 text-sm">तक्रारीचे सविस्तर वर्णन (Details) <span class="text-red-500">*</span></label>
+                        <textarea id="details" required rows="4" placeholder="आपल्या समस्येचे येथे सविस्तर वर्णन लिहा (किमान १५ अक्षरे)..." class="textarea textarea-bordered w-full bg-slate-50 text-slate-800 border-gray-300 focus:border-emerald-500 focus:outline-none text-sm sm:text-base"></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="pt-4">
+                        <button type="submit" class="btn bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white w-full border-none shadow-md py-3 text-base sm:text-lg font-bold">
+                            <i class="fa-solid fa-paper-plane mr-2"></i>तक्रार नोंदवा
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Success Modal Dialog -->
+    <dialog id="successModal" class="modal">
+        <div class="modal-box bg-white text-slate-800 rounded-2xl max-w-md p-6 text-center">
+            <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-3xl mx-auto mb-4">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 class="text-xl font-extrabold text-[#1f3a5f] mb-2">तक्रार यशस्वीरित्या नोंदवली गेली!</h3>
+            <p class="text-slate-500 text-sm leading-relaxed mb-6">
+                आपली तक्रार क्रमांक <span class="font-bold text-slate-800" id="ticketNo">#GP-MSL-9843</span> म्हणून दाखल झाली आहे. ग्रामपंचायत प्रशासन यावर त्वरित कार्यवाही करेल.
+            </p>
+            <form method="dialog">
+                <button class="btn bg-[#1f3a5f] hover:bg-[#1a2e50] text-white px-6 border-none font-bold rounded-lg w-full">
+                    ठीक आहे (Close)
+                </button>
+            </form>
+        </div>
+    </dialog>
+
+    <!-- Shared Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="js/navigation.js"></script>
+    <script>
+        async function handleComplaintSubmit(event) {
+            event.preventDefault();
+            
+            const fullName = document.getElementById('fullName').value.trim();
+            const mobileNo = document.getElementById('mobileNo').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const village = document.getElementById('village').value;
+            const ward = document.getElementById('ward').value;
+            const category = document.getElementById('category').value;
+            const address = document.getElementById('address').value.trim();
+            const details = document.getElementById('details').value.trim();
+
+            const submitBtn = event.target.querySelector('button[type="submit"]');
+            const originalBtnHtml = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner animate-spin mr-2"></i>नोंदणी होत आहे...';
+
+            try {
+                const response = await fetch('http://localhost:5001/api/complaints', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-GP-ID': GP_CONFIG.id
+                    },
+                    body: JSON.stringify({ fullName, mobileNo, email, village, ward, category, address, details })
+                });
+
+                const data = await response.json();
+                if (response.ok) {
+                    document.getElementById('ticketNo').innerText = '#' + data.ticketNo;
+                    document.getElementById('successModal').showModal();
+                    document.getElementById('complaintForm').reset();
+                } else {
+                    alert('तक्रार नोंदवण्यात त्रुटी आली: ' + (data.error || 'अपरिचित समस्या.'));
+                }
+            } catch (error) {
+                console.error('Submit complaint error:', error);
+                alert('सर्व्हरशी जोडणी अपयशी ठरली. कृपया बॅकएंड सुरू असल्याची खात्री करा.');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnHtml;
+            }
+        }
+    </script>
+</body>
+</html>

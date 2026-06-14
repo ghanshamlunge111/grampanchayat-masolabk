@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="mr" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ग्रामपंचायत मसोला (खुर्द) - नोकरी व रोजगार (Jobs & Employment)</title>
+    
+    <!-- Tailwind CSS & DaisyUI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1f3a5f',
+                        secondary: '#3a6b5c',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Tiro+Devanagari+Marathi:ital@0;1&family=Yatra+One&display=swap" rel="stylesheet" />
+
+    <style>
+        .marathi-font { font-family: 'Tiro Devanagari Marathi', serif; }
+    </style>
+</head>
+<body class="bg-slate-50 flex flex-col min-h-screen marathi-font text-slate-800">
+
+    <!-- Shared Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="flex-grow py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Page Header -->
+            <div class="text-center mb-12">
+                <span class="bg-[#1f3a5f]/10 text-[#1f3a5f] font-bold text-xs uppercase px-3 py-1 rounded-full mb-3 inline-block">रोजगार आणि करिअर</span>
+                <h1 class="text-2xl sm:text-4xl font-extrabold text-[#1f3a5f] mb-4">नोकरी व रोजगार विषयक माहिती</h1>
+                <p class="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base">शासकीय भरती, स्थानिक रोजगार हमी योजना (MGNREGS) व युवकांसाठी स्वयंरोजगार कर्ज योजनांची माहिती.</p>
+            </div>
+
+            <!-- Sections Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+                
+                <!-- Left: Job Alerts & Self Employment (7 columns) -->
+                <div class="lg:col-span-7 space-y-8">
+                    
+                    <!-- Job Recruitment Alerts -->
+                    <div class="card bg-white border border-slate-200 shadow-md p-6 rounded-2xl">
+                        <h3 class="font-extrabold text-[#1f3a5f] text-lg mb-4 border-b pb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-bell text-red-600"></i>
+                            <span>नवीन नोकरी भरती जाहिराती (Job Alerts)</span>
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <!-- Alert 1 -->
+                            <div class="p-4 bg-slate-50 rounded-xl border flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                                <div>
+                                    <span class="badge badge-sm bg-red-100 text-red-700 font-extrabold border-none mb-1">नवीन अपडेट</span>
+                                    <h4 class="font-bold text-slate-800 text-sm sm:text-base">महाराष्ट्र पोलीस भरती २०२६</h4>
+                                    <p class="text-xs text-slate-500 mt-0.5">एकूण जागा: १८,०००+ | शैक्षणिक पात्रता: १२ वी उत्तीर्ण</p>
+                                </div>
+                                <a href="https://mahapolice.gov.in" target="_blank" class="btn btn-xs sm:btn-sm bg-[#1f3a5f] text-white border-none font-bold">अर्ज करा</a>
+                            </div>
+
+                            <!-- Alert 2 -->
+                            <div class="p-4 bg-slate-50 rounded-xl border flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                                <div>
+                                    <span class="badge badge-sm bg-blue-100 text-blue-700 font-extrabold border-none mb-1">लवकरच येत आहे</span>
+                                    <h4 class="font-bold text-slate-800 text-sm sm:text-base">वाशीम जिल्हा परिषद गट क भरती</h4>
+                                    <p class="text-xs text-slate-500 mt-0.5">लिपिक, परिचर व वाहनचालक पदे | पात्रता: १० वी / १२ वी</p>
+                                </div>
+                                <button onclick="alert('अधिकृत जाहिरात प्रसिद्ध झाल्यावर येथे लिंक दिली जाईल.')" class="btn btn-xs sm:btn-sm btn-outline font-bold">माहिती पहा</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Self Employment Schemes -->
+                    <div class="card bg-white border border-slate-200 shadow-md p-6 rounded-2xl">
+                        <h3 class="font-extrabold text-[#1f3a5f] text-lg mb-4 border-b pb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-hands-holding-child text-emerald-600"></i>
+                            <span>स्वयंरोजगार कर्ज योजना (Self-Employment Loans)</span>
+                        </h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                            स्वतःचा उद्योग किंवा व्यवसाय सुरू करण्यासाठी शासनाकडून मिळणाऱ्या अनुदानित कर्ज योजना:
+                        </p>
+                        
+                        <div class="space-y-3">
+                            <div class="p-3 bg-emerald-50 rounded-xl border border-emerald-100 text-xs sm:text-sm">
+                                <h4 class="font-bold text-emerald-800">पंतप्रधान मुद्रा योजना (PMMY)</h4>
+                                <p class="text-slate-600 mt-1">शिशु, किशोर व तरुण वर्गांतर्गत व्यवसाय उभारणीसाठी ₹ १० लाख पर्यंत विना-हमी कर्ज.</p>
+                            </div>
+                            <div class="p-3 bg-emerald-50 rounded-xl border border-emerald-100 text-xs sm:text-sm">
+                                <h4 class="font-bold text-emerald-800">मुख्यमंत्री रोजगार निर्मिती कार्यक्रम (CMEGP)</h4>
+                                <p class="text-slate-600 mt-1">नवीन उद्योग स्थापनेसाठी १५% ते ३५% पर्यंत शासनाचे अनुदान (Subsidy) उपलब्ध.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right: MGNREGS / रोहयो (5 columns) -->
+                <div class="lg:col-span-5 space-y-8">
+                    
+                    <!-- MGNREGS Job Card -->
+                    <div class="card bg-gradient-to-br from-emerald-600 to-teal-800 text-white shadow-lg p-6 rounded-2xl relative overflow-hidden">
+                        <div class="absolute right-4 bottom-4 text-white/10 text-9xl pointer-events-none">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <h3 class="font-extrabold text-lg mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-wheat-awn text-yellow-300"></i>
+                            <span>महात्मा गांधी राष्ट्रीय ग्रामीण रोजगार हमी (रोहयो)</span>
+                        </h3>
+                        <p class="text-sm text-slate-100 leading-relaxed mb-6">
+                            गावातील नागरिकांना एका वर्षात किमान १०० दिवसांच्या हक्काच्या अकुशल रोजगाराची हमी.
+                        </p>
+                        
+                        <div class="bg-white/10 rounded-xl p-4 border border-white/20 text-xs sm:text-sm space-y-3 mb-6">
+                            <div><strong>जॉब कार्ड कसे बनवावे:</strong> आधार कार्ड, बँक पासबुक व २ फोटो घेऊन ग्रामपंचायत कार्यालयात ग्रामसेवकांकडे अर्ज करावा.</div>
+                            <div><strong>मजुरी दर:</strong> सध्या शासनाने निश्चित केलेला दैनिक मजुरी दर थेट बँक खात्यात जमा होतो.</div>
+                        </div>
+
+                        <button onclick="alert('रोजगार हमी जॉब कार्ड अर्ज ग्रामपंचायत कार्यालयात मोफत उपलब्ध आहे. तसेच अर्ज डाउनलोड पानावरून डाउनलोड करू शकता.')" class="btn bg-white text-emerald-700 border-none font-bold w-full">जॉब कार्ड अर्ज माहिती</button>
+                    </div>
+
+                    <!-- Online Registration portal link -->
+                    <div class="card bg-white border border-slate-200 shadow-md p-6 rounded-2xl text-center space-y-4">
+                        <div class="w-12 h-12 bg-amber-100 text-amber-700 rounded-full flex items-center justify-center text-xl mx-auto">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <h4 class="font-extrabold text-slate-800 text-base">महास्वयं रोजगार नोंदणी</h4>
+                        <p class="text-slate-500 text-xs leading-relaxed">
+                            कौशल्य विकास विभागाच्या महास्वयं पोर्टलवर नोंदणी करून शासकीय व खाजगी नोकरीच्या संधी मिळवा.
+                        </p>
+                        <a href="https://www.mahaswayam.gov.in" target="_blank" class="btn btn-outline border-amber-600 text-amber-700 hover:bg-amber-700 hover:text-white w-full font-bold">महास्वयं पोर्टल नोंदणी</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Shared Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="js/navigation.js"></script>
+</body>
+</html>

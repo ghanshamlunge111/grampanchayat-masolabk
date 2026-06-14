@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="mr" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ग्रामपंचायत मसोला (खुर्द) - दिव्यांग लाभार्थी यादी</title>
+    
+    <!-- Tailwind CSS & DaisyUI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1f3a5f',
+                        secondary: '#3a6b5c',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Tiro+Devanagari+Marathi:ital@0;1&family=Yatra+One&display=swap" rel="stylesheet" />
+
+    <style>
+        .marathi-font { font-family: 'Tiro Devanagari Marathi', serif; }
+    </style>
+</head>
+<body class="bg-slate-50 flex flex-col min-h-screen marathi-font text-slate-800">
+
+    <!-- Shared Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="flex-grow py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Page Header -->
+            <div class="text-center mb-12">
+                <span class="bg-emerald-100 text-emerald-800 font-bold text-xs uppercase px-3 py-1 rounded-full mb-3 inline-block">कल्याणकारी योजना</span>
+                <h1 class="text-2xl sm:text-4xl font-extrabold text-[#1f3a5f] mb-4">मंजूर दिव्यांग लाभार्थी यादी (५% राखीव निधी)</h1>
+                <p class="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base">ग्रामपंचायतीच्या वार्षिक उत्पन्नातील ५% राखीव निधी अंतर्गत सहाय्य मिळणारे मंजूर दिव्यांग लाभार्थी.</p>
+            </div>
+
+            <!-- Beneficiary Table Card -->
+            <div class="card bg-white border border-slate-200 shadow-xl rounded-2xl overflow-hidden mb-12">
+                <div class="bg-gradient-to-r from-[#1f3a5f] to-[#3a6b5c] text-white py-4 px-6 flex justify-between items-center">
+                    <h3 class="text-base sm:text-lg font-bold flex items-center gap-2">
+                        <i class="fa-solid fa-wheelchair text-emerald-400"></i>
+                        <span>मंजूर दिव्यांग लाभार्थी यादी (२०२५-२६)</span>
+                    </h3>
+                    <span class="badge badge-success text-white font-bold">एकूण: ३९ लाभार्थी</span>
+                </div>
+                <div class="p-6 overflow-x-auto my-scrollbar-thickness">
+                    <table class="table w-full text-slate-800 text-sm">
+                        <thead>
+                            <tr class="bg-slate-100 text-slate-700 font-bold">
+                                <th>अनुक्रमांक</th>
+                                <th>लाभार्थ्याचे नाव व पत्ता / गाव</th>
+                                <th>अपंगत्वाचा प्रकार</th>
+                                <th>अपंगत्व टक्केवारी</th>
+                                <th>योजना लाभधारक (केंद्र/राज्य)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <tr>
+                                <th>१</th>
+                                <td class="font-bold text-slate-800">महादेव तुळशीराम कन्हेरकार (मसोला बुद्रुक)</td>
+                                <td>डोळे अंधत्व</td>
+                                <td class="font-bold text-emerald-700">१००%</td>
+                                <td>आहे</td>
+                            </tr>
+                            <tr>
+                                <th>२</th>
+                                <td class="font-bold text-slate-800">वैशाली दयाराम निशाने (मसोला बुद्रुक)</td>
+                                <td>डोळे अंधत्व</td>
+                                <td class="font-bold text-emerald-700">१००%</td>
+                                <td>आहे</td>
+                            </tr>
+                            <tr>
+                                <th>३</th>
+                                <td class="font-bold text-slate-800">अमोल हरिनारायण लुंगे (मसोला बुद्रुक)</td>
+                                <td>अस्थिव्यंग</td>
+                                <td class="font-bold text-emerald-700">८९%</td>
+                                <td>आहे</td>
+                            </tr>
+                            <tr>
+                                <th>४</th>
+                                <td class="font-bold text-slate-800">सुनिल महादेव ठोंबरे</td>
+                                <td>अस्थिव्यंग</td>
+                                <td class="font-bold text-emerald-700">८१%</td>
+                                <td>आहे</td>
+                            </tr>
+                            <tr>
+                                <th>५</th>
+                                <td class="font-bold text-slate-800">सानिका चंद्रशेखर कावरे (मसोला बुद्रुक)</td>
+                                <td>डोळे अंधत्व</td>
+                                <td class="font-bold text-emerald-700">७३%</td>
+                                <td>आहे</td>
+                            </tr>
+                            <tr>
+                                <th>६</th>
+                                <td class="font-bold text-slate-800">दयाराम भाऊराव निशाने</td>
+                                <td>डोळे अंधत्व</td>
+                                <td class="font-bold text-emerald-700">७५%</td>
+                                <td>आहे</td>
+                            </tr>
+                            <tr>
+                                <th>७</th>
+                                <td class="font-bold text-slate-800">मयूर सुभाष बन्सोड (मसोला बुद्रुक)</td>
+                                <td>मतीमंद</td>
+                                <td class="font-bold text-emerald-700">७०%</td>
+                                <td>आहे</td>
+                            </tr>
+                            <tr>
+                                <th>८</th>
+                                <td class="font-bold text-slate-800">नंदकिशोर विठ्ठल काकड (मसोला बुद्रुक)</td>
+                                <td>अस्थिव्यंग</td>
+                                <td class="font-bold text-emerald-700">६०%</td>
+                                <td>आहे</td>
+                            </tr>
+                            <tr>
+                                <th>९</th>
+                                <td class="font-bold text-slate-800">विजय अशोक देशमुख (मसोला बुद्रुक)</td>
+                                <td>अस्थिव्यंग</td>
+                                <td class="font-bold text-emerald-700">६०%</td>
+                                <td>आहे</td>
+                            </tr>
+                            <tr>
+                                <th>१०</th>
+                                <td class="font-bold text-slate-800">डिगांबर भाऊराव निशाने (मसोला बुद्रुक)</td>
+                                <td>अस्थिव्यंग</td>
+                                <td class="font-bold text-emerald-700">५९%</td>
+                                <td>आहे</td>
+                            </tr>
+                            <tr>
+                                <th>११</th>
+                                <td class="font-bold text-slate-800">कविता अरुण सावके (मसोला बुद्रुक)</td>
+                                <td>अस्थिव्यंग</td>
+                                <td class="font-bold text-emerald-700">७०%</td>
+                                <td>आहे</td>
+                            </tr>
+                            <tr>
+                                <th>१२</th>
+                                <td class="font-bold text-slate-800">किसन शेषराव सावके</td>
+                                <td>अस्थिव्यंग</td>
+                                <td class="font-bold text-emerald-700">५५%</td>
+                                <td>आहे</td>
+                            </tr>
+                            <tr>
+                                <th>१३</th>
+                                <td class="font-bold text-slate-800">देवेंद्र दामोदर मनवर (मसोला बुद्रुक)</td>
+                                <td>अस्थिव्यंग</td>
+                                <td class="font-bold text-emerald-700">४०%</td>
+                                <td>आहे</td>
+                            </tr>
+                            <tr>
+                                <th>१४</th>
+                                <td class="font-bold text-slate-800">अंबादास गणपत इंगळे (मसोला बुद्रुक)</td>
+                                <td>अस्थिव्यंग</td>
+                                <td class="font-bold text-emerald-700">५०%</td>
+                                <td>आहे</td>
+                            </tr>
+                            <tr>
+                                <th>१५</th>
+                                <td class="font-bold text-slate-800">विजय श्रीराम देवळे (मसोला बुद्रुक)</td>
+                                <td>अस्थिव्यंग</td>
+                                <td class="font-bold text-emerald-700">४०%</td>
+                                <td>आहे</td>
+                            </tr>
+                            <tr>
+                                <th>१६</th>
+                                <td class="font-bold text-slate-800">श्रेयशी डीगांबर रोकडे (मसोला बुद्रुक)</td>
+                                <td>डोळे अंधत्व</td>
+                                <td class="font-bold text-emerald-700">४०%</td>
+                                <td>आहे</td>
+                            </tr>
+                            <tr>
+                                <th>१७</th>
+                                <td class="font-bold text-slate-800">रामदास रामचंद्र तडसे (मसोला बुद्रुक)</td>
+                                <td>डोळे अंधत्व</td>
+                                <td class="font-bold text-emerald-700">४०%</td>
+                                <td>आहे</td>
+                            </tr>
+                            <tr>
+                                <th>१८</th>
+                                <td class="font-bold text-slate-800">संतोष महादेव सावके (मसोला बुद्रुक)</td>
+                                <td>अस्थिव्यंग</td>
+                                <td class="font-bold text-emerald-700">५०%</td>
+                                <td>आहे</td>
+                            </tr>
+                            <tr>
+                                <th>१९</th>
+                                <td class="font-bold text-slate-800">जितेंद्र अरुण लुंगे (मसोला बुद्रुक)</td>
+                                <td>डोळे अंधत्व</td>
+                                <td class="font-bold text-emerald-700">४०%</td>
+                                <td>नाही</td>
+                            </tr>
+                            <tr>
+                                <th>२०</th>
+                                <td class="font-bold text-slate-800">डीगांबर दत्तात्रय सुळे (मसोला बुद्रुक)</td>
+                                <td>डोळे अंधत्व</td>
+                                <td class="font-bold text-emerald-700">४०%</td>
+                                <td>नाही</td>
+                            </tr>
+                            <tr>
+                                <th>२१</th>
+                                <td class="font-bold text-slate-800">लक्ष्मि वसंता इंगळे (मसोला बुद्रुक)</td>
+                                <td>डोळे अंधत्व</td>
+                                <td class="font-bold text-emerald-700">९०%</td>
+                                <td>आहे</td>
+                            </tr>
+                            <tr>
+                                <th>२२</th>
+                                <td class="font-bold text-slate-800">अर्चना मारोती निशाने</td>
+                                <td>अंध</td>
+                                <td class="font-bold text-emerald-700">१००%</td>
+                                <td>आहे</td>
+                            </tr>
+                            <tr>
+                                <th>२३</th>
+                                <td class="font-bold text-slate-800">गजानन मोतीराम सावके</td>
+                                <td>अस्थिव्यंग</td>
+                                <td class="font-bold text-emerald-700">५०%</td>
+                                <td>आहे</td>
+                            </tr>
+                            <tr>
+                                <th>२४</th>
+                                <td class="font-bold text-slate-800">सविता सुभाष सावके</td>
+                                <td>मतीमंद</td>
+                                <td class="font-bold text-emerald-700">६५%</td>
+                                <td>आहे</td>
+                            </tr>
+                            <tr>
+                                <th>२५</th>
+                                <td class="font-bold text-slate-800">मनीष शिवशंकर लुंगे</td>
+                                <td>अंधत्व</td>
+                                <td class="font-bold text-emerald-700">३०%</td>
+                                <td>नाही</td>
+                            </tr>
+                            <tr>
+                                <th>२६</th>
+                                <td class="font-bold text-slate-800">गोपाल गजानन ससाणे</td>
+                                <td>अस्थिव्यंग</td>
+                                <td class="font-bold text-emerald-700">४०%</td>
+                                <td>नाही</td>
+                            </tr>
+                            <tr>
+                                <th>२७</th>
+                                <td class="font-bold text-slate-800">वंदना चिंतामण झोंबाडे</td>
+                                <td>मूकबधिर</td>
+                                <td class="font-bold text-emerald-700">१००%</td>
+                                <td>आहे</td>
+                            </tr>
+                            <tr>
+                                <th>२८</th>
+                                <td class="font-bold text-slate-800">ओमप्रकाश दौलत घनगाव</td>
+                                <td>अंधत्व</td>
+                                <td class="font-bold text-emerald-700">१००%</td>
+                                <td>आहे</td>
+                            </tr>
+                            <tr>
+                                <th>२९</th>
+                                <td class="font-bold text-slate-800">जय गजानन लुंगे</td>
+                                <td>अस्थिव्यंग</td>
+                                <td class="font-bold text-emerald-700">३५%</td>
+                                <td>नाही</td>
+                            </tr>
+                            <tr>
+                                <th>३०</th>
+                                <td class="font-bold text-slate-800">दिपाली संजय मनवर</td>
+                                <td>मतीमंद</td>
+                                <td class="font-bold text-emerald-700">१००%</td>
+                                <td>नाही</td>
+                            </tr>
+                            <tr>
+                                <th>३१</th>
+                                <td class="font-bold text-slate-800">वंदना विष्णू राउत</td>
+                                <td>अस्थिव्यंग</td>
+                                <td class="font-bold text-emerald-700">४८%</td>
+                                <td>नाही</td>
+                            </tr>
+                            <tr>
+                                <th>३२</th>
+                                <td class="font-bold text-slate-800">मयूर दत्ता रोकडे</td>
+                                <td>अस्थिव्यंग</td>
+                                <td class="font-bold text-emerald-700">४४%</td>
+                                <td>नाही</td>
+                            </tr>
+                            <tr>
+                                <th>३३</th>
+                                <td class="font-bold text-slate-800">बालाजी पांडुरंग मस्के</td>
+                                <td>अस्थिव्यंग</td>
+                                <td class="font-bold text-emerald-700">४०%</td>
+                                <td>नाही</td>
+                            </tr>
+                            <tr>
+                                <th>३४</th>
+                                <td class="font-bold text-slate-800">श्रावणी ओंकार लुंगे</td>
+                                <td>—</td>
+                                <td class="font-bold text-emerald-700">—</td>
+                                <td>—</td>
+                            </tr>
+                            <tr>
+                                <th>३५</th>
+                                <td class="font-bold text-slate-800">राम रमेश सावके</td>
+                                <td>मेंटल इलनेस</td>
+                                <td class="font-bold text-emerald-700">४५%</td>
+                                <td>होय</td>
+                            </tr>
+                            <tr>
+                                <th>३६</th>
+                                <td class="font-bold text-slate-800">मारोती सुभाष गारुळे</td>
+                                <td>अंधत्व</td>
+                                <td class="font-bold text-emerald-700">४०%</td>
+                                <td>—</td>
+                            </tr>
+                            <tr>
+                                <th>३७</th>
+                                <td class="font-bold text-slate-800">रवि महादेव निशाने</td>
+                                <td>अस्थिव्यंग</td>
+                                <td class="font-bold text-emerald-700">४०%</td>
+                                <td>होय</td>
+                            </tr>
+                            <tr>
+                                <th>३८</th>
+                                <td class="font-bold text-slate-800">प्रियंका गजानन आडोळे</td>
+                                <td>अस्थिव्यंग</td>
+                                <td class="font-bold text-emerald-700">४६%</td>
+                                <td>नाही</td>
+                            </tr>
+                            <tr>
+                                <th>३९</th>
+                                <td class="font-bold text-slate-800">दिनकर शंकरराव भिंगारे</td>
+                                <td>क्रोनिक नुरोलोजी</td>
+                                <td class="font-bold text-emerald-700">५५%</td>
+                                <td>नाही</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Shared Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="js/navigation.js"></script>
+</body>
+</html>

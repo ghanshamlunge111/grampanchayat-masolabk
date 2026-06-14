@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="mr" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ग्रामपंचायत मसोला (खुर्द) - QR List</title>
+    
+    <!-- Tailwind CSS & DaisyUI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1f3a5f',
+                        secondary: '#3a6b5c',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Tiro+Devanagari+Marathi:ital@0;1&family=Yatra+One&display=swap" rel="stylesheet" />
+
+    <style>
+        .marathi-font { font-family: 'Tiro Devanagari Marathi', serif; }
+    </style>
+</head>
+<body class="bg-slate-50 flex flex-col min-h-screen marathi-font text-slate-800">
+
+    <!-- Shared Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="flex-grow py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Page Header -->
+            <div class="text-center mb-12">
+                <span class="bg-emerald-100 text-emerald-800 font-bold text-xs uppercase px-3 py-1 rounded-full mb-3 inline-block">डिजिटल सेवा</span>
+                <h1 class="text-2xl sm:text-4xl font-extrabold text-[#1f3a5f] mb-4">QR कोड सूची (QR Code List)</h1>
+                <p class="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base">विविध शासकीय सेवा, अर्ज व तक्रार पोर्टलवर थेट पोहोचण्यासाठी खालील QR कोड स्कॅन करा अथवा डाऊनलोड करा.</p>
+            </div>
+
+            <!-- QR Codes Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                
+                <!-- QR 1: RTI -->
+                <div class="card bg-white border border-slate-200 shadow-sm p-5 rounded-2xl flex flex-row items-center gap-5 hover:shadow-md transition">
+                    <div class="w-24 h-24 shrink-0 bg-slate-100 border rounded-xl overflow-hidden p-1">
+                        <!-- Dynamic QR code using QRServer API -->
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://gpmedshi.com/rti/info" alt="RTI QR" class="w-full h-full object-contain" />
+                    </div>
+                    <div class="flex flex-col justify-between h-full py-1">
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-base">माहितीचा अधिकार</h4>
+                            <p class="text-xs text-slate-500 mt-1">RTI नियमावली व अर्ज नमुना पाहण्यासाठी स्कॅन करा.</p>
+                        </div>
+                        <a href="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://gpmedshi.com/rti/info" download="RTI_QR.png" target="_blank" class="btn btn-xs btn-emerald text-white border-none mt-3 w-fit">
+                            <i class="fa-solid fa-download mr-1"></i>QR डाऊनलोड
+                        </a>
+                    </div>
+                </div>
+
+                <!-- QR 2: Complaints -->
+                <div class="card bg-white border border-slate-200 shadow-sm p-5 rounded-2xl flex flex-row items-center gap-5 hover:shadow-md transition">
+                    <div class="w-24 h-24 shrink-0 bg-slate-100 border rounded-xl overflow-hidden p-1">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://gpmedshi.com/complaints" alt="Complaint QR" class="w-full h-full object-contain" />
+                    </div>
+                    <div class="flex flex-col justify-between h-full py-1">
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-base">तक्रार नोंदणी</h4>
+                            <p class="text-xs text-slate-500 mt-1">गावातील समस्यांविषयी ऑनलाईन तक्रार नोंदवण्यासाठी.</p>
+                        </div>
+                        <a href="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://gpmedshi.com/complaints" download="Complaint_QR.png" target="_blank" class="btn btn-xs btn-emerald text-white border-none mt-3 w-fit">
+                            <i class="fa-solid fa-download mr-1"></i>QR डाऊनलोड
+                        </a>
+                    </div>
+                </div>
+
+                <!-- QR 3: Applications -->
+                <div class="card bg-white border border-slate-200 shadow-sm p-5 rounded-2xl flex flex-row items-center gap-5 hover:shadow-md transition">
+                    <div class="w-24 h-24 shrink-0 bg-slate-100 border rounded-xl overflow-hidden p-1">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://gpmedshi.com/gp-applications" alt="App QR" class="w-full h-full object-contain" />
+                    </div>
+                    <div class="flex flex-col justify-between h-full py-1">
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-base">नागरीक सुविधा अर्ज</h4>
+                            <p class="text-xs text-slate-500 mt-1">विविध शासकीय दाखले व परवानग्यांचे अर्ज डाऊनलोड करण्यासाठी.</p>
+                        </div>
+                        <a href="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://gpmedshi.com/gp-applications" download="Applications_QR.png" target="_blank" class="btn btn-xs btn-emerald text-white border-none mt-3 w-fit">
+                            <i class="fa-solid fa-download mr-1"></i>QR डाऊनलोड
+                        </a>
+                    </div>
+                </div>
+
+                <!-- QR 4: Meri Panchayat App -->
+                <div class="card bg-white border border-slate-200 shadow-sm p-5 rounded-2xl flex flex-row items-center gap-5 hover:shadow-md transition">
+                    <div class="w-24 h-24 shrink-0 bg-slate-100 border rounded-xl overflow-hidden p-1">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://play.google.com/store/apps/details?id=com.meri_panchayat" alt="Meri Panchayat App" class="w-full h-full object-contain" />
+                    </div>
+                    <div class="flex flex-col justify-between h-full py-1">
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-base">मेरी पंचायत अँप</h4>
+                            <p class="text-xs text-slate-500 mt-1">केंद्र शासनाचे अधिकृत पंचायत मोबाईल ॲप डाऊनलोड करा.</p>
+                        </div>
+                        <a href="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://play.google.com/store/apps/details?id=com.meri_panchayat" download="App_QR.png" target="_blank" class="btn btn-xs btn-emerald text-white border-none mt-3 w-fit">
+                            <i class="fa-solid fa-download mr-1"></i>QR डाऊनलोड
+                        </a>
+                    </div>
+                </div>
+
+                <!-- QR 5: Government Resolutions -->
+                <div class="card bg-white border border-slate-200 shadow-sm p-5 rounded-2xl flex flex-row items-center gap-5 hover:shadow-md transition">
+                    <div class="w-24 h-24 shrink-0 bg-slate-100 border rounded-xl overflow-hidden p-1">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://gr.maharashtra.gov.in/1125/Home" alt="GR QR" class="w-full h-full object-contain" />
+                    </div>
+                    <div class="flex flex-col justify-between h-full py-1">
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-base">महाराष्ट्र शासन निर्णय (GR)</h4>
+                            <p class="text-xs text-slate-500 mt-1">शासनाचे नवनवीन जीआर व परिपत्रके शोधण्यासाठी.</p>
+                        </div>
+                        <a href="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://gr.maharashtra.gov.in/1125/Home" download="GR_QR.png" target="_blank" class="btn btn-xs btn-emerald text-white border-none mt-3 w-fit">
+                            <i class="fa-solid fa-download mr-1"></i>QR डाऊनलोड
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Shared Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="js/navigation.js"></script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="mr" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ग्रामपंचायत मसोला (खुर्द) - विकास कामे (Development Works)</title>
+    
+    <!-- Tailwind CSS & DaisyUI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1f3a5f',
+                        secondary: '#3a6b5c',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Tiro+Devanagari+Marathi:ital@0;1&family=Yatra+One&display=swap" rel="stylesheet" />
+
+    <style>
+        .marathi-font { font-family: 'Tiro Devanagari Marathi', serif; }
+    </style>
+</head>
+<body class="bg-slate-50 flex flex-col min-h-screen marathi-font text-slate-800">
+
+    <!-- Shared Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="flex-grow py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Page Header -->
+            <div class="text-center mb-12">
+                <span class="bg-emerald-100 text-emerald-800 font-bold text-xs uppercase px-3 py-1 rounded-full mb-3 inline-block">प्रगतीचा आलेख</span>
+                <h1 class="text-2xl sm:text-4xl font-extrabold text-[#1f3a5f] mb-4">चालू व पूर्ण विकास कामे</h1>
+                <p class="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base">गावातील रस्ते, पाणी, सौरऊर्जा आणि इतर पायाभूत सुविधांच्या कामांची सद्यस्थिती व प्रगती.</p>
+            </div>
+
+            <!-- Filter Controls -->
+            <div class="flex flex-wrap justify-center gap-3 mb-10">
+                <button onclick="filterWorks('all')" class="btn btn-sm sm:btn-md bg-[#1f3a5f] text-white border-none filter-btn active-btn">सर्व कामे</button>
+                <button onclick="filterWorks('completed')" class="btn btn-sm sm:btn-md btn-outline text-emerald-700 border-emerald-600 hover:bg-emerald-700 hover:text-white filter-btn">पूर्ण कामे</button>
+                <button onclick="filterWorks('ongoing')" class="btn btn-sm sm:btn-md btn-outline text-amber-700 border-amber-600 hover:bg-amber-700 hover:text-white filter-btn">चालू कामे</button>
+                <button onclick="filterWorks('planned')" class="btn btn-sm sm:btn-md btn-outline text-blue-700 border-blue-600 hover:bg-blue-700 hover:text-white filter-btn">नियोजित कामे</button>
+            </div>
+
+            <!-- Works Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12" id="works-grid">
+                
+                <!-- Work 1: Completed -->
+                <div class="card bg-white border border-slate-200 shadow-md overflow-hidden rounded-2xl work-item" data-status="completed">
+                    <div class="bg-emerald-600 text-white text-xs font-bold px-4 py-2 flex justify-between items-center">
+                        <span>१५ वा वित्त आयोग</span>
+                        <span class="badge badge-sm bg-white text-emerald-700 border-none font-extrabold">पूर्ण (Completed)</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <h3 class="font-extrabold text-[#1f3a5f] text-base sm:text-lg">मुख्य मार्ग ते स्मशानभूमी सिमेंट रस्ता</h3>
+                        <p class="text-slate-500 text-xs sm:text-sm">गावातील मुख्य चौकापासून ते स्मशानभूमी पर्यंत सिमेंट काँक्रीटीकरण व बाजूला गटार बांधणी.</p>
+                        <div class="border-t pt-4 text-xs sm:text-sm grid grid-cols-2 gap-2 text-slate-700">
+                            <div><strong>मंजूर निधी:</strong> <span class="font-bold text-emerald-700">₹ ५,००,०००</span></div>
+                            <div><strong>पूर्ण वर्ष:</strong> <span class="font-bold">२०२४-२५</span></div>
+                            <div class="col-span-2"><strong>कार्यक्षेत्र:</strong> मसोला बुद्रुक गाव</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Work 2: Ongoing -->
+                <div class="card bg-white border border-slate-200 shadow-md overflow-hidden rounded-2xl work-item" data-status="ongoing">
+                    <div class="bg-amber-600 text-white text-xs font-bold px-4 py-2 flex justify-between items-center">
+                        <span>स्वच्छ भारत मिशन</span>
+                        <span class="badge badge-sm bg-white text-amber-700 border-none font-extrabold">चालू (Ongoing)</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <h3 class="font-extrabold text-[#1f3a5f] text-base sm:text-lg">सांडपाणी व्यवस्थापन व भूमिगत गटार योजना</h3>
+                        <p class="text-slate-500 text-xs sm:text-sm">मसोला बुद्रुक गावांमधील घरगुती सांडपाण्याचा निचरा करण्यासाठी भूमिगत पाईपलाईन काम.</p>
+                        <div class="border-t pt-4 text-xs sm:text-sm grid grid-cols-2 gap-2 text-slate-700">
+                            <div><strong>मंजूर निधी:</strong> <span class="font-bold text-[#1f3a5f]">₹ ८,५०,०००</span></div>
+                            <div><strong>प्रगती:</strong> <span class="font-bold text-amber-600">७०% पूर्ण</span></div>
+                            <div class="col-span-2"><strong>कार्यक्षेत्र:</strong> मसोला बुद्रुक व मसोला बुद्रुक</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Work 3: Completed -->
+                <div class="card bg-white border border-slate-200 shadow-md overflow-hidden rounded-2xl work-item" data-status="completed">
+                    <div class="bg-emerald-600 text-white text-xs font-bold px-4 py-2 flex justify-between items-center">
+                        <span>जिल्हा परिषद सेस फंड</span>
+                        <span class="badge badge-sm bg-white text-emerald-700 border-none font-extrabold">पूर्ण (Completed)</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <h3 class="font-extrabold text-[#1f3a5f] text-base sm:text-lg">सौर ऊर्जा दिवाबत्ती जोडणी (Solar Streetlights)</h3>
+                        <p class="text-slate-500 text-xs sm:text-sm">तिन्ही गावांच्या अंतर्गत मुख्य चौकांमध्ये व अंधाऱ्या गल्ल्यांमध्ये ५० नवीन सौर पथदिव्यांची उभारणी.</p>
+                        <div class="border-t pt-4 text-xs sm:text-sm grid grid-cols-2 gap-2 text-slate-700">
+                            <div><strong>मंजूर निधी:</strong> <span class="font-bold text-emerald-700">₹ ३,६०,०००</span></div>
+                            <div><strong>पूर्ण वर्ष:</strong> <span class="font-bold">२०२४-२५</span></div>
+                            <div class="col-span-2"><strong>कार्यक्षेत्र:</strong> मसोला बुद्रुक, मसोला बुद्रुक, मसोला बुद्रुक</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Work 4: Planned -->
+                <div class="card bg-white border border-slate-200 shadow-md overflow-hidden rounded-2xl work-item" data-status="planned">
+                    <div class="bg-blue-600 text-white text-xs font-bold px-4 py-2 flex justify-between items-center">
+                        <span>१५ वा वित्त आयोग</span>
+                        <span class="badge badge-sm bg-white text-blue-700 border-none font-extrabold">नियोजित (Planned)</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <h3 class="font-extrabold text-[#1f3a5f] text-base sm:text-lg">अंगणवाडी केंद्र दुरुस्ती व सौर पॅनल बसवणे</h3>
+                        <p class="text-slate-500 text-xs sm:text-sm">केंद्राच्या इमारतीची दुरुस्ती, बालस्नेही रंगरंगोटी व अखंडित वीज पुरवठ्यासाठी ३ किलोवॉट सौर यंत्रणा.</p>
+                        <div class="border-t pt-4 text-xs sm:text-sm grid grid-cols-2 gap-2 text-slate-700">
+                            <div><strong>अपेक्षित निधी:</strong> <span class="font-bold text-slate-700">₹ २,००,०००</span></div>
+                            <div><strong>अपेक्षित सुरुवात:</strong> <span class="font-bold">ऑगस्ट २०२६</span></div>
+                            <div class="col-span-2"><strong>कार्यक्षेत्र:</strong> मसोला बुद्रुक अंगणवाडी केंद्र</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Work 5: Ongoing -->
+                <div class="card bg-white border border-slate-200 shadow-md overflow-hidden rounded-2xl work-item" data-status="ongoing">
+                    <div class="bg-amber-600 text-white text-xs font-bold px-4 py-2 flex justify-between items-center">
+                        <span>जल जीवन मिशन</span>
+                        <span class="badge badge-sm bg-white text-amber-700 border-none font-extrabold">चालू (Ongoing)</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <h3 class="font-extrabold text-[#1f3a5f] text-base sm:text-lg">हर घर नल से जल पाईपलाईन</h3>
+                        <p class="text-slate-500 text-xs sm:text-sm">प्रत्येक घरात पिण्याच्या पाण्याचे जोडणी देणे व नवीन पाण्याच्या टाकीचे बांधकाम.</p>
+                        <div class="border-t pt-4 text-xs sm:text-sm grid grid-cols-2 gap-2 text-slate-700">
+                            <div><strong>मंजूर निधी:</strong> <span class="font-bold text-[#1f3a5f]">₹ १२,००,०००</span></div>
+                            <div><strong>प्रगती:</strong> <span class="font-bold text-amber-600">४५% पूर्ण</span></div>
+                            <div class="col-span-2"><strong>कार्यक्षेत्र:</strong> तिन्ही गावे</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Shared Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="js/navigation.js"></script>
+    <script>
+        function filterWorks(status) {
+            // Update button styles
+            const buttons = document.querySelectorAll(".filter-btn");
+            buttons.forEach(btn => {
+                btn.classList.remove("bg-[#1f3a5f]", "text-white", "active-btn");
+                btn.classList.add("btn-outline");
+            });
+
+            // Highlight the clicked button
+            const eventTarget = window.event ? window.event.target : null;
+            if (eventTarget) {
+                eventTarget.classList.remove("btn-outline");
+                eventTarget.classList.add("bg-[#1f3a5f]", "text-white", "active-btn");
+            }
+
+            // Filter items
+            const items = document.querySelectorAll(".work-item");
+            items.forEach(item => {
+                if (status === "all" || item.getAttribute("data-status") === status) {
+                    item.classList.remove("hidden");
+                } else {
+                    item.classList.add("hidden");
+                }
+            });
+        }
+    </script>
+</body>
+</html>

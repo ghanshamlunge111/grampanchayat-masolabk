@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="mr" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ग्रामपंचायत मसोला (खुर्द) - आरोग्य सेवा (Healthcare Services)</title>
+    
+    <!-- Tailwind CSS & DaisyUI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1f3a5f',
+                        secondary: '#3a6b5c',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Tiro+Devanagari+Marathi:ital@0;1&family=Yatra+One&display=swap" rel="stylesheet" />
+
+    <style>
+        .marathi-font { font-family: 'Tiro Devanagari Marathi', serif; }
+    </style>
+</head>
+<body class="bg-slate-50 flex flex-col min-h-screen marathi-font text-slate-800">
+
+    <!-- Shared Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="flex-grow py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Page Header -->
+            <div class="text-center mb-12">
+                <span class="bg-red-100 text-red-800 font-bold text-xs uppercase px-3 py-1 rounded-full mb-3 inline-block">आरोग्यम धनसंपदा</span>
+                <h1 class="text-2xl sm:text-4xl font-extrabold text-[#1f3a5f] mb-4">आरोग्य सेवा व संपर्क माहिती</h1>
+                <p class="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base">मसोला बुद्रुक परिसरातील प्राथमिक आरोग्य उपकेंद्र, डॉक्टर, आशा सेविका व आपत्कालीन रुग्णवाहिका सेवांची माहिती.</p>
+            </div>
+
+            <!-- Main Sections Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+                
+                <!-- Left: Subcenter & Staff Details (7 columns) -->
+                <div class="lg:col-span-7 space-y-8">
+                    
+                    <!-- Sub-centre details -->
+                    <div class="card bg-white border border-slate-200 shadow-md p-6 rounded-2xl">
+                        <h3 class="font-extrabold text-[#1f3a5f] text-lg mb-4 border-b pb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-house-medical text-red-600"></i>
+                            <span>प्राथमिक आरोग्य उपकेंद्र, मसोला बुद्रुक</span>
+                        </h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                            मसोला बुद्रुक गावामध्ये सुसज्ज उपकेंद्र कार्यरत असून येथे गरोदर माता तपासणी, बाल लसीकरण, मोफत औषधोपचार व प्राथमिक उपचार केले जातात.
+                        </p>
+                        <div class="bg-slate-50 rounded-xl p-4 border text-xs sm:text-sm space-y-2">
+                            <div><strong>वेळ:</strong> सकाळी ९:०० ते दुपारी १:०० | दुपारी ३:०० ते संध्या. ६:००</div>
+                            <div><strong>उपलब्ध डॉक्टर:</strong> डॉ. नितीन राठोड (भेट: दर मंगळवारी व शुक्रवारी)</div>
+                            <div><strong>नियमित परिचारिका (ANM):</strong> सौ. सरला सोनोने (+९१ ९८XXXXXX३३)</div>
+                        </div>
+                    </div>
+
+                    <!-- Veterinary Hospital details -->
+                    <div class="card bg-white border border-slate-200 shadow-md p-6 rounded-2xl">
+                        <h3 class="font-extrabold text-[#1f3a5f] text-lg mb-4 border-b pb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-cow text-emerald-600"></i>
+                            <span>शासकीय पशुवैद्यकीय रुग्णालय, मसोला बुद्रुक</span>
+                        </h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                            गावातील पशुधनाच्या आरोग्यासाठी शासकीय पशुवैद्यकीय रुग्णालय कार्यरत असून, येथे जनावरांचे मोफत उपचार, लसीकरण व मार्गदर्शन केले जाते.
+                        </p>
+                        <div class="bg-slate-50 rounded-xl p-4 border text-xs sm:text-sm space-y-2">
+                            <div><strong>वेळ:</strong> सकाळी ८:०० ते दुपारी १२:०० | दुपारी २:०० ते संध्या. ५:००</div>
+                            <div><strong>पशुवैद्यकीय अधिकारी:</strong> उपलब्ध (सोमवार ते शनिवार)</div>
+                        </div>
+                    </div>
+
+                    <!-- Private Clinic details -->
+                    <div class="card bg-white border border-slate-200 shadow-md p-6 rounded-2xl">
+                        <h3 class="font-extrabold text-[#1f3a5f] text-lg mb-4 border-b pb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-stethoscope text-blue-600"></i>
+                            <span>डॉ. गोठे यांचे खाजगी क्लिनिक, मसोला बुद्रुक</span>
+                        </h3>
+                        <p class="text-slate-600 text-xs sm:text-sm leading-relaxed mb-4">
+                            गावातील नागरिकांसाठी डॉ. गोठे यांचे खाजगी क्लिनिक उपलब्ध असून, येथे विविध आजारांवर प्राथमिक उपचार व वैद्यकीय सल्ला दिला जातो.
+                        </p>
+                        <div class="bg-slate-50 rounded-xl p-4 border text-xs sm:text-sm space-y-2">
+                            <div><strong>वेळ:</strong> सकाळी ९:०० ते दुपारी २:०० | संध्याकाळी ४:०० ते रात्री ८:००</div>
+                            <div><strong>संपर्क डॉक्टर:</strong> डॉ. गोठे</div>
+                        </div>
+                    </div>
+
+                    <!-- Medical Staff Contacts -->
+                    <div class="card bg-white border border-slate-200 shadow-md p-6 rounded-2xl">
+                        <h3 class="font-extrabold text-[#1f3a5f] text-lg mb-4 border-b pb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-user-doctor text-emerald-600"></i>
+                            <span>महत्त्वाचे वैद्यकीय संपर्क</span>
+                        </h3>
+                        <div class="overflow-x-auto my-scrollbar-thickness">
+                            <table class="table w-full text-xs sm:text-sm text-slate-800">
+                                <thead>
+                                    <tr class="bg-slate-100 text-slate-700">
+                                        <th>नाव / पद</th>
+                                        <th>भूमिका</th>
+                                        <th>मोबाईल नंबर</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="font-bold">डॉ. नितीन राठोड</td>
+                                        <td>वैद्यकीय अधिकारी, PHC मंगरुळपीर</td>
+                                        <td class="font-bold text-emerald-700">+९१ ९८XXXXXX३१</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-bold">सौ. जयश्री जाधव</td>
+                                        <td>समुदाय आरोग्य अधिकारी (CHO), मसोला बुद्रुक</td>
+                                        <td class="font-bold text-emerald-700">+९१ ९८XXXXXX३२</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-bold">सौ. सरला सोनोने</td>
+                                        <td>आरोग्य सेविका (ANM), मसोला बुद्रुक उपकेंद्र</td>
+                                        <td class="font-bold text-emerald-700">+९१ ९८XXXXXX३३</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-bold">श्री. गजानन ठाकरे</td>
+                                        <td>आरोग्य सेवक (MPW)</td>
+                                        <td class="font-bold text-emerald-700">+९१ ९८XXXXXX३४</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right: Emergency & Ambulance (5 columns) -->
+                <div class="lg:col-span-5 space-y-8">
+                    
+                    <!-- Emergency Ambulance -->
+                    <div class="card bg-gradient-to-br from-red-500 to-orange-600 text-white shadow-lg p-6 rounded-2xl relative overflow-hidden">
+                        <div class="absolute right-4 bottom-4 text-white/10 text-9xl pointer-events-none">
+                            <i class="fa-solid fa-truck-medical"></i>
+                        </div>
+                        <h3 class="font-extrabold text-lg mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-bell text-yellow-300 animate-bounce"></i>
+                            <span>२४/७ आपत्कालीन रुग्णवाहिका</span>
+                        </h3>
+                        <p class="text-sm text-slate-100 leading-relaxed mb-6">
+                            कोणत्याही गंभीर अपघातासाठी किंवा प्रसूतीसाठी शासनाची मोफत १०८ रुग्णवाहिका सेवा उपलब्ध आहे.
+                        </p>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-white/10 rounded-xl p-3 border border-white/20 flex justify-between items-center">
+                                <div>
+                                    <span class="block text-xs text-slate-200">मोफत टोल-फ्री क्रमांक</span>
+                                    <span class="text-2xl font-black">१०८ (108)</span>
+                                </div>
+                                <a href="tel:108" class="btn btn-sm bg-white text-red-600 border-none font-bold">कॉल करा</a>
+                            </div>
+
+                            <div class="bg-white/10 rounded-xl p-3 border border-white/20 flex justify-between items-center">
+                                <div>
+                                    <span class="block text-xs text-slate-200">स्थानिक रुग्णवाहिका चालक</span>
+                                    <span class="text-lg font-bold">श्री. अमोल लुंगे</span>
+                                </div>
+                                <a href="tel:+919800000035" class="btn btn-sm bg-white text-red-600 border-none font-bold"><i class="fa-solid fa-phone"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Health Camp Alerts -->
+                    <div class="card bg-white border border-slate-200 shadow-md p-6 rounded-2xl">
+                        <h3 class="font-bold text-slate-800 text-base sm:text-lg mb-4 border-b pb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-bullhorn text-amber-600"></i>
+                            <span>आरोग्य शिबिर व सूचना</span>
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="p-3 bg-red-50 border-l-4 border-red-500 rounded-lg text-xs sm:text-sm">
+                                <span class="font-extrabold text-red-800 block">पोलिओ लसीकरण मोहीम २०२६</span>
+                                <p class="text-slate-600 mt-1">येत्या रविवारी गावातील उपकेंद्रात ० ते ५ वयोगटातील बालकांसाठी पोलिओ लसीकरण आयोजित केले आहे.</p>
+                            </div>
+                            <div class="p-3 bg-blue-50 border-l-4 border-blue-500 rounded-lg text-xs sm:text-sm">
+                                <span class="font-extrabold text-blue-800 block">मोफत डोळे व मोतीबिंदू तपासणी</span>
+                                <p class="text-slate-600 mt-1">दिनांक १५ जून रोजी सकाळी १० ते ३ या वेळेत भव्य डोळे तपासणी शिबिर होईल.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Shared Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="js/navigation.js"></script>
+</body>
+</html>

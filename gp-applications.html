@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="mr" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ग्रामपंचायत मसोला (खुर्द) - नागरीक सुविधा अर्ज</title>
+    
+    <!-- Tailwind CSS & DaisyUI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1f3a5f',
+                        secondary: '#3a6b5c',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Tiro+Devanagari+Marathi:ital@0;1&family=Yatra+One&display=swap" rel="stylesheet" />
+
+    <style>
+        .marathi-font { font-family: 'Tiro Devanagari Marathi', serif; }
+    </style>
+</head>
+<body class="bg-slate-50 flex flex-col min-h-screen marathi-font text-slate-800">
+
+    <!-- Shared Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="flex-grow py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Page Header -->
+            <div class="text-center mb-12">
+                <span class="bg-emerald-100 text-emerald-800 font-bold text-xs uppercase px-3 py-1 rounded-full mb-3 inline-block">अर्ज आणि दाखले</span>
+                <h1 class="text-2xl sm:text-4xl font-extrabold text-[#1f3a5f] mb-4">नागरीक सुविधा अर्ज केंद्र</h1>
+                <p class="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base">विविध शासकीय दाखले, परवाने, नळ जोडणी, किंवा फेरफार इत्यादींसाठी लागणारे अर्ज खालीलप्रमाणे डाऊनलोड करा.</p>
+            </div>
+
+            <!-- Forms Categories Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- Category 1: दाखले व प्रमाणपत्रे (Certificates) -->
+                <div class="card bg-white border border-slate-200 shadow-sm p-6 rounded-2xl">
+                    <h3 class="font-bold text-[#1f3a5f] text-lg mb-4 border-b pb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-file-invoice text-emerald-600"></i>
+                        <span>महत्त्वाचे दाखले व प्रमाणपत्रे</span>
+                    </h3>
+                    
+                    <div class="space-y-4 text-xs sm:text-sm">
+                        <!-- Form 1 -->
+                        <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-100">
+                            <div>
+                                <h4 class="font-bold text-slate-800">जन्म नोंदणी प्रमाणपत्र अर्ज (नमुना १)</h4>
+                                <p class="text-slate-400 text-2xs">PDF | १५ दिवसांत आवश्यक</p>
+                            </div>
+                            <button onclick="alert('जन्म नोंदणी अर्ज डाऊनलोड सुरू झाला आहे.')" class="btn btn-sm bg-gradient-to-r from-[#1f3a5f] to-[#234a7d] text-white border-none"><i class="fa-solid fa-download"></i></button>
+                        </div>
+                        
+                        <!-- Form 2 -->
+                        <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-100">
+                            <div>
+                                <h4 class="font-bold text-slate-800">मृत्यू नोंदणी प्रमाणपत्र अर्ज (नमुना २)</h4>
+                                <p class="text-slate-400 text-2xs">PDF | २१ दिवसांत आवश्यक</p>
+                            </div>
+                            <button onclick="alert('मृत्यू नोंदणी अर्ज डाऊनलोड सुरू झाला आहे.')" class="btn btn-sm bg-gradient-to-r from-[#1f3a5f] to-[#234a7d] text-white border-none"><i class="fa-solid fa-download"></i></button>
+                        </div>
+
+                        <!-- Form 3 -->
+                        <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-100">
+                            <div>
+                                <h4 class="font-bold text-slate-800">विवाह नोंदणी प्रमाणपत्र अर्ज (नमुना 'ड')</h4>
+                                <p class="text-slate-400 text-2xs">PDF | वधू-वरांचे पुरावे आवश्यक</p>
+                            </div>
+                            <button onclick="alert('विवाह नोंदणी अर्ज डाऊनलोड सुरू झाला आहे.')" class="btn btn-sm bg-gradient-to-r from-[#1f3a5f] to-[#234a7d] text-white border-none"><i class="fa-solid fa-download"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 2: परवानग्या व इतर अर्ज (Permits & Assets) -->
+                <div class="card bg-white border border-slate-200 shadow-sm p-6 rounded-2xl">
+                    <h3 class="font-bold text-[#1f3a5f] text-lg mb-4 border-b pb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-screwdriver-wrench text-emerald-600"></i>
+                        <span>परवानग्या व इतर नागरीक सेवा</span>
+                    </h3>
+                    
+                    <div class="space-y-4 text-xs sm:text-sm">
+                        <!-- Form 4 -->
+                        <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-100" id="mutation">
+                            <div>
+                                <h4 class="font-bold text-slate-800">घर किंवा मालमत्ता फेरफार / नामांतर अर्ज</h4>
+                                <p class="text-slate-400 text-2xs">PDF | खरेदीखत किंवा वारस प्रमाणपत्र आवश्यक</p>
+                            </div>
+                            <button onclick="alert('फेरफार नामांतर अर्ज डाऊनलोड सुरू झाला आहे.')" class="btn btn-sm bg-gradient-to-r from-[#1f3a5f] to-[#234a7d] text-white border-none"><i class="fa-solid fa-download"></i></button>
+                        </div>
+                        
+                        <!-- Form 5 -->
+                        <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-100" id="construction">
+                            <div>
+                                <h4 class="font-bold text-slate-800">इमारत किंवा घर बांधकाम परवानगी अर्ज</h4>
+                                <p class="text-slate-400 text-2xs">PDF | नकाशा व ८-अ उतारा आवश्यक</p>
+                            </div>
+                            <button onclick="alert('बांधकाम परवानगी अर्ज डाऊनलोड सुरू झाला आहे.')" class="btn btn-sm bg-gradient-to-r from-[#1f3a5f] to-[#234a7d] text-white border-none"><i class="fa-solid fa-download"></i></button>
+                        </div>
+
+                        <!-- Form 6 -->
+                        <div class="flex items-center justify-between p-3 bg-slate-50 rounded-xl border border-slate-100" id="jobcard">
+                            <div>
+                                <h4 class="font-bold text-slate-800">नरेगा रोजगार जॉब कार्ड नवीन अर्ज</h4>
+                                <p class="text-slate-400 text-2xs">PDF | आधार कार्ड व फोटो आवश्यक</p>
+                            </div>
+                            <button onclick="alert('नरेगा जॉब कार्ड अर्ज डाऊनलोड सुरू झाला आहे.')" class="btn btn-sm bg-gradient-to-r from-[#1f3a5f] to-[#234a7d] text-white border-none"><i class="fa-solid fa-download"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Shared Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="js/navigation.js"></script>
+</body>
+</html>

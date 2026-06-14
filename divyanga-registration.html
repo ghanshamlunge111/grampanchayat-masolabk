@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="mr" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ग्रामपंचायत मसोला (खुर्द) - दिव्यांग नोंदणी अर्ज (Divyang Registration)</title>
+    
+    <!-- Tailwind CSS & DaisyUI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1f3a5f',
+                        secondary: '#3a6b5c',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Tiro+Devanagari+Marathi:ital@0;1&family=Yatra+One&display=swap" rel="stylesheet" />
+
+    <style>
+        .marathi-font { font-family: 'Tiro Devanagari Marathi', serif; }
+    </style>
+</head>
+<body class="bg-slate-50 flex flex-col min-h-screen marathi-font text-slate-800">
+
+    <!-- Shared Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="flex-grow py-12">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Page Header -->
+            <div class="text-center mb-10">
+                <span class="bg-emerald-100 text-emerald-800 font-bold text-xs uppercase px-3 py-1 rounded-full mb-3 inline-block">सामाजिक कल्याण</span>
+                <h1 class="text-2xl sm:text-4xl font-extrabold text-[#1f3a5f] mb-3">दिव्यांग नागरिक ऑनलाईन नोंदणी अर्ज</h1>
+                <p class="text-slate-500 text-xs sm:text-sm">ग्रामपंचायत स्तरावरील ५% राखीव दिव्यांग निधी योजनांचा थेट लाभ मिळवण्यासाठी आपली नोंदणी अचूक करा.</p>
+            </div>
+
+            <!-- Form Card -->
+            <div class="card bg-white border border-slate-200 shadow-xl rounded-2xl p-6 sm:p-8">
+                <form id="divyangForm" onsubmit="submitForm(event)" class="space-y-6">
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Full Name -->
+                        <div class="form-control w-full sm:col-span-2">
+                            <label class="label font-bold text-slate-700 text-sm">संपूर्ण नाव (Full Name) *</label>
+                            <input type="text" id="fullname" placeholder="पहिले नाव, वडिलांचे नाव, आडनाव" class="input input-bordered w-full bg-slate-50 text-slate-800 border-gray-300 focus:border-emerald-500 focus:outline-none" required />
+                        </div>
+
+                        <!-- Aadhaar Number -->
+                        <div class="form-control w-full">
+                            <label class="label font-bold text-slate-700 text-sm">आधार क्रमांक (Aadhaar No) *</label>
+                            <input type="text" id="aadhaar" maxlength="12" placeholder="१२ अंकी आधार क्रमांक" class="input input-bordered w-full bg-slate-50 text-slate-800 border-gray-300 focus:border-emerald-500 focus:outline-none" required />
+                        </div>
+
+                        <!-- UDID card number -->
+                        <div class="form-control w-full">
+                            <label class="label font-bold text-slate-700 text-sm">युडीआयडी (UDID) कार्ड क्रमांक</label>
+                            <input type="text" id="udid" placeholder="उदा. MH30XXXXXXXXXXXX" class="input input-bordered w-full bg-slate-50 text-slate-800 border-gray-300 focus:border-emerald-500 focus:outline-none" />
+                        </div>
+
+                        <!-- Disability Type -->
+                        <div class="form-control w-full">
+                            <label class="label font-bold text-slate-700 text-sm">दिव्यांग प्रकार (Disability Type) *</label>
+                            <select id="disabilityType" class="select select-bordered w-full bg-slate-50 text-slate-800 border-gray-300 focus:border-emerald-500 focus:outline-none font-semibold" required>
+                                <option value="" disabled selected>निवडा...</option>
+                                <option value="अस्थिव्यंग (Orthopedic)">अस्थिव्यंग (Orthopedic)</option>
+                                <option value="कर्णबधिर (Hearing Impaired)">कर्णबधिर (Hearing Impaired)</option>
+                                <option value="मतिमंद (Intellectual Disability)">मतिमंद (Intellectual Disability)</option>
+                                <option value="अंध / मूकबधिर (Blindness/Deafblind)">अंध / मूकबधिर (Blindness/Deafblind)</option>
+                                <option value="इतर प्रकार (Other)">इतर प्रकार (Other)</option>
+                            </select>
+                        </div>
+
+                        <!-- Disability Percentage -->
+                        <div class="form-control w-full">
+                            <label class="label font-bold text-slate-700 text-sm">दिव्यांगत्व प्रमाण (%) (Percentage) *</label>
+                            <input type="number" id="percentage" min="40" max="100" placeholder="किमान ४०% किंवा त्याहून अधिक" class="input input-bordered w-full bg-slate-50 text-slate-800 border-gray-300 focus:border-emerald-500 focus:outline-none" required />
+                        </div>
+
+                        <!-- Mobile Number -->
+                        <div class="form-control w-full">
+                            <label class="label font-bold text-slate-700 text-sm">मोबाईल नंबर (Mobile Number) *</label>
+                            <input type="tel" id="mobile" maxlength="10" placeholder="१० अंकी मोबाईल क्रमांक" class="input input-bordered w-full bg-slate-50 text-slate-800 border-gray-300 focus:border-emerald-500 focus:outline-none" required />
+                        </div>
+
+                        <!-- Village Selection -->
+                        <div class="form-control w-full">
+                            <label class="label font-bold text-slate-700 text-sm">गाव (Village) *</label>
+                            <select id="village" class="select select-bordered w-full bg-slate-50 text-slate-800 border-gray-300 focus:border-emerald-500 focus:outline-none font-semibold" required>
+                                <option value="" disabled selected>निवडा...</option>
+                                <option value="मसोला बुद्रुक">मसोला बुद्रुक</option>
+                                <option value="मसोला बुद्रुक">मसोला बुद्रुक</option>
+                                <option value="मसोला बुद्रुक">मसोला बुद्रुक</option>
+                            </select>
+                        </div>
+
+                        <!-- Account Number -->
+                        <div class="form-control w-full">
+                            <label class="label font-bold text-slate-700 text-sm">बँक खाते क्रमांक (Bank Account No) *</label>
+                            <input type="text" id="bankAccount" placeholder="बँक खाते क्रमांक" class="input input-bordered w-full bg-slate-50 text-slate-800 border-gray-300 focus:border-emerald-500 focus:outline-none" required />
+                        </div>
+
+                        <!-- Bank IFSC -->
+                        <div class="form-control w-full">
+                            <label class="label font-bold text-slate-700 text-sm">बँक IFSC कोड *</label>
+                            <input type="text" id="ifsc" placeholder="उदा. SBIN000XXXX" class="input input-bordered w-full bg-slate-50 text-slate-800 border-gray-300 focus:border-emerald-500 focus:outline-none uppercase" required />
+                        </div>
+                    </div>
+
+                    <!-- Terms checkbox -->
+                    <div class="form-control">
+                        <label class="label cursor-pointer justify-start gap-3">
+                            <input type="checkbox" checked="checked" class="checkbox checkbox-success border-gray-300" required />
+                            <span class="label-text text-xs text-slate-600 font-semibold">मी प्रमाणित करतो की वरील दिलेली माहिती सत्य आणि खरी आहे.</span>
+                        </label>
+                    </div>
+
+                    <!-- Submit Buttons -->
+                    <div class="flex gap-4 pt-4">
+                        <button type="submit" class="btn bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-700 hover:to-teal-800 text-white border-none shadow-md font-bold py-3 px-6 rounded-xl flex-grow">अर्ज सबमिट करा</button>
+                        <button type="reset" class="btn btn-outline border-slate-300 hover:bg-slate-100 text-slate-600 rounded-xl font-bold">रीसेट</button>
+                    </div>
+
+                </form>
+            </div>
+
+            <!-- Confirmation Modal (DaisyUI dialog) -->
+            <dialog id="successModal" class="modal">
+                <div class="modal-box bg-white max-w-sm rounded-2xl p-6 text-center shadow-2xl relative text-slate-800">
+                    <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-3xl mx-auto mb-4 animate-bounce">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <h3 class="text-xl font-extrabold text-[#1f3a5f] mb-2">नोंदणी अर्ज यशस्वी!</h3>
+                    <p class="text-xs sm:text-sm text-slate-500 leading-relaxed mb-6">
+                        आपला नोंदणी अर्ज यशस्वीरीत्या ग्रामपंचायतीकडे वर्ग करण्यात आला आहे. लवकरच पडताळणी प्रक्रियेनंतर लाभ सुरू होईल.
+                    </p>
+                    <form method="dialog">
+                        <button class="btn bg-[#1f3a5f] hover:bg-[#234a7d] text-white w-full border-none shadow-md font-bold py-2.5">
+                            बंद करा
+                        </button>
+                    </form>
+                </div>
+            </dialog>
+
+        </div>
+    </main>
+
+    <!-- Shared Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="js/navigation.js"></script>
+    <script>
+        function submitForm(event) {
+            event.preventDefault();
+            // Validate inputs
+            const mobile = document.getElementById("mobile").value;
+            const aadhaar = document.getElementById("aadhaar").value;
+            
+            if (mobile.length !== 10 || isNaN(mobile)) {
+                alert("कृपया वैध १० अंकी मोबाईल क्रमांक प्रविष्ट करा.");
+                return;
+            }
+            
+            if (aadhaar.length !== 12 || isNaN(aadhaar)) {
+                alert("कृपया वैध १२ अंकी आधार क्रमांक प्रविष्ट करा.");
+                return;
+            }
+
+            // Show DaisyUI confirmation modal
+            document.getElementById("successModal").showModal();
+            document.getElementById("divyangForm").reset();
+        }
+    </script>
+</body>
+</html>

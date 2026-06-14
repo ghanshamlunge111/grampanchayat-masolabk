@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="mr" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ग्रामपंचायत मसोला (खुर्द) - शासकीय आरोग्य योजना (Gov Health Schemes)</title>
+    
+    <!-- Tailwind CSS & DaisyUI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1f3a5f',
+                        secondary: '#3a6b5c',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Tiro+Devanagari+Marathi:ital@0;1&family=Yatra+One&display=swap" rel="stylesheet" />
+
+    <style>
+        .marathi-font { font-family: 'Tiro Devanagari Marathi', serif; }
+    </style>
+</head>
+<body class="bg-slate-50 flex flex-col min-h-screen marathi-font text-slate-800">
+
+    <!-- Shared Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="flex-grow py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Page Header -->
+            <div class="text-center mb-12">
+                <span class="bg-emerald-100 text-emerald-800 font-bold text-xs uppercase px-3 py-1 rounded-full mb-3 inline-block">कल्याणकारी योजना</span>
+                <h1 class="text-2xl sm:text-4xl font-extrabold text-[#1f3a5f] mb-4">शासकीय आरोग्य योजना</h1>
+                <p class="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base">राज्य व केंद्र शासनामार्फत राबविल्या जाणाऱ्या विविध आरोग्य विमा व आर्थिक सहाय्य योजनांची माहिती.</p>
+            </div>
+
+            <!-- Schemes List -->
+            <div id="yojanas-container" class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+                
+                <!-- Scheme 1: MJPJAY -->
+                <div class="card bg-white border border-slate-200 shadow-md p-6 rounded-2xl space-y-4 hover:shadow-lg transition-all">
+                    <div class="flex items-center justify-between border-b pb-3">
+                        <h3 class="font-extrabold text-[#1f3a5f] text-base sm:text-lg">१. महात्मा ज्योतिबा फुले जन आरोग्य योजना (MJPJAY)</h3>
+                        <span class="badge badge-success text-white font-bold text-xs">सुरू आहे</span>
+                    </div>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        महाराष्ट्रातील पिवळ्या, केषरी व पांढऱ्या शिधापत्रिकाधारक कुटुंबांना गंभीर आजारांवर मोफत उपचारांची सुविधा दिली जाते.
+                    </p>
+                    <div class="text-xs sm:text-sm space-y-2 text-slate-700 bg-slate-50 rounded-xl p-4">
+                        <div><strong>लाभ:</strong> वर्षाला प्रति कुटुंब ₹ ५,००,००० पर्यंत मोफत उपचार व शस्त्रक्रिया.</div>
+                        <div><strong>पात्रता:</strong> महाराष्ट्रातील रहिवासी, वैध शिधापत्रिका व ओळखपत्र धारक.</div>
+                        <div><strong>नोंदणीसाठी कागदपत्रे:</strong> शिधापत्रिका, आधार कार्ड, पॅन कार्ड किंवा वाहन चालक परवाना.</div>
+                    </div>
+                </div>
+
+                <!-- Scheme 2: PMJAY (Ayushman Bharat) -->
+                <div class="card bg-white border border-slate-200 shadow-md p-6 rounded-2xl space-y-4 hover:shadow-lg transition-all">
+                    <div class="flex items-center justify-between border-b pb-3">
+                        <h3 class="font-extrabold text-[#1f3a5f] text-base sm:text-lg">२. आयुष्मान भारत - प्रधानमंत्री जन आरोग्य योजना (PM-JAY)</h3>
+                        <span class="badge badge-success text-white font-bold text-xs">सुरू आहे</span>
+                    </div>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        केंद्र शासनाची महत्त्वाकांक्षी योजना असून याद्वारे देशातील आर्थिकदृष्ट्या दुर्बल कुटुंबांना मोफत आरोग्य संरक्षण कवच मिळते.
+                    </p>
+                    <div class="text-xs sm:text-sm space-y-2 text-slate-700 bg-slate-50 rounded-xl p-4">
+                        <div><strong>लाभ:</strong> प्रति कुटुंब प्रति वर्ष ₹ ५,००,००० पर्यंत रोखविरहित (Cashless) उपचार.</div>
+                        <div><strong>पात्रता:</strong> SECC २०११ जनगणनेतील नोंदणीकृत गरीब व गरजू कुटुंबे.</div>
+                        <div><strong>कसे मिळवाल:</strong> जवळच्या सीएससी (CSC) केंद्रावर जाऊन 'आयुष्मान कार्ड' काढून घ्यावे.</div>
+                    </div>
+                </div>
+
+                <!-- Scheme 3: Matru Vandana Yojana -->
+                <div class="card bg-white border border-slate-200 shadow-md p-6 rounded-2xl space-y-4 hover:shadow-lg transition-all">
+                    <div class="flex items-center justify-between border-b pb-3">
+                        <h3 class="font-extrabold text-[#1f3a5f] text-base sm:text-lg">३. प्रधानमंत्री मातृ वंदना योजना (PMMVY)</h3>
+                        <span class="badge badge-success text-white font-bold text-xs">सुरू आहे</span>
+                    </div>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        पहिल्यांदाच गर्भवती असणाऱ्या मातांना पोषण आणि चांगल्या आरोग्यासाठी शासनाकडून बँक खात्यात थेट अनुदान दिले जाते.
+                    </p>
+                    <div class="text-xs sm:text-sm space-y-2 text-slate-700 bg-slate-50 rounded-xl p-4">
+                        <div><strong>लाभ:</strong> एकूण ₹ ५,००० चे आर्थिक सहाय्य ३ टप्प्यांत थेट बँक खात्यात.</div>
+                        <div><strong>पात्रता:</strong> पहिल्यांदा गरोदर असणाऱ्या सर्व महिला (शासकीय नोकरी नसलेल्या).</div>
+                        <div><strong>नोंदणी:</strong> गावातील आशा सेविका किंवा अंगणवाडी सेविकेशी संपर्क साधून अर्ज भरावा.</div>
+                    </div>
+                </div>
+
+                <!-- Scheme 4: ABHA Card Registration -->
+                <div class="card bg-white border border-slate-200 shadow-md p-6 rounded-2xl space-y-4 hover:shadow-lg transition-all">
+                    <div class="flex items-center justify-between border-b pb-3">
+                        <h3 class="font-extrabold text-[#1f3a5f] text-base sm:text-lg">४. आभा कार्ड नोंदणी (ABHA - Digital Health Card)</h3>
+                        <span class="badge badge-primary text-white font-bold text-xs">डिजिटल सेवा</span>
+                    </div>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        प्रत्येक नागरिकाचे डिजिटल आरोग्य खाते (Ayushman Bharat Health Account) उघडून संपूर्ण वैद्यकीय इतिहास सुरक्षित ठेवण्याची सोय.
+                    </p>
+                    <div class="text-xs sm:text-sm space-y-2 text-slate-700 bg-slate-50 rounded-xl p-4">
+                        <div><strong>लाभ:</strong> रिपोर्ट, प्रिस्क्रिप्शन डिजिटल स्वरूपात जतन राहतात. कागदी फाईल सांभाळण्याची गरज नाही.</div>
+                        <div><strong>कसे बनवावे:</strong> आधार कार्ड व लिंक मोबाईल नंबरद्वारे ऑनलाईन किंवा उपकेंद्रात विनामूल्य तयार होते.</div>
+                        <button onclick="alert('आभा कार्ड नोंदणी लिंक लवकरच कार्यान्वित होईल. जवळच्या आशा सेविकेशी संपर्क साधा.')" class="btn btn-xs bg-[#1f3a5f] text-white border-none mt-2 font-bold py-1 px-3">आभा कार्ड ऑनलाईन बनवा</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Shared Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="js/navigation.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const container = document.getElementById('yojanas-container');
+            if (!container) return;
+            try {
+                const response = await fetch('http://localhost:5001/api/yojanas?category=Health', {
+                    headers: {
+                        'X-GP-ID': GP_CONFIG.id
+                    }
+                });
+                if (response.ok) {
+                    const yojanas = await response.json();
+                    if (yojanas.length > 0) {
+                        container.innerHTML = yojanas.map((y, idx) => `
+                            <div class="card bg-white border border-slate-200 shadow-md p-6 rounded-2xl space-y-4 hover:shadow-lg transition-all">
+                                <div class="flex items-center justify-between border-b pb-3">
+                                    <h3 class="font-extrabold text-[#1f3a5f] text-base sm:text-lg">${idx + 1}. ${y.title}</h3>
+                                    <span class="badge ${y.status === 'Active' ? 'badge-success' : 'badge-ghost'} text-white font-bold text-xs">
+                                        ${y.status === 'Active' ? 'सुरू आहे' : 'बंद आहे'}
+                                    </span>
+                                </div>
+                                <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                                    ${y.description}
+                                </p>
+                                <div class="text-xs sm:text-sm space-y-2 text-slate-700 bg-slate-50 rounded-xl p-4">
+                                    <div><strong>लाभ:</strong> ${y.benefits}</div>
+                                    <div><strong>पात्रता:</strong> ${y.eligibility}</div>
+                                    <div><strong>नोंदणीसाठी कागदपत्रे:</strong> ${y.documents}</div>
+                                </div>
+                            </div>
+                        `).join('');
+                    }
+                }
+            } catch (error) {
+                console.warn('Failed to load dynamic schemes from backend, falling back to static HTML.', error);
+            }
+        });
+    </script>
+</body>
+</html>

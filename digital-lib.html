@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="mr" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ग्रामपंचायत मसोला (खुर्द) - डिजिटल लायब्ररी (Digital Library)</title>
+    
+    <!-- Tailwind CSS & DaisyUI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1f3a5f',
+                        secondary: '#3a6b5c',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Tiro+Devanagari+Marathi:ital@0;1&family=Yatra+One&display=swap" rel="stylesheet" />
+
+    <style>
+        .marathi-font { font-family: 'Tiro Devanagari Marathi', serif; }
+    </style>
+</head>
+<body class="bg-slate-50 flex flex-col min-h-screen marathi-font text-slate-800">
+
+    <!-- Shared Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="flex-grow py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Page Header -->
+            <div class="text-center mb-12">
+                <span class="bg-emerald-100 text-emerald-800 font-bold text-xs uppercase px-3 py-1 rounded-full mb-3 inline-block">ज्ञानपीठ</span>
+                <h1 class="text-2xl sm:text-4xl font-extrabold text-[#1f3a5f] mb-4">डिजिटल लायब्ररी (Digital Library)</h1>
+                <p class="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base">शालेय बालभारती पुस्तके, कृषी हस्तपुस्तिका, कायदा व नियम आणि ग्रामपंचायतीच्या विविध योजनांची मार्गदर्शिका एकाच ठिकाणी.</p>
+            </div>
+
+            <!-- Library Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                
+                <!-- Section 1: बालभारती पुस्तके -->
+                <div class="card bg-white border border-slate-200 shadow-sm p-6 rounded-2xl">
+                    <h3 class="font-bold text-[#1f3a5f] text-lg mb-4 border-b pb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-book-open text-emerald-600"></i>
+                        <span>ई-बालभारती शालेय पुस्तके</span>
+                    </h3>
+                    <ul class="space-y-3 text-xs sm:text-sm">
+                        <li class="flex items-center justify-between p-2.5 bg-slate-50 border rounded-lg">
+                            <span>इयत्ता पहिली (सर्व विषय)</span>
+                            <button onclick="alert('पुस्तके डाऊनलोड सुरू झाली आहेत.')" class="btn btn-xs bg-[#1f3a5f] text-white border-none"><i class="fa-solid fa-download"></i></button>
+                        </li>
+                        <li class="flex items-center justify-between p-2.5 bg-slate-50 border rounded-lg">
+                            <span>इयत्ता पाचवी (गणित व विज्ञान)</span>
+                            <button onclick="alert('पुस्तके डाऊनलोड सुरू झाली आहेत.')" class="btn btn-xs bg-[#1f3a5f] text-white border-none"><i class="fa-solid fa-download"></i></button>
+                        </li>
+                        <li class="flex items-center justify-between p-2.5 bg-slate-50 border rounded-lg">
+                            <span>इयत्ता दहावी (इतिहास व नागरिकशास्त्र)</span>
+                            <button onclick="alert('पुस्तके डाऊनलोड सुरू झाली आहेत.')" class="btn btn-xs bg-[#1f3a5f] text-white border-none"><i class="fa-solid fa-download"></i></button>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Section 2: कृषी व शेती पूरक -->
+                <div class="card bg-white border border-slate-200 shadow-sm p-6 rounded-2xl">
+                    <h3 class="font-bold text-[#1f3a5f] text-lg mb-4 border-b pb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-seedling text-emerald-600"></i>
+                        <span>कृषी मार्गदर्शिका</span>
+                    </h3>
+                    <ul class="space-y-3 text-xs sm:text-sm">
+                        <li class="flex items-center justify-between p-2.5 bg-slate-50 border rounded-lg">
+                            <span>हंगामी पिके व खत व्यवस्थापन</span>
+                            <button onclick="alert('कृषी मार्गदर्शिका डाऊनलोड सुरू झाली आहे.')" class="btn btn-xs bg-[#1f3a5f] text-white border-none"><i class="fa-solid fa-download"></i></button>
+                        </li>
+                        <li class="flex items-center justify-between p-2.5 bg-slate-50 border rounded-lg">
+                            <span>ठिबक व तुषार सिंचन पद्धती</span>
+                            <button onclick="alert('मार्गदर्शिका डाऊनलोड सुरू झाली आहे.')" class="btn btn-xs bg-[#1f3a5f] text-white border-none"><i class="fa-solid fa-download"></i></button>
+                        </li>
+                        <li class="flex items-center justify-between p-2.5 bg-slate-50 border rounded-lg">
+                            <span>सेंद्रिय शेती व खत निर्मिती मार्गदर्शक</span>
+                            <button onclick="alert('मार्गदर्शिका डाऊनलोड सुरू झाली आहे.')" class="btn btn-xs bg-[#1f3a5f] text-white border-none"><i class="fa-solid fa-download"></i></button>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Section 3: शासकीय कायदे व नियम -->
+                <div class="card bg-white border border-slate-200 shadow-sm p-6 rounded-2xl">
+                    <h3 class="font-bold text-[#1f3a5f] text-lg mb-4 border-b pb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-scale-balanced text-emerald-600"></i>
+                        <span>कायदा व मार्गदर्शक नियम</span>
+                    </h3>
+                    <ul class="space-y-3 text-xs sm:text-sm">
+                        <li class="flex items-center justify-between p-2.5 bg-slate-50 border rounded-lg">
+                            <span>महाराष्ट्र ग्रामपंचायत अधिनियम (१९५८)</span>
+                            <button onclick="alert('अधिनियम कायदा फाईल डाऊनलोड सुरू झाली आहे.')" class="btn btn-xs bg-[#1f3a5f] text-white border-none"><i class="fa-solid fa-download"></i></button>
+                        </li>
+                        <li class="flex items-center justify-between p-2.5 bg-slate-50 border rounded-lg">
+                            <span>माहितीचा अधिकार अधिनियम (२००५)</span>
+                            <button onclick="alert('RTI कायदा डाऊनलोड सुरू झाला आहे.')" class="btn btn-xs bg-[#1f3a5f] text-white border-none"><i class="fa-solid fa-download"></i></button>
+                        </li>
+                        <li class="flex items-center justify-between p-2.5 bg-slate-50 border rounded-lg">
+                            <span>पंचायत राज व्यवस्था - एक परिचय</span>
+                            <button onclick="alert('मार्गदर्शिका डाऊनलोड सुरू झाली आहे.')" class="btn btn-xs bg-[#1f3a5f] text-white border-none"><i class="fa-solid fa-download"></i></button>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Shared Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="js/navigation.js"></script>
+</body>
+</html>

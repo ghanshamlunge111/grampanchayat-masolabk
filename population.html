@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="mr" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ग्रामपंचायत मसोला बुद्रुक - ग्रामपंचायत टिपणी (Population)</title>
+    
+    <!-- Tailwind CSS & DaisyUI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1f3a5f',
+                        secondary: '#3a6b5c',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Tiro+Devanagari+Marathi:ital@0;1&family=Yatra+One&display=swap" rel="stylesheet" />
+
+    <style>
+        .marathi-font { font-family: 'Tiro Devanagari Marathi', serif; }
+    </style>
+</head>
+<body class="bg-slate-50 flex flex-col min-h-screen marathi-font text-slate-800">
+
+    <!-- Shared Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="flex-grow py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Page Header -->
+            <div class="text-center mb-12">
+                <span class="bg-emerald-100 text-emerald-800 font-bold text-xs uppercase px-3 py-1 rounded-full mb-3 inline-block">प्रशासकीय टिपणी</span>
+                <h1 class="text-2xl sm:text-4xl font-extrabold text-[#1f3a5f] mb-4">ग्रामपंचायत टिपणी व प्रशासकीय माहिती</h1>
+                <p class="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base">ग्रामपंचायतीची प्रशासकीय माहिती, विविध समित्या, लोकसंख्या विश्लेषण व अधिकृत आकडेवारी.</p>
+            </div>
+
+            <!-- Content Grid: Basic Info & Committee details -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+                
+                <!-- Left: Basic Info Table (7 cols) -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="card bg-white border border-slate-200 shadow-lg rounded-2xl overflow-hidden">
+                        <div class="bg-gradient-to-r from-[#1f3a5f] to-[#234a7d] text-white py-4 px-6">
+                            <h3 class="text-lg font-bold flex items-center gap-2">
+                                <i class="fa-solid fa-circle-info text-emerald-400"></i>
+                                <span>मूलभूत प्रशासकीय माहिती</span>
+                            </h3>
+                        </div>
+                        <div class="p-6 overflow-x-auto my-scrollbar-thickness">
+                            <table class="table w-full text-slate-800 text-sm">
+                                <tbody class="divide-y divide-slate-100">
+                                    <tr>
+                                        <td class="font-bold text-slate-500">अधिकृत ईमेल आयडी</td>
+                                        <td class="font-bold text-[#1f3a5f]">gp.masolakhurd@gmail.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-bold text-slate-500">सरपंचाचे नाव</td>
+                                        <td class="font-bold">सौ. सुनंदा विनोद काळे</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-bold text-slate-500">उपसरपंचाचे नाव</td>
+                                        <td class="font-bold">श्री. नंदकिशोर देवीदास मुळे</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-bold text-slate-500">ग्रामसेवकाचे नाव</td>
+                                        <td class="font-bold">श्री. विश्वनाथ व्यवहारे</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-bold text-slate-500">चार्ज घेतल्याचा दिनांक</td>
+                                        <td>—</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-bold text-slate-500">वार्ड संख्या व एकूण सदस्य</td>
+                                        <td class="font-bold">एकूण ३ वार्ड, ७ सदस्य</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-bold text-slate-500">लागू असलेले कर</td>
+                                        <td>घरपट्टी, पाणीपट्टी, दिवाबत्ती कर</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-bold text-slate-500">लोकसभा मतदारसंघ</td>
+                                        <td>यवतमाळ-वाशीम</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font-bold text-slate-500">विधानसभा मतदारसंघ</td>
+                                        <td>वाशीम (SC)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Committees List (5 cols) -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="card bg-white border border-slate-200 shadow-lg rounded-2xl p-6">
+                        <h3 class="font-bold text-slate-800 text-lg mb-4 border-b pb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-users-gear text-emerald-600"></i>
+                            <span>ग्रामपंचायत स्तरावरील सक्रीय समित्या</span>
+                        </h3>
+                        
+                        <div class="space-y-4 max-h-[360px] overflow-y-auto my-scrollbar-thickness text-xs sm:text-sm">
+                            <!-- Committee 1 -->
+                            <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
+                                <h4 class="font-bold text-[#1f3a5f]">१. ग्राम आरोग्य पोषण, पाणी पुरवठा व स्वच्छता समिती</h4>
+                                <p class="text-xs text-slate-500 mt-1">सक्रीय समिती</p>
+                            </div>
+                            <!-- Committee 2 -->
+                            <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
+                                <h4 class="font-bold text-[#1f3a5f]">२. ग्राम बाल संरक्षण समिती</h4>
+                                <p class="text-xs text-slate-500 mt-1">सक्रीय समिती</p>
+                            </div>
+                            <!-- Committee 3 -->
+                            <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
+                                <h4 class="font-bold text-[#1f3a5f]">३. जैव विविधता व्यवस्थापन समिती</h4>
+                                <p class="text-xs text-slate-500 mt-1">सक्रीय समिती</p>
+                            </div>
+                            <!-- Committee 4 -->
+                            <div class="p-3 bg-slate-50 rounded-xl border border-slate-100">
+                                <h4 class="font-bold text-[#1f3a5f]">४. सामाजिक अंकेक्षण (लेखा परीक्षण) समिती</h4>
+                                <p class="text-xs text-slate-500 mt-1">सक्रीय समिती</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Population Statistics Section -->
+            <div class="card bg-white border border-slate-200 shadow-lg rounded-2xl p-6 mb-12">
+                <h3 class="font-bold text-slate-800 text-lg mb-4 border-b pb-2 flex items-center gap-2">
+                    <i class="fa-solid fa-chart-pie text-emerald-600"></i>
+                    <span>मसोला बुद्रुक लोकसंख्या विश्लेषण (Census 2011)</span>
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                    <div class="bg-blue-50 border border-blue-100 p-4 rounded-xl text-center">
+                        <span class="text-xs text-slate-500 font-bold block">एकूण लोकसंख्या</span>
+                        <span class="font-extrabold text-[#1f3a5f] text-2xl">९०७</span>
+                        <span class="text-2xs text-slate-400 block mt-1">पुरुष: ४७२ | महिला: ४३५</span>
+                    </div>
+                    <div class="bg-emerald-50 border border-emerald-100 p-4 rounded-xl text-center">
+                        <span class="text-xs text-slate-500 font-bold block">साक्षरता दर</span>
+                        <span class="font-extrabold text-emerald-700 text-2xl">८१.७०%</span>
+                        <span class="text-2xs text-slate-400 block mt-1">पुरुष साक्षरता: ८३.९०% | महिला: ७९.३१%</span>
+                    </div>
+                    <div class="bg-purple-50 border border-purple-100 p-4 rounded-xl text-center">
+                        <span class="text-xs text-slate-500 font-bold block">स्त्री-पुरुष प्रमाण (Sex Ratio)</span>
+                        <span class="font-extrabold text-purple-700 text-2xl">९२१</span>
+                        <span class="text-2xs text-slate-400 block mt-1">प्रति १,००० पुरुषांमागे</span>
+                    </div>
+                </div>
+                <div class="overflow-x-auto my-scrollbar-thickness">
+                    <table class="table w-full text-slate-800 text-sm">
+                        <thead>
+                            <tr class="bg-slate-100 text-slate-700">
+                                <th>वर्ग / प्रवर्ग</th>
+                                <th>एकूण (Total)</th>
+                                <th>पुरुष (Male)</th>
+                                <th>महिला (Female)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b">
+                                <td class="font-bold">एकूण लोकसंख्या</td>
+                                <td class="font-bold">९०७</td>
+                                <td>४७२</td>
+                                <td>४३५</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="font-bold">बाल लोकसंख्या (०-६ वर्षे)</td>
+                                <td class="font-bold">९५</td>
+                                <td>५९</td>
+                                <td>३६</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="font-bold">अनुसूचित जाती (SC)</td>
+                                <td class="font-bold text-red-600">३७३</td>
+                                <td>१९५</td>
+                                <td>१७८</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="font-bold">अनुसूचित जमाती (ST)</td>
+                                <td class="font-bold text-red-600">१</td>
+                                <td>-</td>
+                                <td>१</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="font-bold text-emerald-700">साक्षर लोकसंख्या</td>
+                                <td class="font-bold text-emerald-700">७४१</td>
+                                <td>३९६</td>
+                                <td>३४५</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="font-bold text-slate-500">निरक्षर लोकसंख्या</td>
+                                <td class="font-bold text-slate-500">१६६</td>
+                                <td>७६</td>
+                                <td>९०</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Nearby Villages Section -->
+            <div class="card bg-white border border-slate-200 shadow-lg rounded-2xl p-6 mb-12">
+                <h3 class="font-bold text-slate-800 text-lg mb-4 border-b pb-2 flex items-center gap-2">
+                    <i class="fa-solid fa-map-location-dot text-emerald-600"></i>
+                    <span>मसोला बुद्रुकची शेजारील गावे (Nearby Villages)</span>
+                </h3>
+                <div class="overflow-x-auto my-scrollbar-thickness">
+                    <table class="table w-full text-slate-800 text-sm">
+                        <thead>
+                            <tr class="bg-slate-100 text-slate-700">
+                                <th>शेजारील गाव</th>
+                                <th>दिशा</th>
+                                <th>अंदाजे हवाई अंतर (सरळ रेषेतील अंतर)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b">
+                                <td class="font-semibold">खर्बी (Kharbi)</td>
+                                <td>पूर्व</td>
+                                <td>१.९२ किमी</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="font-semibold">पिंपळखुटा (Pimpalkhuta)</td>
+                                <td>दक्षिण</td>
+                                <td>२.०२ किमी</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="font-semibold">रायपूर (Raipur)</td>
+                                <td>ईशान्य</td>
+                                <td>२.२९ किमी</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="font-semibold">पिंप्री बुद्रुक (Pimpri Bk.)</td>
+                                <td>आग्नेय</td>
+                                <td>२.३२ किमी</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="font-semibold">तरहाळा (Tarhala)</td>
+                                <td>पश्चिम</td>
+                                <td>२.३९ किमी</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="font-semibold">गणेशपूर (Ganeshpur)</td>
+                                <td>पूर्व</td>
+                                <td>३.२३ किमी</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="font-semibold">चांभाई (Chambhai)</td>
+                                <td>दक्षिण</td>
+                                <td>३.९३ किमी</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="font-semibold">पेडगाव (Pedgaon)</td>
+                                <td>उत्तर</td>
+                                <td>४.१२ किमी</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="font-semibold">तपोवन (Tapovan)</td>
+                                <td>पश्चिम</td>
+                                <td>४.२० किमी</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="font-semibold">मोझरी (Mozari)</td>
+                                <td>आग्नेय</td>
+                                <td>४.२५ किमी</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Anganwadi & Asha Workers Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                
+                <!-- Anganwadi Centers -->
+                <div class="card bg-white border border-slate-200 shadow-lg rounded-2xl p-6">
+                    <h3 class="font-bold text-slate-800 text-lg mb-4 border-b pb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-child-reaching text-emerald-600"></i>
+                        <span>अंगणवाडी केंद्रांची माहिती</span>
+                    </h3>
+                    <div class="overflow-x-auto my-scrollbar-thickness">
+                        <table class="table w-full text-slate-800 text-sm">
+                            <thead>
+                                <tr class="bg-slate-100 text-slate-700">
+                                    <th>केंद्राचे नाव</th>
+                                    <th>अंगणवाडी सेविका</th>
+                                    <th>मदतनीस</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-semibold">अंगणवाडी केंद्र क्र. १ (मसोला बुद्रुक)</td>
+                                    <td>माहिती उपलब्ध नाही</td>
+                                    <td>माहिती उपलब्ध नाही</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold">अंगणवाडी केंद्र क्र. २ (मसोला बुद्रुक)</td>
+                                    <td>माहिती उपलब्ध नाही</td>
+                                    <td>माहिती उपलब्ध नाही</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Asha Workers -->
+                <div class="card bg-white border border-slate-200 shadow-lg rounded-2xl p-6">
+                    <h3 class="font-bold text-slate-800 text-lg mb-4 border-b pb-2 flex items-center gap-2">
+                        <i class="fa-solid fa-user-nurse text-emerald-600"></i>
+                        <span>आशा सेविका माहिती</span>
+                    </h3>
+                    <div class="overflow-x-auto my-scrollbar-thickness">
+                        <table class="table w-full text-slate-800 text-sm">
+                            <thead>
+                                <tr class="bg-slate-100 text-slate-700">
+                                    <th>नाव</th>
+                                    <th>गाव / क्षेत्र</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-semibold">माहिती उपलब्ध नाही</td>
+                                    <td>मसोला बुद्रुक क्षेत्र</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Shared Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="js/navigation.js"></script>
+</body>
+</html>

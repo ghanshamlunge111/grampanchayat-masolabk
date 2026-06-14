@@ -1,0 +1,29 @@
+/* Global formatting and alignment constraints */
+
+/* Center alignment for evenly-split row columns */
+.et_pb_equal_columns {
+    display: flex !important;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.et_pb_row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 980px) {
+    .et_pb_equal_columns, .et_pb_row {
+        align-items: stretch;
+    }
+    .et_pb_column {
+        width: 100% !important;
+        margin-bottom: 30px;
+    }
+}
+
+/* Ensure no bottom margin on last column to fix uneven extra space */
+.et_pb_column.et-last-child {
+    margin-bottom: 0 !important;
+}

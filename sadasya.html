@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="mr" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ग्रामपंचायत मसोला (खुर्द) - पदाधिकारी व सेवकवर्ग</title>
+    
+    <!-- Tailwind CSS & DaisyUI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1f3a5f',
+                        secondary: '#3a6b5c',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Tiro+Devanagari+Marathi:ital@0;1&family=Yatra+One&display=swap" rel="stylesheet" />
+
+    <style>
+        .marathi-font { font-family: 'Tiro Devanagari Marathi', serif; }
+    </style>
+</head>
+<body class="bg-slate-50 flex flex-col min-h-screen marathi-font text-slate-800">
+
+    <!-- Shared Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="flex-grow py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Page Header -->
+            <div class="text-center mb-12">
+                <span class="bg-emerald-100 text-emerald-800 font-bold text-xs uppercase px-3 py-1 rounded-full mb-3 inline-block">कार्यकारिणी</span>
+                <h1 class="text-2xl sm:text-4xl font-extrabold text-[#1f3a5f] mb-4">पदाधिकारी व सेवकवर्ग</h1>
+                <p class="text-slate-500 max-w-xl mx-auto text-sm sm:text-base">ग्रामपंचायतीचे नेतृत्व करणारे लोकनियुक्त सरपंच, उपसरपंच, ग्रामपंचायत सदस्य आणि सेवारत सेवकवर्ग.</p>
+            </div>
+
+            <!-- GP Leaders (Sarpanch, Upsarpanch & Gram Sevak) -->
+            <div class="mb-12">
+                <h2 class="text-xl font-bold text-[#1f3a5f] border-b pb-2 mb-6 uppercase tracking-wider text-center md:text-left"><i class="fa-solid fa-star text-emerald-600 mr-2"></i>मुख्य पदाधिकारी व अधिकारी</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                    
+                    <!-- Sarpanch Card -->
+                    <div class="card bg-white border border-slate-200 shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center p-6 gap-4 rounded-2xl">
+                        <div class="w-28 h-28 rounded-full overflow-hidden border-4 border-emerald-500 shadow-sm bg-slate-100">
+                            <img src="./assets/dummy-profile-pic.jpg" alt="Sunanda Kale" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/150'"/>
+                        </div>
+                        <div class="text-center">
+                            <span class="bg-emerald-600 text-white text-2xs uppercase px-2 py-0.5 rounded-full font-bold">सरपंच</span>
+                            <h3 class="text-base font-bold text-slate-800 mt-2">सौ. सुनंदा विनोद काळे</h3>
+                            <p class="text-xs font-semibold text-slate-500">सरपंच (ग्रामपंचायत मसोला (खुर्द))</p>
+                            <p class="text-xs text-slate-400 mt-2">भ्रमणध्वनी: +९१ ९८XXXXXX१०</p>
+                            <div class="flex gap-2 justify-center mt-3">
+                                <a href="#" class="btn btn-xs btn-circle bg-blue-100 hover:bg-blue-200 border-none text-blue-700"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="#" class="btn btn-xs btn-circle bg-sky-100 hover:bg-sky-200 border-none text-sky-600"><i class="fa-brands fa-x-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Upsarpanch Card -->
+                    <div class="card bg-white border border-slate-200 shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center p-6 gap-4 rounded-2xl">
+                        <div class="w-28 h-28 rounded-full overflow-hidden border-4 border-emerald-500 shadow-sm bg-slate-100">
+                            <img src="./assets/nandkishormule.jpg" alt="Nandkishor Mule" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/150'"/>
+                        </div>
+                        <div class="text-center">
+                            <span class="bg-emerald-600 text-white text-2xs uppercase px-2 py-0.5 rounded-full font-bold">उपसरपंच</span>
+                            <h3 class="text-base font-bold text-slate-800 mt-2">श्री. नंदकिशोर देवीदास मुळे</h3>
+                            <p class="text-xs font-semibold text-slate-500">उपसरपंच (ग्रामपंचायत मसोला (खुर्द))</p>
+                            <p class="text-xs text-slate-400 mt-2">भ्रमणध्वनी: +९१ ९८XXXXXX१२</p>
+                            <div class="flex gap-2 justify-center mt-3">
+                                <a href="#" class="btn btn-xs btn-circle bg-blue-100 hover:bg-blue-200 border-none text-blue-700"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="#" class="btn btn-xs btn-circle bg-sky-100 hover:bg-sky-200 border-none text-sky-600"><i class="fa-brands fa-x-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gram Sevak Card -->
+                    <div class="card bg-white border border-slate-200 shadow-sm hover:shadow-md transition duration-300 flex flex-col items-center p-6 gap-4 rounded-2xl">
+                        <div class="w-28 h-28 rounded-full overflow-hidden border-4 border-emerald-500 shadow-sm bg-slate-100">
+                            <img src="./assets/dummy-profile-pic.jpg" alt="Vishwanath Vhyavahare" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/150'" loading="lazy"/>
+                        </div>
+                        <div class="text-center">
+                            <span class="bg-emerald-600 text-white text-2xs uppercase px-2 py-0.5 rounded-full font-bold">ग्रामसेवक</span>
+                            <h3 class="text-base font-bold text-slate-800 mt-2">श्री. विश्वनाथ व्यवहारे</h3>
+                            <p class="text-xs font-semibold text-slate-500">ग्रामसेवक (ग्रामपंचायत मसोला (खुर्द))</p>
+                            <p class="text-xs text-slate-400 mt-2">भ्रमणध्वनी: +९१ ९८XXXXXX११</p>
+                            <div class="flex gap-2 justify-center mt-3">
+                                <a href="#" class="btn btn-xs btn-circle bg-blue-100 hover:bg-blue-200 border-none text-blue-700"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="#" class="btn btn-xs btn-circle bg-sky-100 hover:bg-sky-200 border-none text-sky-600"><i class="fa-brands fa-x-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- GP Members Grid -->
+            <div>
+                <h2 class="text-xl font-bold text-[#1f3a5f] border-b pb-2 mb-6 uppercase tracking-wider text-center md:text-left"><i class="fa-solid fa-users text-emerald-600 mr-2"></i>ग्रामपंचायत सदस्य</h2>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    
+                    <!-- Member 1 -->
+                    <div class="card bg-white border border-slate-100 shadow-sm rounded-2xl p-5 hover:-translate-y-1 transition duration-300 flex flex-row items-center gap-4">
+                        <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-emerald-500 shrink-0 bg-slate-50">
+                            <img src="./assets/dummy-profile-pic.jpg" alt="Member 1" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/150'"/>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-base">सदस्य १</h4>
+                            <p class="text-xs text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded-md w-fit mt-1">सदस्य</p>
+                        </div>
+                    </div>
+
+                    <!-- Member 2 -->
+                    <div class="card bg-white border border-slate-100 shadow-sm rounded-2xl p-5 hover:-translate-y-1 transition duration-300 flex flex-row items-center gap-4">
+                        <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-emerald-500 shrink-0 bg-slate-50">
+                            <img src="./assets/dummy-profile-pic.jpg" alt="Member 2" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/150'" loading="lazy"/>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-base">सदस्य २</h4>
+                            <p class="text-xs text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded-md w-fit mt-1">सदस्य</p>
+                        </div>
+                    </div>
+
+                    <!-- Member 3 -->
+                    <div class="card bg-white border border-slate-100 shadow-sm rounded-2xl p-5 hover:-translate-y-1 transition duration-300 flex flex-row items-center gap-4">
+                        <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-emerald-500 shrink-0 bg-slate-50">
+                            <img src="./assets/dummy-profile-pic.jpg" alt="Member 3" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/150'" loading="lazy"/>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-base">सदस्य ३</h4>
+                            <p class="text-xs text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded-md w-fit mt-1">सदस्य</p>
+                        </div>
+                    </div>
+
+                    <!-- Member 4 -->
+                    <div class="card bg-white border border-slate-100 shadow-sm rounded-2xl p-5 hover:-translate-y-1 transition duration-300 flex flex-row items-center gap-4">
+                        <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-emerald-500 shrink-0 bg-slate-50">
+                            <img src="./assets/dummy-profile-pic.jpg" alt="Member 4" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/150'" loading="lazy"/>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-base">सदस्य ४</h4>
+                            <p class="text-xs text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded-md w-fit mt-1">सदस्य</p>
+                        </div>
+                    </div>
+
+                    <!-- Member 5 -->
+                    <div class="card bg-white border border-slate-100 shadow-sm rounded-2xl p-5 hover:-translate-y-1 transition duration-300 flex flex-row items-center gap-4">
+                        <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-emerald-500 shrink-0 bg-slate-50">
+                            <img src="./assets/dummy-profile-pic.jpg" alt="Member 5" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/150'" loading="lazy"/>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-base">सदस्य ५</h4>
+                            <p class="text-xs text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded-md w-fit mt-1">सदस्य</p>
+                        </div>
+                    </div>
+
+                    <!-- Member 6 -->
+                    <div class="card bg-white border border-slate-100 shadow-sm rounded-2xl p-5 hover:-translate-y-1 transition duration-300 flex flex-row items-center gap-4">
+                        <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-emerald-500 shrink-0 bg-slate-50">
+                            <img src="./assets/dummy-profile-pic.jpg" alt="Member 6" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/150'" loading="lazy"/>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-base">सदस्य ६</h4>
+                            <p class="text-xs text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded-md w-fit mt-1">सदस्य</p>
+                        </div>
+                    </div>
+
+                    <!-- Member 7 -->
+                    <div class="card bg-white border border-slate-100 shadow-sm rounded-2xl p-5 hover:-translate-y-1 transition duration-300 flex flex-row items-center gap-4">
+                        <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-emerald-500 shrink-0 bg-slate-50">
+                            <img src="./assets/dummy-profile-pic.jpg" alt="Member 7" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/150'" loading="lazy"/>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-base">सदस्य ७</h4>
+                            <p class="text-xs text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded-md w-fit mt-1">सदस्य</p>
+                        </div>
+                    </div>
+
+                    <!-- Member 8 -->
+                    <div class="card bg-white border border-slate-100 shadow-sm rounded-2xl p-5 hover:-translate-y-1 transition duration-300 flex flex-row items-center gap-4">
+                        <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-emerald-500 shrink-0 bg-slate-50">
+                            <img src="./assets/dummy-profile-pic.jpg" alt="Member 8" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/150'" loading="lazy"/>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-base">सदस्य ८</h4>
+                            <p class="text-xs text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded-md w-fit mt-1">सदस्य</p>
+                        </div>
+                    </div>
+
+                    <!-- Member 9 -->
+                    <div class="card bg-white border border-slate-100 shadow-sm rounded-2xl p-5 hover:-translate-y-1 transition duration-300 flex flex-row items-center gap-4">
+                        <div class="w-20 h-20 rounded-full overflow-hidden border-2 border-emerald-500 shrink-0 bg-slate-50">
+                            <img src="./assets/dummy-profile-pic.jpg" alt="Member 9" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/150'" loading="lazy"/>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-base">सदस्य ९</h4>
+                            <p class="text-xs text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded-md w-fit mt-1">सदस्य</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- GP Staff Section -->
+            <div class="mt-12">
+                <h2 class="text-xl font-bold text-[#1f3a5f] border-b pb-2 mb-6 uppercase tracking-wider text-center md:text-left"><i class="fa-solid fa-user-gear text-emerald-600 mr-2"></i>सेवक व कर्मचारी वर्ग</h2>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <!-- Staff 1 -->
+                    <div class="card bg-white border border-slate-100 shadow-sm rounded-2xl p-5 hover:-translate-y-1 transition duration-300 flex flex-row items-center gap-4">
+                        <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-emerald-500 shrink-0 bg-slate-50">
+                            <img src="./assets/dummy-profile-pic.jpg" alt="Staff 1" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/150'" loading="lazy"/>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-sm sm:text-base font-semibold">कर्मचारी १</h4>
+                            <p class="text-xs text-slate-500 font-semibold mt-1">संगणक परिचालक</p>
+                        </div>
+                    </div>
+
+                    <!-- Staff 2 -->
+                    <div class="card bg-white border border-slate-100 shadow-sm rounded-2xl p-5 hover:-translate-y-1 transition duration-300 flex flex-row items-center gap-4">
+                        <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-emerald-500 shrink-0 bg-slate-50">
+                            <img src="./assets/dummy-profile-pic.jpg" alt="Staff 2" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/150'" loading="lazy"/>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-sm sm:text-base font-semibold">कर्मचारी २</h4>
+                            <p class="text-xs text-slate-500 font-semibold mt-1">ग्राम रोजगार सेवक</p>
+                        </div>
+                    </div>
+
+                    <!-- Staff 3 -->
+                    <div class="card bg-white border border-slate-100 shadow-sm rounded-2xl p-5 hover:-translate-y-1 transition duration-300 flex flex-row items-center gap-4">
+                        <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-emerald-500 shrink-0 bg-slate-50">
+                            <img src="./assets/dummy-profile-pic.jpg" alt="Staff 3" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/150'" loading="lazy"/>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-sm sm:text-base font-semibold">कर्मचारी ३</h4>
+                            <p class="text-xs text-slate-500 font-semibold mt-1">ग्रामपंचायत शिपाई</p>
+                        </div>
+                    </div>
+
+                    <!-- Staff 4 -->
+                    <div class="card bg-white border border-slate-100 shadow-sm rounded-2xl p-5 hover:-translate-y-1 transition duration-300 flex flex-row items-center gap-4">
+                        <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-emerald-500 shrink-0 bg-slate-50">
+                            <img src="./assets/dummy-profile-pic.jpg" alt="Staff 4" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/150'" loading="lazy"/>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-sm sm:text-base font-semibold">कर्मचारी ४</h4>
+                            <p class="text-xs text-slate-500 font-semibold mt-1">पाणीपुरवठा कर्मचारी</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Shared Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="js/navigation.js"></script>
+</body>
+</html>

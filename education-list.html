@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="mr" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ग्रामपंचायत मसोला (खुर्द) - शाळा व महाविद्यालये (Education)</title>
+
+    <!-- Tailwind CSS & DaisyUI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1f3a5f',
+                        secondary: '#3a6b5c',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Tiro+Devanagari+Marathi:ital@0;1&family=Yatra+One&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        .marathi-font {
+            font-family: 'Tiro Devanagari Marathi', serif;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 flex flex-col min-h-screen marathi-font text-slate-800">
+
+    <!-- Shared Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="flex-grow py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Page Header -->
+            <div class="text-center mb-12">
+                <span
+                    class="bg-emerald-100 text-emerald-800 font-bold text-xs uppercase px-3 py-1 rounded-full mb-3 inline-block">शैक्षणिक
+                    प्रगती</span>
+                <h1 class="text-2xl sm:text-4xl font-extrabold text-[#1f3a5f] mb-4">शाळा व महाविद्यालये यादी</h1>
+                <p class="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base">ग्रामपंचायत मसोला (खुर्द) अंतर्गत येणाऱ्या
+                    सर्व प्राथमिक शाळा, हायस्कूल व उच्च शिक्षण सुविधा.</p>
+            </div>
+
+            <!-- Schools Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+
+                <!-- School 1 -->
+                <div
+                    class="card bg-white border border-slate-200 shadow-md p-6 rounded-2xl space-y-4 hover:shadow-lg transition-all">
+                    <div class="flex items-center gap-3 border-b pb-3">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center text-lg shrink-0">
+                            <i class="fa-solid fa-school"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-extrabold text-[#1f3a5f] text-base sm:text-lg">१. जिल्हा परिषद प्राथमिक
+                                केंद्र शाळा, मसोला बुद्रुक</h3>
+                            <span class="text-xs text-slate-500 font-bold">स्थापना: १९५२ | वर्ग: इ. १ ली ते ४ थी</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3 text-xs sm:text-sm text-slate-700">
+                        <div><strong>मुख्याध्यापक:</strong> श्री. रामदास लunge</div>
+                        <div><strong>एकूण विद्यार्थी:</strong> १२५</div>
+                        <div class="col-span-2">
+                            <strong>सुविधा:</strong> संगणक कक्ष, ई-लर्निंग वर्गखोल्या, सुंदर क्रीडा मैदान, शुद्ध पेयजल
+                            यंत्रणा, शालेय पोषण आहार गृह.
+                        </div>
+                        <div class="col-span-2"><strong>पत्ता:</strong> बस स्थानकाजवळ, मुख्य रस्ता मसोला बुद्रुक.</div>
+                    </div>
+                </div>
+
+                <!-- School 2 -->
+                <div
+                    class="card bg-white border border-slate-200 shadow-md p-6 rounded-2xl space-y-4 hover:shadow-lg transition-all">
+                    <div class="flex items-center gap-3 border-b pb-3">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center text-lg shrink-0">
+                            <i class="fa-solid fa-school"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-extrabold text-[#1f3a5f] text-base sm:text-lg">२. प्र. ग. गावंडे हायस्कूल,
+                                मसोला बुद्रुक</h3>
+                            <span class="text-xs text-slate-500 font-bold">माध्यमिक व उच्च माध्यमिक | वर्ग: इ. ५ वी ते
+                                १० वी</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3 text-xs sm:text-sm text-slate-700">
+                        <div><strong>प्राचार्य:</strong> श्री. विकास राठोड</div>
+                        <div><strong>एकूण विद्यार्थी:</strong> २१०</div>
+                        <div class="col-span-2">
+                            <strong>सुविधा:</strong> सुसज्ज प्रयोगशाळा, डिजिटल वाचनालय, क्रीडा साहित्य विभाग, भव्य
+                            मैदान, मुलींसाठी स्वतंत्र स्वच्छतागृह.
+                        </div>
+                        <div class="col-span-2"><strong>पत्ता:</strong> मंगरुळपीर रोड, मसोला बुद्रुक.</div>
+                    </div>
+                </div>
+
+                <!-- School 3 -->
+                <div
+                    class="card bg-white border border-slate-200 shadow-md p-6 rounded-2xl space-y-4 hover:shadow-lg transition-all">
+                    <div class="flex items-center gap-3 border-b pb-3">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center text-lg shrink-0">
+                            <i class="fa-solid fa-school"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-extrabold text-[#1f3a5f] text-base sm:text-lg">३. जिल्हा परिषद प्राथमिक
+                                शाळा, मसोला बुद्रुक</h3>
+                            <span class="text-xs text-slate-500 font-bold">स्थापना: १९६५ | वर्ग: इ. १ ली ते ५ वी</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3 text-xs sm:text-sm text-slate-700">
+                        <div><strong>मुख्याध्यापक:</strong> सौ. लताताई इंगळे</div>
+                        <div><strong>एकूण विद्यार्थी:</strong> ५८</div>
+                        <div class="col-span-2">
+                            <strong>सुविधा:</strong> सुसज्ज खोल्या, डिजिटल टीव्ही वर्गखोली, वृक्षारोपण बाग, स्वच्छ
+                            पेयजल, पोषण आहार.
+                        </div>
+                        <div class="col-span-2"><strong>पत्ता:</strong> ग्रामपंचायत कार्यालयाजवळ, मसोला बुद्रुक.</div>
+                    </div>
+                </div>
+
+                <!-- School 4 -->
+                <div
+                    class="card bg-white border border-slate-200 shadow-md p-6 rounded-2xl space-y-4 hover:shadow-lg transition-all">
+                    <div class="flex items-center gap-3 border-b pb-3">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center text-lg shrink-0">
+                            <i class="fa-solid fa-school"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-extrabold text-[#1f3a5f] text-base sm:text-lg">४. जिल्हा परिषद प्राथमिक
+                                शाळा, मसोला बुद्रुक</h3>
+                            <span class="text-xs text-slate-500 font-bold">स्थापना: १९७० | वर्ग: इ. १ ली ते ५ वी</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3 text-xs sm:text-sm text-slate-700">
+                        <div><strong>मुख्याध्यापक:</strong> श्री. गजानन वानखडे</div>
+                        <div><strong>एकूण विद्यार्थी:</strong> ६२</div>
+                        <div class="col-span-2">
+                            <strong>सुविधा:</strong> खेळणी गृह, मुला-मुलींसाठी पिण्याचे पाणी, शौचालय, सुंदर क्रीडा
+                            क्षेत्र.
+                        </div>
+                        <div class="col-span-2"><strong>पत्ता:</strong> हनुमान मंदिराजवळ, मसोला बुद्रुक.</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Shared Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="js/navigation.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="mr" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ग्रामपंचायत मसोला बुद्रुक - साईटमॅप (Sitemap)</title>
+    
+    <!-- Tailwind CSS & DaisyUI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1f3a5f',
+                        secondary: '#3a6b5c',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Tiro+Devanagari+Marathi:ital@0;1&family=Yatra+One&display=swap" rel="stylesheet" />
+
+    <style>
+        .marathi-font { font-family: 'Tiro Devanagari Marathi', serif; }
+    </style>
+</head>
+<body class="bg-slate-50 flex flex-col min-h-screen marathi-font text-slate-800">
+
+    <!-- Shared Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="flex-grow py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Page Header -->
+            <div class="text-center mb-10">
+                <span class="bg-emerald-100 text-emerald-800 font-bold text-xs uppercase px-3 py-1 rounded-full mb-3 inline-block">वेबसाईट नकाशा</span>
+                <h1 class="text-3xl sm:text-5xl font-extrabold text-[#1f3a5f] mb-3">साईटमॅप (Sitemap)</h1>
+                <p class="text-slate-500 text-sm sm:text-base">संकेतस्थळावरील सर्व पानांची सूची. आपण शोध बॉक्स वापरून विशिष्ट पान सहज शोधू शकता.</p>
+            </div>
+
+            <!-- Interactive Search Bar -->
+            <div class="max-w-md mx-auto mb-12">
+                <div class="relative">
+                    <span class="absolute inset-y-0 left-0 pl-3.5 flex items-center text-slate-400 pointer-events-none">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </span>
+                    <input type="text" id="sitemapSearch" oninput="filterSitemap()" placeholder="पानाचे नाव शोधा... (उदा. तक्रार, नकाशा, शाळा)" class="input input-bordered w-full pl-10 bg-white text-slate-800 border-slate-300 focus:border-emerald-500 focus:outline-none shadow-md rounded-xl" />
+                </div>
+            </div>
+
+            <!-- Categories Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="sitemap-grid">
+                
+                <!-- Category 1: मुख्य आणि महत्वपूर्ण दुवे -->
+                <div class="sitemap-card card bg-white border border-slate-200 shadow-lg rounded-2xl p-6 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-5 border-b border-slate-100 pb-3">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center">
+                            <i class="fa-solid fa-house-chimney text-lg"></i>
+                        </div>
+                        <h2 class="text-lg font-extrabold text-[#1f3a5f]">मुख्य दुवे</h2>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="page-link-item"><a href="index.html" class="hover:text-emerald-700 font-semibold flex items-center gap-2 text-sm text-slate-600 hover:translate-x-1 transition-transform"><i class="fa-solid fa-circle-chevron-right text-[#3a6b5c] text-2xs"></i>मुख्य पृष्ठ (Home)</a></li>
+                        <li class="page-link-item"><a href="sadasya.html" class="hover:text-emerald-700 font-semibold flex items-center gap-2 text-sm text-slate-600 hover:translate-x-1 transition-transform"><i class="fa-solid fa-circle-chevron-right text-[#3a6b5c] text-2xs"></i>पदाधिकारी व सेवकवर्ग</a></li>
+                        <li class="page-link-item"><a href="rti-info.html" class="hover:text-emerald-700 font-semibold flex items-center gap-2 text-sm text-slate-600 hover:translate-x-1 transition-transform"><i class="fa-solid fa-circle-chevron-right text-[#3a6b5c] text-2xs"></i>माहितीचा अधिकार (RTI)</a></li>
+                        <li class="page-link-item"><a href="complaints.html" class="hover:text-emerald-700 font-semibold flex items-center gap-2 text-sm text-slate-600 hover:translate-x-1 transition-transform"><i class="fa-solid fa-circle-chevron-right text-[#3a6b5c] text-2xs"></i>तक्रार निवारण प्रणाली</a></li>
+                    </ul>
+                </div>
+
+                <!-- Category 2: आपला गाव -->
+                <div class="sitemap-card card bg-white border border-slate-200 shadow-lg rounded-2xl p-6 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-5 border-b border-slate-100 pb-3">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center">
+                            <i class="fa-solid fa-people-roof text-lg"></i>
+                        </div>
+                        <h2 class="text-lg font-extrabold text-[#1f3a5f]">आपला गाव (Our Village)</h2>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="page-link-item"><a href="mahiti.html" class="hover:text-emerald-700 font-semibold flex items-center gap-2 text-sm text-slate-600 hover:translate-x-1 transition-transform"><i class="fa-solid fa-circle-chevron-right text-[#3a6b5c] text-2xs"></i>अहवाल व माहिती</a></li>
+                        <li class="page-link-item"><a href="population.html" class="hover:text-emerald-700 font-semibold flex items-center gap-2 text-sm text-slate-600 hover:translate-x-1 transition-transform"><i class="fa-solid fa-circle-chevron-right text-[#3a6b5c] text-2xs"></i>लोकसंख्या व समित्या</a></li>
+                        <li class="page-link-item"><a href="gallery.html" class="hover:text-emerald-700 font-semibold flex items-center gap-2 text-sm text-slate-600 hover:translate-x-1 transition-transform"><i class="fa-solid fa-circle-chevron-right text-[#3a6b5c] text-2xs"></i>छायाचित्रे (Gallery)</a></li>
+                        <li class="page-link-item"><a href="digital-lib.html" class="hover:text-emerald-700 font-semibold flex items-center gap-2 text-sm text-slate-600 hover:translate-x-1 transition-transform"><i class="fa-solid fa-circle-chevron-right text-[#3a6b5c] text-2xs"></i>डिजिटल वाचनालय</a></li>
+                        <li class="page-link-item"><a href="udyog.html" class="hover:text-emerald-700 font-semibold flex items-center gap-2 text-sm text-slate-600 hover:translate-x-1 transition-transform"><i class="fa-solid fa-circle-chevron-right text-[#3a6b5c] text-2xs"></i>गावातील उद्योग</a></li>
+                        <li class="page-link-item"><a href="news.html" class="hover:text-emerald-700 font-semibold flex items-center gap-2 text-sm text-slate-600 hover:translate-x-1 transition-transform"><i class="fa-solid fa-circle-chevron-right text-[#3a6b5c] text-2xs"></i>गावातील घडामोडी/बातम्या</a></li>
+                        <li class="page-link-item"><a href="divyanga-list.html" class="hover:text-emerald-700 font-semibold flex items-center gap-2 text-sm text-slate-600 hover:translate-x-1 transition-transform"><i class="fa-solid fa-circle-chevron-right text-[#3a6b5c] text-2xs"></i>मंजूर दिव्यांग लाभार्थी यादी</a></li>
+                    </ul>
+                </div>
+
+                <!-- Category 3: मार्गदर्शक सेवा -->
+                <div class="sitemap-card card bg-white border border-slate-200 shadow-lg rounded-2xl p-6 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-5 border-b border-slate-100 pb-3">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center">
+                            <i class="fa-solid fa-hands-holding-child text-lg"></i>
+                        </div>
+                        <h2 class="text-lg font-extrabold text-[#1f3a5f]">मार्गदर्शक सेवा</h2>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="page-link-item"><a href="online-guidance.html" class="hover:text-emerald-700 font-semibold flex items-center gap-2 text-sm text-slate-600 hover:translate-x-1 transition-transform"><i class="fa-solid fa-circle-chevron-right text-[#3a6b5c] text-2xs"></i>ऑनलाइन शासकीय सेवा मार्गदर्शन</a></li>
+                        <li class="page-link-item"><a href="eseva.html" class="hover:text-emerald-700 font-semibold flex items-center gap-2 text-sm text-slate-600 hover:translate-x-1 transition-transform"><i class="fa-solid fa-circle-chevron-right text-[#3a6b5c] text-2xs"></i>ग्रामपंचायत ई-सेवा</a></li>
+                        <li class="page-link-item"><a href="suvidha.html" class="hover:text-emerald-700 font-semibold flex items-center gap-2 text-sm text-slate-600 hover:translate-x-1 transition-transform"><i class="fa-solid fa-circle-chevron-right text-[#3a6b5c] text-2xs"></i>सार्वजनिक नागरिक सुविधा</a></li>
+                        <li class="page-link-item"><a href="gp-applications.html" class="hover:text-emerald-700 font-semibold flex items-center gap-2 text-sm text-slate-600 hover:translate-x-1 transition-transform"><i class="fa-solid fa-circle-chevron-right text-[#3a6b5c] text-2xs"></i>नागरीक सुविधा अर्ज डाऊनलोड</a></li>
+                        <li class="page-link-item"><a href="divyanga-registration.html" class="hover:text-emerald-700 font-semibold flex items-center gap-2 text-sm text-slate-600 hover:translate-x-1 transition-transform"><i class="fa-solid fa-circle-chevron-right text-[#3a6b5c] text-2xs"></i>दिव्यांग नोंदणी अर्ज</a></li>
+                        <li class="page-link-item"><a href="qr-list.html" class="hover:text-emerald-700 font-semibold flex items-center gap-2 text-sm text-slate-600 hover:translate-x-1 transition-transform"><i class="fa-solid fa-circle-chevron-right text-[#3a6b5c] text-2xs"></i>QR कोड्स यादी (जलद दुवे)</a></li>
+                    </ul>
+                </div>
+
+                <!-- Category 4: योजना व विकास -->
+                <div class="sitemap-card card bg-white border border-slate-200 shadow-lg rounded-2xl p-6 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-5 border-b border-slate-100 pb-3">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center">
+                            <i class="fa-solid fa-chart-line text-lg"></i>
+                        </div>
+                        <h2 class="text-lg font-extrabold text-[#1f3a5f]">योजना व विकास कामे</h2>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="page-link-item"><a href="fund-details.html" class="hover:text-emerald-700 font-semibold flex items-center gap-2 text-sm text-slate-600 hover:translate-x-1 transition-transform"><i class="fa-solid fa-circle-chevron-right text-[#3a6b5c] text-2xs"></i>ग्रामपंचायत निधी व खर्च तपशील</a></li>
+                        <li class="page-link-item"><a href="dev-works.html" class="hover:text-emerald-700 font-semibold flex items-center gap-2 text-sm text-slate-600 hover:translate-x-1 transition-transform"><i class="fa-solid fa-circle-chevron-right text-[#3a6b5c] text-2xs"></i>गावातील चालू व पूर्ण विकास कामे</a></li>
+                        <li class="page-link-item"><a href="nirnay.html" class="hover:text-emerald-700 font-semibold flex items-center gap-2 text-sm text-slate-600 hover:translate-x-1 transition-transform"><i class="fa-solid fa-circle-chevron-right text-[#3a6b5c] text-2xs"></i>ग्रामसभा ठराव व निर्णय</a></li>
+                    </ul>
+                </div>
+
+                <!-- Category 5: आरोग्य, शिक्षण व कृषी -->
+                <div class="sitemap-card card bg-white border border-slate-200 shadow-lg rounded-2xl p-6 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-5 border-b border-slate-100 pb-3">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center">
+                            <i class="fa-solid fa-graduation-cap text-lg"></i>
+                        </div>
+                        <h2 class="text-lg font-extrabold text-[#1f3a5f]">आरोग्य, शिक्षण व कृषी</h2>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="page-link-item"><a href="arogya-seva.html" class="hover:text-emerald-700 font-semibold flex items-center gap-2 text-sm text-slate-600 hover:translate-x-1 transition-transform"><i class="fa-solid fa-circle-chevron-right text-[#3a6b5c] text-2xs"></i>आरोग्य केंद्र व संपर्क</a></li>
+                        <li class="page-link-item"><a href="arogya-yojana.html" class="hover:text-emerald-700 font-semibold flex items-center gap-2 text-sm text-slate-600 hover:translate-x-1 transition-transform"><i class="fa-solid fa-circle-chevron-right text-[#3a6b5c] text-2xs"></i>शासकीय आरोग्य विमा योजना</a></li>
+                        <li class="page-link-item"><a href="jobs.html" class="hover:text-emerald-700 font-semibold flex items-center gap-2 text-sm text-slate-600 hover:translate-x-1 transition-transform"><i class="fa-solid fa-circle-chevron-right text-[#3a6b5c] text-2xs"></i>नोकरी व स्वयंरोजगार मार्गदर्शन</a></li>
+                        <li class="page-link-item"><a href="education-list.html" class="hover:text-emerald-700 font-semibold flex items-center gap-2 text-sm text-slate-600 hover:translate-x-1 transition-transform"><i class="fa-solid fa-circle-chevron-right text-[#3a6b5c] text-2xs"></i>शाळा, हायस्कूल व अंगणवाडी यादी</a></li>
+                        <li class="page-link-item"><a href="krishi.html" class="hover:text-emerald-700 font-semibold flex items-center gap-2 text-sm text-slate-600 hover:translate-x-1 transition-transform"><i class="fa-solid fa-circle-chevron-right text-[#3a6b5c] text-2xs"></i>कृषी सल्ला व योजना माहिती</a></li>
+                    </ul>
+                </div>
+
+                <!-- Category 6: इतर आणि वैधानिक पाने -->
+                <div class="sitemap-card card bg-white border border-slate-200 shadow-lg rounded-2xl p-6 hover:shadow-xl transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-5 border-b border-slate-100 pb-3">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center">
+                            <i class="fa-solid fa-circle-nodes text-lg"></i>
+                        </div>
+                        <h2 class="text-lg font-extrabold text-[#1f3a5f]">इतर पाने व धोरणे</h2>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="page-link-item"><a href="nakasha.html" class="hover:text-emerald-700 font-semibold flex items-center gap-2 text-sm text-slate-600 hover:translate-x-1 transition-transform"><i class="fa-solid fa-circle-chevron-right text-[#3a6b5c] text-2xs"></i>गावाचा भौगोलिक नकाशा</a></li>
+                        <li class="page-link-item"><a href="puraskar.html" class="hover:text-emerald-700 font-semibold flex items-center gap-2 text-sm text-slate-600 hover:translate-x-1 transition-transform"><i class="fa-solid fa-circle-chevron-right text-[#3a6b5c] text-2xs"></i>ग्रामपंचायतीचे पुरस्कार व सन्मान</a></li>
+                        <li class="page-link-item"><a href="utsav.html" class="hover:text-emerald-700 font-semibold flex items-center gap-2 text-sm text-slate-600 hover:translate-x-1 transition-transform"><i class="fa-solid fa-circle-chevron-right text-[#3a6b5c] text-2xs"></i>गावातील सण आणि सांस्कृतिक उत्सव</a></li>
+                        <li class="page-link-item"><a href="paryatan.html" class="hover:text-emerald-700 font-semibold flex items-center gap-2 text-sm text-slate-600 hover:translate-x-1 transition-transform"><i class="fa-solid fa-circle-chevron-right text-[#3a6b5c] text-2xs"></i>स्थानिक पर्यटन स्थळे</a></li>
+                        <li class="page-link-item"><a href="abhipray.html" class="hover:text-emerald-700 font-semibold flex items-center gap-2 text-sm text-slate-600 hover:translate-x-1 transition-transform"><i class="fa-solid fa-circle-chevron-right text-[#3a6b5c] text-2xs"></i>अभिप्राय नोंदणी (Feedback)</a></li>
+                        <li class="page-link-item"><a href="atisharti.html" class="hover:text-emerald-700 font-semibold flex items-center gap-2 text-sm text-slate-600 hover:translate-x-1 transition-transform"><i class="fa-solid fa-circle-chevron-right text-[#3a6b5c] text-2xs"></i>वापरण्याच्या अटी आणि शर्ती</a></li>
+                        <li class="page-link-item"><a href="dhorne.html" class="hover:text-emerald-700 font-semibold flex items-center gap-2 text-sm text-slate-600 hover:translate-x-1 transition-transform"><i class="fa-solid fa-circle-chevron-right text-[#3a6b5c] text-2xs"></i>वेबसाईटचे गोपनीयता धोरण</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- No Results Alert -->
+            <div id="no-results-msg" class="hidden text-center py-10">
+                <div class="w-16 h-16 bg-slate-100 text-slate-400 rounded-full flex items-center justify-center text-2xl mx-auto mb-3">
+                    <i class="fa-solid fa-folder-open"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-700">निकाल आढळला नाही</h3>
+                <p class="text-slate-400 text-xs sm:text-sm">कृपया वेगळे शब्द वापरून शोधा.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Shared Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="js/navigation.js"></script>
+    <script>
+        function filterSitemap() {
+            const query = document.getElementById("sitemapSearch").value.toLowerCase().trim();
+            const categories = document.getElementsByClassName("sitemap-card");
+            const noResultsMsg = document.getElementById("no-results-msg");
+            let totalVisible = 0;
+
+            for (let i = 0; i < categories.length; i++) {
+                const card = categories[i];
+                const links = card.getElementsByClassName("page-link-item");
+                let cardHasMatches = false;
+
+                for (let j = 0; j < links.length; j++) {
+                    const item = links[j];
+                    const text = item.textContent.toLowerCase();
+                    if (text.includes(query)) {
+                        item.style.display = ""; // Show
+                        cardHasMatches = true;
+                    } else {
+                        item.style.display = "none"; // Hide
+                    }
+                }
+
+                if (cardHasMatches || query === "") {
+                    card.style.display = ""; // Show category card
+                    totalVisible++;
+                } else {
+                    card.style.display = "none"; // Hide category card
+                }
+            }
+
+            if (totalVisible === 0) {
+                noResultsMsg.classList.remove("hidden");
+            } else {
+                noResultsMsg.classList.add("hidden");
+            }
+        }
+    </script>
+</body>
+</html>

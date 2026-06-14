@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="mr" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ग्रामपंचायत मसोला (खुर्द) - कृषी विज्ञान माहिती (Agriculture)</title>
+    
+    <!-- Tailwind CSS & DaisyUI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1f3a5f',
+                        secondary: '#3a6b5c',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Tiro+Devanagari+Marathi:ital@0;1&family=Yatra+One&display=swap" rel="stylesheet" />
+
+    <style>
+        .marathi-font { font-family: 'Tiro Devanagari Marathi', serif; }
+    </style>
+</head>
+<body class="bg-slate-50 flex flex-col min-h-screen marathi-font text-slate-800">
+
+    <!-- Shared Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="flex-grow py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Page Header -->
+            <div class="text-center mb-12">
+                <span class="bg-emerald-100 text-emerald-800 font-bold text-xs uppercase px-3 py-1 rounded-full mb-3 inline-block">बळीराजा सुखाय भव</span>
+                <h1 class="text-2xl sm:text-4xl font-extrabold text-[#1f3a5f] mb-4">कृषी विज्ञान व शेती सल्ला माहिती</h1>
+                <p class="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base">शेतकऱ्यांसाठी मृदा आरोग्य पत्रिका, पीक विमा (PMFBY), कृषी अवजारे अनुदान आणि आधुनिक सिंचन योजना.</p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+                
+                <!-- Section 1: मृदा चाचणी व पीक आरोग्य -->
+                <div class="card bg-white border border-slate-200 shadow-md p-6 rounded-2xl space-y-4 hover:shadow-lg transition-all">
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-xl flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-flask"></i>
+                    </div>
+                    <h3 class="font-extrabold text-[#1f3a5f] text-lg">१. मृदा चाचणी (Soil Testing)</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        आपल्या शेतातील मातीची तपासणी करून घ्या आणि त्यानुसारच खतांचे नियोजन करा. यामुळे खर्च वाचतो व पीक उत्पादन वाढते.
+                    </p>
+                    <div class="text-xs sm:text-sm text-slate-700 bg-slate-50 p-4 rounded-xl space-y-1.5">
+                        <div><strong>मृदा चाचणी केंद्र:</strong> कृषी विज्ञान केंद्र, मंगरुळपीर.</div>
+                        <div><strong>तपासणी शुल्क:</strong> शासकीय दरात अत्यल्प शुल्क.</div>
+                        <div><strong>माती नमुना गोळा पद्धत:</strong> व्ही-आकारात खड्डा करून बाजूची माती घ्यावी.</div>
+                    </div>
+                </div>
+
+                <!-- Section 2: पीक विमा योजना -->
+                <div class="card bg-white border border-slate-200 shadow-md p-6 rounded-2xl space-y-4 hover:shadow-lg transition-all">
+                    <div class="w-12 h-12 bg-blue-100 text-[#1f3a5f] rounded-xl flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-umbrella"></i>
+                    </div>
+                    <h3 class="font-extrabold text-[#1f3a5f] text-lg">२. पंतप्रधान पीक विमा (PMFBY)</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        नैसर्गिक आपत्ती जसे की अतिवृष्टी, दुष्काळ किंवा कीड पडल्यास पिकांचे नुकसान झाल्यास नुकसान भरपाई मिळवण्यासाठी विमा उतरवा.
+                    </p>
+                    <div class="text-xs sm:text-sm text-slate-700 bg-slate-50 p-4 rounded-xl space-y-1.5">
+                        <div><strong>रु. १ भरून पीक विमा योजना:</strong> आता महाराष्ट्र शासनाने ₹ १ मध्ये पीक विमा सुरू केला आहे.</div>
+                        <div><strong>आवश्यक पुरावा:</strong> ७/१२ उतारा, ८-अ, आधार कार्ड व पीक पेरणी घोषणापत्र.</div>
+                        <a href="https://pmfby.gov.in" target="_blank" class="btn btn-xs bg-[#1f3a5f] text-white border-none mt-2 font-bold py-1 px-3">विमा पोर्टल उघडा</a>
+                    </div>
+                </div>
+
+                <!-- Section 3: सिंचन व सौर पंप -->
+                <div class="card bg-white border border-slate-200 shadow-md p-6 rounded-2xl space-y-4 hover:shadow-lg transition-all">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-700 rounded-xl flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-solar-panel"></i>
+                    </div>
+                    <h3 class="font-extrabold text-[#1f3a5f] text-lg">३. कुसुम सौर कृषी पंप योजना</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        शेतात दिवसा वीज उपलब्ध होण्यासाठी व डिझेल इंजिनचा खर्च टाळण्यासाठी शासनाच्या ९०% ते ९५% अनुदानावर सौर पंप मिळवा.
+                    </p>
+                    <div class="text-xs sm:text-sm text-slate-700 bg-slate-50 p-4 rounded-xl space-y-1.5">
+                        <div><strong>लाभार्थी हिस्सा:</strong> ३, ५ किंवा ७.५ एचपी सौर पंपासाठी अत्यल्प रक्कम.</div>
+                        <div><strong>पात्रता:</strong> शेत जमीन नावावर असावी व पाण्याची खात्रीशीर सुविधा.</div>
+                        <div><strong>नोंदणीसाठी:</strong> महावितरणच्या अधिकृत कुसुम पोर्टलवर अर्ज करावा.</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Agricultural Officers Contact -->
+            <div class="card bg-white border border-slate-200 shadow-lg rounded-2xl p-6">
+                <h3 class="font-bold text-slate-800 text-lg mb-4 border-b pb-2 flex items-center gap-2">
+                    <i class="fa-solid fa-user-tie text-emerald-600"></i>
+                    <span>स्थानिक कृषी सल्लागार व अधिकारी</span>
+                </h3>
+                <div class="overflow-x-auto my-scrollbar-thickness">
+                    <table class="table w-full text-xs sm:text-sm text-slate-800">
+                        <thead>
+                            <tr class="bg-slate-100 text-slate-700">
+                                <th>नाव</th>
+                                <th>पद / कार्यालय</th>
+                                <th>मोबाईल नंबर</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-bold">श्री. गजानन ठाकरे</td>
+                                <td>कृषी सहाय्यक, मसोला बुद्रुक क्षेत्र</td>
+                                <td class="font-bold text-emerald-700">+९१ ९८XXXXXX४१</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">श्री. शरद देशमुख</td>
+                                <td>कृषी पर्यवेक्षक, मंगरुळपीर</td>
+                                <td class="font-bold text-emerald-700">+९१ ९८XXXXXX४२</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">कृषी विज्ञान केंद्र (KVK)</td>
+                                <td>कार्यालयीन सल्ला केंद्र, मंगरुळपीर</td>
+                                <td class="font-bold text-emerald-700">+९१ ७२५३-XXXXXX</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Shared Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="js/navigation.js"></script>
+</body>
+</html>

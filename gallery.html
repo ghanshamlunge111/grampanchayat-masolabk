@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="mr" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ग्रामपंचायत मसोला (खुर्द) - छायाचित्र दालन (Gallery)</title>
+    
+    <!-- Tailwind CSS & DaisyUI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1f3a5f',
+                        secondary: '#3a6b5c',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Tiro+Devanagari+Marathi:ital@0;1&family=Yatra+One&display=swap" rel="stylesheet" />
+
+    <style>
+        .marathi-font { font-family: 'Tiro Devanagari Marathi', serif; }
+    </style>
+</head>
+<body class="bg-slate-50 flex flex-col min-h-screen marathi-font text-slate-800">
+
+    <!-- Shared Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="flex-grow py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Page Header -->
+            <div class="text-center mb-12">
+                <span class="bg-emerald-100 text-emerald-800 font-bold text-xs uppercase px-3 py-1 rounded-full mb-3 inline-block">छायाचित्रे</span>
+                <h1 class="text-2xl sm:text-4xl font-extrabold text-[#1f3a5f] mb-4">फोटो गॅलरी (Photo Gallery)</h1>
+                <p class="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base">मसोला बुद्रुक गावाचा विकास, नवनाथ महाराज संस्थान, सण-उत्सव आणि विविध सार्वजनिक उपक्रमांचे सुंदर क्षणचित्रे.</p>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mb-12">
+                
+                <!-- Item 1 -->
+                <div class="card bg-white border rounded-2xl overflow-hidden shadow-sm group hover:shadow-md transition">
+                    <div class="aspect-video bg-slate-200 overflow-hidden relative">
+                        <img src="./assets/masola-gmap.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="font-bold text-sm text-slate-800">मसोला बुद्रुक गावचा भू-नकाशा</h4>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="card bg-white border rounded-2xl overflow-hidden shadow-sm group hover:shadow-md transition">
+                    <div class="aspect-video bg-slate-200 overflow-hidden relative">
+                        <img src="./assets/PM-Awas-Yojana.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="font-bold text-sm text-slate-800">पंतप्रधान आवास योजना गृहप्रकल्प</h4>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="card bg-white border rounded-2xl overflow-hidden shadow-sm group hover:shadow-md transition">
+                    <div class="aspect-video bg-slate-200 overflow-hidden relative">
+                        <img src="./assets/BhavaniMataMandirParwa.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1578319439584-104c94d37305?q=80&w=600&auto=format&fit=crop'"/>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="font-bold text-sm text-slate-800">नवनाथ महाराज संस्थान मसोला बुद्रुक</h4>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="card bg-white border rounded-2xl overflow-hidden shadow-sm group hover:shadow-md transition">
+                    <div class="aspect-video bg-slate-200 overflow-hidden relative">
+                        <img src="./assets/s-1.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1473163928189-364b2c4e1135?q=80&w=600&auto=format&fit=crop'"/>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="font-bold text-sm text-slate-800">ग्रामपंचायत आमसभा नियोजन</h4>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="card bg-white border rounded-2xl overflow-hidden shadow-sm group hover:shadow-md transition">
+                    <div class="aspect-video bg-slate-200 overflow-hidden relative">
+                        <img src="./assets/s-2.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1541963463532-d68292c34b19?q=80&w=600&auto=format&fit=crop'"/>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="font-bold text-sm text-slate-800">स्वच्छता मोहीम उपक्रम</h4>
+                    </div>
+                </div>
+
+                <!-- Item 6 -->
+                <div class="card bg-white border rounded-2xl overflow-hidden shadow-sm group hover:shadow-md transition">
+                    <div class="aspect-video bg-slate-200 overflow-hidden relative">
+                        <img src="./assets/s-3.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1532187643603-ba119ca4109e?q=80&w=600&auto=format&fit=crop'"/>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="font-bold text-sm text-slate-800">प्राथमिक आरोग्य केंद्र व तपासणी शिबीर</h4>
+                    </div>
+                </div>
+
+                <!-- Item 7 -->
+                <div class="card bg-white border rounded-2xl overflow-hidden shadow-sm group hover:shadow-md transition">
+                    <div class="aspect-video bg-slate-200 overflow-hidden relative">
+                        <img src="./assets/gajanan_mandir.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1602693680194-ad0f68285517?q=80&w=600&auto=format&fit=crop'"/>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="font-bold text-sm text-slate-800">श्री संत गजानन महाराज मंदिर</h4>
+                    </div>
+                </div>
+
+                <!-- Item 8 -->
+                <div class="card bg-white border rounded-2xl overflow-hidden shadow-sm group hover:shadow-md transition">
+                    <div class="aspect-video bg-slate-200 overflow-hidden relative">
+                        <img src="./assets/mungsaji_mandir.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1590050752117-238cb0612b1b?q=80&w=600&auto=format&fit=crop'"/>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="font-bold text-sm text-slate-800">श्री संत मुंगसाजी महाराज मंदिर</h4>
+                    </div>
+                </div>
+
+                <!-- Item 9 -->
+                <div class="card bg-white border rounded-2xl overflow-hidden shadow-sm group hover:shadow-md transition">
+                    <div class="aspect-video bg-slate-200 overflow-hidden relative">
+                        <img src="./assets/hanuman_mandir.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1561361058-c24cecae35ca?q=80&w=600&auto=format&fit=crop'"/>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="font-bold text-sm text-slate-800">संकटमोचन हनुमानजी (मारुती) मंदिर</h4>
+                    </div>
+                </div>
+
+                <!-- Item 10 -->
+                <div class="card bg-white border rounded-2xl overflow-hidden shadow-sm group hover:shadow-md transition">
+                    <div class="aspect-video bg-slate-200 overflow-hidden relative">
+                        <img src="./assets/mahadev_mandir.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1631579543160-c3d5a49c6ba7?q=80&w=600&auto=format&fit=crop'"/>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="font-bold text-sm text-slate-800">महादेव मंदिर</h4>
+                    </div>
+                </div>
+
+                <!-- Item 11 -->
+                <div class="card bg-white border rounded-2xl overflow-hidden shadow-sm group hover:shadow-md transition">
+                    <div class="aspect-video bg-slate-200 overflow-hidden relative">
+                        <img src="./assets/vet_hospital.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=600&auto=format&fit=crop'"/>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="font-bold text-sm text-slate-800">शासकीय पशुवैद्यकीय रुग्णालय</h4>
+                    </div>
+                </div>
+
+                <!-- Item 12 -->
+                <div class="card bg-white border rounded-2xl overflow-hidden shadow-sm group hover:shadow-md transition">
+                    <div class="aspect-video bg-slate-200 overflow-hidden relative">
+                        <img src="./assets/NavratriMahaprasad.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="font-bold text-sm text-slate-800">नवनाथ महाराज यात्रा आणि महाप्रसाद वितरण</h4>
+                    </div>
+                </div>
+
+                <!-- Item 13 -->
+                <div class="card bg-white border rounded-2xl overflow-hidden shadow-sm group hover:shadow-md transition">
+                    <div class="aspect-video bg-slate-200 overflow-hidden relative">
+                        <img src="./assets/BhavaniMataMandirParwa.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="font-bold text-sm text-slate-800">नवनाथ महाराज संस्थान , मसोला बुद्रुक</h4>
+                    </div>
+                </div>
+
+                <!-- Item 14 -->
+                <div class="card bg-white border rounded-2xl overflow-hidden shadow-sm group hover:shadow-md transition">
+                    <div class="aspect-video bg-slate-200 overflow-hidden relative">
+                        <img src="./assets/ParwaVillage.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="font-bold text-sm text-slate-800">मसोला बुद्रुक गावचे विहंगम दृश्य</h4>
+                    </div>
+                </div>
+
+                <!-- Item 15 -->
+                <div class="card bg-white border rounded-2xl overflow-hidden shadow-sm group hover:shadow-md transition">
+                    <div class="aspect-video bg-slate-200 overflow-hidden relative">
+                        <img src="./assets/wanVibhagVruqshaLagvad.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="font-bold text-sm text-slate-800">वनविभाग वृक्ष लागवड मोहीम</h4>
+                    </div>
+                </div>
+
+                <!-- Item 16 -->
+                <div class="card bg-white border rounded-2xl overflow-hidden shadow-sm group hover:shadow-md transition">
+                    <div class="aspect-video bg-slate-200 overflow-hidden relative">
+                        <img src="./assets/BhavaniMataMandirParisarParwa.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+                    </div>
+                    <div class="p-4 text-center">
+                        <h4 class="font-bold text-sm text-slate-800">नवनाथ महाराज संस्थान परिसर, मसोला बुद्रुक</h4>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Shared Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="js/navigation.js"></script>
+</body>
+</html>

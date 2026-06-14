@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="mr" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ग्रामपंचायत मसोला (खुर्द) - गावातील बातम्या व सूचना</title>
+    
+    <!-- Tailwind CSS & DaisyUI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1f3a5f',
+                        secondary: '#3a6b5c',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Tiro+Devanagari+Marathi:ital@0;1&family=Yatra+One&display=swap" rel="stylesheet" />
+
+    <style>
+        .marathi-font { font-family: 'Tiro Devanagari Marathi', serif; }
+    </style>
+</head>
+<body class="bg-slate-50 flex flex-col min-h-screen marathi-font text-slate-800">
+
+    <!-- Shared Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="flex-grow py-12">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            
+            <!-- Page Header -->
+            <div class="text-center mb-12">
+                <span class="bg-blue-100 text-blue-800 font-bold text-xs uppercase px-3 py-1 rounded-full mb-3 inline-block">माहिती पत्रक</span>
+                <h1 class="text-2xl sm:text-4xl font-extrabold text-[#1f3a5f] mb-4">गावातील घडामोडी व बातम्या</h1>
+                <p class="text-slate-500 text-sm sm:text-base">ग्रामपंचायत मसोला (खुर्द) येथील शासकीय कार्यक्रम, विकासात्मक निर्णय आणि महत्त्वाच्या नागरी सूचना.</p>
+            </div>
+
+            <!-- News Articles List -->
+            <div class="space-y-6 mb-12">
+                
+                <!-- Article 1 -->
+                <div class="card bg-white border border-slate-200 shadow-sm p-6 rounded-2xl flex flex-col md:flex-row gap-6 hover:shadow-md transition">
+                    <div class="md:w-1/4 flex-shrink-0 text-slate-500 font-semibold text-xs sm:text-sm">
+                        <p class="text-emerald-700 font-bold text-lg">१५ जून २०२६</p>
+                        <p class="mt-1"><i class="fa-solid fa-clock mr-1"></i>सकाळी ११:०० वाजता</p>
+                        <p><i class="fa-solid fa-location-dot mr-1"></i>ग्रामपंचायत सभागृह</p>
+                    </div>
+                    <div class="flex-grow space-y-2">
+                        <span class="bg-red-50 text-red-800 text-3xs font-bold px-2 py-0.5 rounded-full uppercase">अति-महत्त्वाची सूचना</span>
+                        <h3 class="font-extrabold text-[#1f3a5f] text-lg sm:text-xl">विशेष ग्रामसभेचे आयोजन (नियोजनाबाबत आढावा)</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed text-justify">
+                            मसोला बुद्रुक गावच्या विकासात्मक कामांचे नियोजन, तसेच आगामी आर्थिक वर्षाचे अंदाजपत्रक मांडण्यासाठी विशेष ग्रामसभेचे आयोजन करण्यात आले आहे. सर्व ग्रामस्थांनी या ग्रामसभेला बहुसंख्येने उपस्थित राहावे, असे आवाहन सरपंच सौ. सुनंदा विनोद काळे यांनी केले आहे.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="card bg-white border border-slate-200 shadow-sm p-6 rounded-2xl flex flex-col md:flex-row gap-6 hover:shadow-md transition">
+                    <div class="md:w-1/4 flex-shrink-0 text-slate-500 font-semibold text-xs sm:text-sm">
+                        <p class="text-emerald-700 font-bold text-lg">३० मे २०२६</p>
+                        <p class="mt-1"><i class="fa-solid fa-certificate mr-1"></i>पुरस्कार</p>
+                    </div>
+                    <div class="flex-grow space-y-2">
+                        <span class="bg-emerald-50 text-emerald-800 text-3xs font-bold px-2 py-0.5 rounded-full uppercase">यशस्वी उपक्रम</span>
+                        <h3 class="font-extrabold text-[#1f3a5f] text-lg sm:text-xl">मसोला बुद्रुक गावाला 'स्वच्छ सुंदर गाव' जिल्हास्तरीय सन्मान</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed text-justify">
+                            वाशिम जिल्हा परिषदेतर्फे आयोजित करण्यात आलेल्या स्वच्छ सुंदर गाव अभियानांतर्गत मसोला बुद्रुक गावाला उत्कृष्ट घनकचरा व्यवस्थापन व हागणदारीमुक्त सातत्य राखल्याबद्दल जिल्हाधिकारी कार्यालयातर्फे विशेष सन्मानित करण्यात आले आहे. याचे संपूर्ण श्रेय सरपंच व जागरूक ग्रामस्थांना जाते.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Shared Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="js/navigation.js"></script>
+</body>
+</html>

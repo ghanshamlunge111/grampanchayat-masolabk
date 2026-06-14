@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="mr" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ग्रामपंचायत मसोला (खुर्द) - सार्वजनिक सोयी-सुविधा (Amenities)</title>
+    
+    <!-- Tailwind CSS & DaisyUI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1f3a5f',
+                        secondary: '#3a6b5c',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Tiro+Devanagari+Marathi:ital@0;1&family=Yatra+One&display=swap" rel="stylesheet" />
+
+    <style>
+        .marathi-font { font-family: 'Tiro Devanagari Marathi', serif; }
+    </style>
+</head>
+<body class="bg-slate-50 flex flex-col min-h-screen marathi-font text-slate-800">
+
+    <!-- Shared Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="flex-grow py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Page Header -->
+            <div class="text-center mb-12">
+                <span class="bg-[#1f3a5f]/10 text-[#1f3a5f] font-bold text-xs uppercase px-3 py-1 rounded-full mb-3 inline-block">नागरिक सुविधा</span>
+                <h1 class="text-2xl sm:text-4xl font-extrabold text-[#1f3a5f] mb-4">सार्वजनिक सोयी-सुविधा</h1>
+                <p class="text-slate-500 max-w-2xl mx-auto text-sm sm:text-base">ग्रामस्थांच्या सुखी व सुकर जीवनासाठी ग्रामपंचायतीद्वारे पुरविल्या जाणाऱ्या विविध सार्वजनिक सोयी-सुविधा.</p>
+            </div>
+
+            <!-- Amenities Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                
+                <!-- Facility 1: Gym -->
+                <div class="card bg-white border border-slate-200 shadow-md p-6 rounded-2xl space-y-4 hover:shadow-lg transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-dumbbell"></i>
+                    </div>
+                    <h3 class="font-extrabold text-[#1f3a5f] text-base sm:text-lg">१. सार्वजनिक व्यायामशाळा (Gymnasium)</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        गावातील तरुणांच्या आरोग्यासाठी आणि व्यायामासाठी अत्याधुनिक व्यायामाची साधने असणारी सार्वजनिक व्यायामशाळा विनामूल्य उपलब्ध आहे.
+                    </p>
+                    <span class="badge badge-success text-white font-bold text-xs">सुरू आहे</span>
+                </div>
+
+                <!-- Facility 2: Jal Jeevan Mission -->
+                <div class="card bg-white border border-slate-200 shadow-md p-6 rounded-2xl space-y-4 hover:shadow-lg transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-faucet-drip"></i>
+                    </div>
+                    <h3 class="font-extrabold text-[#1f3a5f] text-base sm:text-lg">२. जल जीवन मिशन अंतर्गत जल योजना</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        पिण्याच्या पाण्याचे शुद्धीकरण आणि साठवणुकीसाठी आधुनिक फिल्टर प्लांट आणि मोठी पाण्याची टाकी उभारण्यात आली आहे.
+                    </p>
+                    <span class="badge badge-success text-white font-bold text-xs">सुरू आहे</span>
+                </div>
+
+                <!-- Facility 3: Har Ghar Nal -->
+                <div class="card bg-white border border-slate-200 shadow-md p-6 rounded-2xl space-y-4 hover:shadow-lg transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-glass-water"></i>
+                    </div>
+                    <h3 class="font-extrabold text-[#1f3a5f] text-base sm:text-lg">३. प्रत्येक घरी नळ योजना</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        पाणी पुरवठा सुकर करण्यासाठी गावातील प्रत्येक घरापर्यंत पिण्याच्या पाण्याची पाईपलाईन टाकून स्वतंत्र नळ जोडणी देण्यात आली आहे.
+                    </p>
+                    <span class="badge badge-success text-white font-bold text-xs">सुरू आहे</span>
+                </div>
+
+                <!-- Facility 4: Community Hall -->
+                <div class="card bg-white border border-slate-200 shadow-md p-6 rounded-2xl space-y-4 hover:shadow-lg transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-building-user"></i>
+                    </div>
+                    <h3 class="font-extrabold text-[#1f3a5f] text-base sm:text-lg">४. भव्य मंगल कार्यालय (Community Hall)</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        ग्रामस्थांचे विवाह सोहळे व सांस्कृतिक कार्यक्रमांसाठी माफक दरात भव्य मंगल कार्यालय व सभामंडपाची सोय उपलब्ध आहे.
+                    </p>
+                    <span class="badge badge-success text-white font-bold text-xs">सुरू आहे</span>
+                </div>
+
+                <!-- Facility 5: Tree plantation -->
+                <div class="card bg-white border border-slate-200 shadow-md p-6 rounded-2xl space-y-4 hover:shadow-lg transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-tree"></i>
+                    </div>
+                    <h3 class="font-extrabold text-[#1f3a5f] text-base sm:text-lg">५. रस्त्याच्या दोन्ही बाजूला वृक्षारोपण</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        पर्यावरण संवर्धनासाठी आणि गाव सुंदर बनवण्यासाठी मुख्य प्रवेश रस्ता व जोड रस्त्यांच्या बाजूला शेकडो वृक्षांची लागवड केली आहे.
+                    </p>
+                    <span class="badge badge-success text-white font-bold text-xs">सुरू आहे</span>
+                </div>
+
+                <!-- Facility 6: Festival Ground -->
+                <div class="card bg-white border border-slate-200 shadow-md p-6 rounded-2xl space-y-4 hover:shadow-lg transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                    <h3 class="font-extrabold text-[#1f3a5f] text-base sm:text-lg">६. यात्रा व क्रीडा मैदान</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        वार्षिक यात्रा महोत्सव, बैलपोळा व क्रीडा स्पर्धांच्या आयोजनासाठी भव्य यात्रा मैदान खुले ठेवण्यात आले आहे.
+                    </p>
+                    <span class="badge badge-success text-white font-bold text-xs">सुरू आहे</span>
+                </div>
+
+                <!-- Facility 7: House Solar Plant -->
+                <div class="card bg-white border border-slate-200 shadow-md p-6 rounded-2xl space-y-4 hover:shadow-lg transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-solar-panel"></i>
+                    </div>
+                    <h3 class="font-extrabold text-[#1f3a5f] text-base sm:text-lg">७. घरगुती सौर ऊर्जा प्रकल्प (Solar Plants)</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        गावातील विजेची गरज भागवण्यासाठी आणि शाश्वत ऊर्जेला प्रोत्साहन देण्यासाठी अनेक घरांवर सौर ऊर्जा संच बसविण्यात आले आहेत.
+                    </p>
+                    <span class="badge badge-success text-white font-bold text-xs">सुरू आहे</span>
+                </div>
+
+                <!-- Facility 8: Solid Waste Management -->
+                <div class="card bg-white border border-slate-200 shadow-md p-6 rounded-2xl space-y-4 hover:shadow-lg transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-recycle"></i>
+                    </div>
+                    <h3 class="font-extrabold text-[#1f3a5f] text-base sm:text-lg">८. घनकचरा व्यवस्थापन (सुका/ओला कचरा)</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        पर्यावरण रक्षणासाठी गावात ओला व सुका कचरा वेगवेगळ्या कचरा कुंडीत जमा करून त्याचे योग्य व्यवस्थापन व प्रक्रिया केली जाते.
+                    </p>
+                    <span class="badge badge-success text-white font-bold text-xs">सुरू आहे</span>
+                </div>
+
+                <!-- Facility 9: Waste Collection Vehicle -->
+                <div class="card bg-white border border-slate-200 shadow-md p-6 rounded-2xl space-y-4 hover:shadow-lg transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-truck"></i>
+                    </div>
+                    <h3 class="font-extrabold text-[#1f3a5f] text-base sm:text-lg">९. कचरा गोळा करण्यासाठी घंटागाडी</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        गावातील स्वच्छता राखण्यासाठी आणि घरोघरी जाऊन ओला व सुका कचरा गोळा करण्यासाठी घंटागाडी सेवा सुरू करण्यात आली आहे.
+                    </p>
+                    <span class="badge badge-success text-white font-bold text-xs">सुरू आहे</span>
+                </div>
+
+                <!-- Facility 10: CSC Kendra -->
+                <div class="card bg-white border border-slate-200 shadow-md p-6 rounded-2xl space-y-4 hover:shadow-lg transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-desktop"></i>
+                    </div>
+                    <h3 class="font-extrabold text-[#1f3a5f] text-base sm:text-lg">१०. ग्राहक सेवा केंद्र (CSC Kendra)</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        नागरिकांना विविध शासकीय दाखले, प्रमाणपत्रे, ऑनलाईन अर्ज आणि इतर डिजिटल सेवा एकाच छताखाली देण्यासाठी सीएससी केंद्र सुरू आहे.
+                    </p>
+                    <span class="badge badge-success text-white font-bold text-xs">सुरू आहे</span>
+                </div>
+
+                <!-- Facility 11: Post Office -->
+                <div class="card bg-white border border-slate-200 shadow-md p-6 rounded-2xl space-y-4 hover:shadow-lg transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-envelope-open-text"></i>
+                    </div>
+                    <h3 class="font-extrabold text-[#1f3a5f] text-base sm:text-lg">११. टपाल कार्यालय (Post Office)</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        टपाल सेवा, शासकीय बचत योजना, मनीऑर्डर व इतर आर्थिक व्यवहारांसाठी गावात स्वतंत्र पोस्ट ऑफिसची सोय उपलब्ध आहे.
+                    </p>
+                    <span class="badge badge-success text-white font-bold text-xs">सुरू आहे</span>
+                </div>
+
+                <!-- Facility 12: Solar Lights -->
+                <div class="card bg-white border border-slate-200 shadow-md p-6 rounded-2xl space-y-4 hover:shadow-lg transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <h3 class="font-extrabold text-[#1f3a5f] text-base sm:text-lg">१२. रस्त्याच्या कडेला पोलसह सौर पथदिवे</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        गावचे रस्ते रात्री प्रकाशमान करण्यासाठी आणि ऊर्जेची बचत करण्यासाठी पोलसह पर्यावरणपूरक सौर पथदिवे बसविण्यात आले आहेत.
+                    </p>
+                    <span class="badge badge-success text-white font-bold text-xs">सुरू आहे</span>
+                </div>
+
+                <!-- Facility 13: Soak Pits -->
+                <div class="card bg-white border border-slate-200 shadow-md p-6 rounded-2xl space-y-4 hover:shadow-lg transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-water"></i>
+                    </div>
+                    <h3 class="font-extrabold text-[#1f3a5f] text-base sm:text-lg">१३. सांडपाण्यासाठी शोषखड्डे (Soak Pits)</h3>
+                    <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                        घरातील सांडपाण्याची विल्हेवाट लावण्यासाठी, डासांच्या उत्पत्तीला रोखण्यासाठी व जलपुनर्भरणासाठी गावात ठिकठिकाणी शोषखड्डे तयार करण्यात आले आहेत.
+                    </p>
+                    <span class="badge badge-success text-white font-bold text-xs">सुरू आहे</span>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Shared Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="js/navigation.js"></script>
+</body>
+</html>

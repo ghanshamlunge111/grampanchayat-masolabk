@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="mr" data-theme="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ग्रामपंचायत मसोला बुद्रुक - मुख्य पृष्ठ</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1f3a5f',
+                        secondary: '#3a6b5c',
+                        accent: '#10b981',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'Tiro Devanagari Marathi', 'sans-serif'],
+                        yatra: ['Yatra One', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- DaisyUI CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.0/dist/full.css" rel="stylesheet" type="text/css" />
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Tiro+Devanagari+Marathi:ital@0;1&family=Yatra+One&display=swap" rel="stylesheet" />
+
+    <!-- Local Styles overrides -->
+    <style>
+        .my-scrollbar-thickness::-webkit-scrollbar {
+            height: 4px;
+            width: 4px;
+        }
+        .my-scrollbar-thickness::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+        .marathi-font {
+            font-family: 'Tiro Devanagari Marathi', serif;
+        }
+        .yatra-font {
+            font-family: 'Yatra One', cursive;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .animate-marquee {
+            animation: marquee 18s linear infinite;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 flex flex-col min-h-screen marathi-font text-slate-800">
+
+    <!-- Shared Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        
+        <!-- Marquee Announcement Strip -->
+        <div class="relative overflow-hidden bg-gradient-to-r from-amber-500 to-orange-600 text-white py-2 shadow-inner border-y border-amber-400">
+            <div class="max-w-7xl mx-auto px-4 flex items-center">
+                <span class="bg-red-700 text-white text-xs font-bold uppercase px-3 py-1 rounded-full shrink-0 mr-3 animate-pulse">नवीन अपडेट:</span>
+                <div class="relative overflow-hidden w-full h-5">
+                    <div class="absolute flex whitespace-nowrap gap-8 items-center animate-marquee font-bold text-sm sm:text-base">
+                        <span><i class="fa-solid fa-bullhorn text-yellow-300"></i> आजचा सुविचार : सकारात्मक विचार आपल्या जीवनाला उज्ज्वल आणि प्रगतिशील करतात.</span>
+                        <span><i class="fa-solid fa-circle-exclamation text-yellow-300"></i> आपल्या ग्रामपंचायतीचा नागरीक सुविधा अर्ज आता ऑनलाईन उपलब्ध आहे.</span>
+                        <span><i class="fa-solid fa-circle-info text-yellow-300"></i> मसोला बुद्रुक गाव पंचायती राज व्यवस्थेअंतर्गत मसोला (खुर्द) ग्रामपंचायत अंतर्गत येते.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Carousel / Slider Section -->
+        <section class="relative bg-slate-200">
+            <div class="carousel w-full aspect-[21/9] md:h-[450px] lg:h-[550px] relative">
+                
+                <!-- Slide 1 -->
+                <div id="slide1" class="carousel-item relative w-full h-full">
+                    <img src="./assets/masola-gmap.png" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1596422846543-75c6fc197f07?q=80&w=1200&auto=format&fit=crop'" />
+                    <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent flex items-center">
+                        <div class="max-w-2xl ml-8 sm:ml-16 md:ml-24 text-white p-4">
+                             <span class="bg-emerald-600 text-white font-bold text-xs uppercase px-3 py-1 rounded-full mb-3 inline-block">स्वागतम</span>
+                            <h2 class="text-xl sm:text-3xl md:text-5xl font-extrabold leading-tight text-white mb-4">ग्रामपंचायत कार्यालय मसोला (खुर्द)</h2>
+                            <p class="text-xs sm:text-sm md:text-base text-slate-200 mb-6 font-medium">वाशिम जिल्ह्यातील मसोला बुद्रुक गावच्या अधिकृत संकेतस्थळावर आपले सहर्ष स्वागत आहे.</p>
+                            <a href="mahiti.html" class="btn bg-emerald-600 hover:bg-emerald-700 text-white border-none shadow-lg px-6">अधिक माहिती वाचा</a>
+                        </div>
+                    </div>
+                    <!-- Slider Nav Controls -->
+                    <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2 z-10">
+                        <a href="#slide2" class="btn btn-circle bg-black/30 hover:bg-black/60 text-white border-none">❮</a> 
+                        <a href="#slide2" class="btn btn-circle bg-black/30 hover:bg-black/60 text-white border-none">❯</a>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div id="slide2" class="carousel-item relative w-full h-full">
+                    <img src="./assets/PM-Awas-Yojana.png" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1200&auto=format&fit=crop'" loading="lazy" />
+                    <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent flex items-center">
+                        <div class="max-w-2xl ml-8 sm:ml-16 md:ml-24 text-white p-4">
+                            <span class="bg-amber-600 text-white font-bold text-xs uppercase px-3 py-1 rounded-full mb-3 inline-block">शासकीय योजना</span>
+                            <h2 class="text-xl sm:text-3xl md:text-5xl font-extrabold leading-tight text-white mb-4">पंतप्रधान आवास योजना (ग्रामीण)</h2>
+                            <p class="text-xs sm:text-sm md:text-base text-slate-200 mb-6 font-medium">प्रत्येकाला स्वतःचे पक्के आणि सुंदर घर मिळावे याकरिता शासकीय योजनांच्या अंमलबजावणीत मसोला (खुर्द) ग्रामपंचायत कटिबद्ध आहे.</p>
+                            <a href="arogya-yojana.html" class="btn btn-warning text-slate-900 border-none shadow-lg px-6">योजना पहा</a>
+                        </div>
+                    </div>
+                    <!-- Slider Nav Controls -->
+                    <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2 z-10">
+                        <a href="#slide1" class="btn btn-circle bg-black/30 hover:bg-black/60 text-white border-none">❮</a> 
+                        <a href="#slide1" class="btn btn-circle bg-black/30 hover:bg-black/60 text-white border-none">❯</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- National & State Leaders (G-Medshi Layout) -->
+        <section class="py-10 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h3 class="text-center text-xl sm:text-2xl font-extrabold text-[#1f3a5f] uppercase tracking-wider mb-8 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-20 after:h-1 after:bg-emerald-600">
+                    महाराष्ट्र राज्य व देश नेतृत्व
+                </h3>
+                
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 max-w-5xl mx-auto">
+                    <!-- PM Card -->
+                    <div class="flex flex-col items-center bg-slate-50 p-4 rounded-2xl border shadow-sm hover:shadow-md transition">
+                        <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-emerald-500 mb-3 bg-slate-200">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Official_Photograph_of_Prime_Minister_Narendra_Modi_Portrait.png" alt="Narendra Modi" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://via.placeholder.com/150';"/>
+                        </div>
+                        <h4 class="text-slate-800 font-bold text-sm sm:text-base">श्री. नरेंद्र मोदी</h4>
+                        <p class="text-xs text-slate-500 font-semibold">पंतप्रधान, भारत</p>
+                    </div>
+
+                    <!-- Governor Card -->
+                    <div class="flex flex-col items-center bg-slate-50 p-4 rounded-2xl border shadow-sm hover:shadow-md transition">
+                        <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-emerald-500 mb-3 bg-slate-200">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/CPRadhakrishnan.png" alt="Governor" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://upload.wikimedia.org/wikipedia/commons/4/4e/C._P._Radhakrishnan_official_portrait.jpg';"/>
+                        </div>
+                        <h4 class="text-slate-800 font-bold text-sm sm:text-base">श्री. सी. पी. राधाकृष्णन</h4>
+                        <p class="text-xs text-slate-500 font-semibold">राज्यपाल, महाराष्ट्र राज्य</p>
+                    </div>
+
+                    <!-- CM Card -->
+                    <div class="flex flex-col items-center bg-slate-50 p-4 rounded-2xl border shadow-sm hover:shadow-md transition">
+                        <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-emerald-500 mb-3 bg-slate-200">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Devendra_Fadnavis_2019_Official_Portrail.jpg" alt="CM" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://maharashtra.gov.in/Site/Common/images/Devendra-Fadnavis.png';"/>
+                        </div>
+                        <h4 class="text-slate-800 font-bold text-sm sm:text-base">श्री. देवेंद्र फडणवीस</h4>
+                        <p class="text-xs text-slate-500 font-semibold">मुख्यमंत्री, महाराष्ट्र राज्य</p>
+                    </div>
+
+                    <!-- Deputy CM Card 1 -->
+                    <div class="flex flex-col items-center bg-slate-50 p-4 rounded-2xl border shadow-sm hover:shadow-md transition">
+                        <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-emerald-500 mb-3 bg-slate-200">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Eknath_Shinde_with_PM_Narendra_Modi_Cropped.jpg" alt="Deputy CM" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://via.placeholder.com/150';"/>
+                        </div>
+                        <h4 class="text-slate-800 font-bold text-sm sm:text-base">श्री. एकनाथ शिंदे</h4>
+                        <p class="text-xs text-slate-500 font-semibold">उपमुख्यमंत्री, महाराष्ट्र राज्य</p>
+                    </div>
+
+                    <!-- Deputy CM Card 2 -->
+                    <div class="flex flex-col items-center bg-slate-50 p-4 rounded-2xl border shadow-sm hover:shadow-md transition col-span-2 sm:col-span-1">
+                        <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-emerald-500 mb-3 bg-slate-200">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/8/8f/President_of_India%2C_Pratibha_Patil_%28left%29_with_Sunetra_Ajitdada_Pawar_%28right%29_at_Rashtrapati_Bhavan_%28cropped%29.jpg" alt="Deputy CM" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='https://via.placeholder.com/150';"/>
+                        </div>
+                        <h4 class="text-slate-800 font-bold text-sm sm:text-base text-center">श्रीमती सुनेत्रा अजित पवार</h4>
+                        <p class="text-xs text-slate-500 font-semibold">उपमुख्यमंत्री, महाराष्ट्र राज्य</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Notice Board & Local Leadership Section -->
+        <section class="py-12 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                    
+                    <!-- Left: State Song & Local Quote (7 cols) -->
+                    <div class="lg:col-span-7 space-y-6">
+                        
+                        <!-- State Song Video Card -->
+                        <div class="bg-white border rounded-2xl shadow-sm overflow-hidden p-5">
+                            <h3 class="text-lg font-bold text-slate-800 border-b pb-3 mb-4 flex items-center gap-2">
+                                <i class="fa-solid fa-music text-red-600"></i>
+                                <span>महाराष्ट्र राज्य गीत</span>
+                            </h3>
+                            <div class="aspect-video w-full rounded-xl overflow-hidden shadow-inner bg-black">
+                                <iframe 
+                                     title="जय जय महाराष्ट्र माझा, गर्जा महाराष्ट्र माझा..." 
+                                     src="https://www.youtube.com/embed/zs-AYr99354" 
+                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                     referrerpolicy="strict-origin-when-cross-origin" 
+                                     allowfullscreen
+                                     class="w-full h-full border-none">
+                                </iframe>
+                            </div>
+                        </div>
+
+                        <!-- Local Quote (Tukdoji Maharaj) -->
+                        <div class="bg-gradient-to-br from-emerald-50 to-[#e6f4f1] border border-emerald-100 rounded-2xl p-6 shadow-sm flex flex-col md:flex-row gap-5 items-center">
+                            <div class="w-28 h-28 rounded-full overflow-hidden shrink-0 border-4 border-white shadow-md bg-white">
+                                <img src="./assets/tukdojimaharaj.png" alt="Tukdoji Maharaj" class="w-full h-full object-cover" onerror="this.src='./assets/tukdoji_tmp.jpg'" loading="lazy"/>
+                            </div>
+                            <div class="text-center md:text-left">
+                                <h4 class="text-emerald-800 font-extrabold text-lg mb-2">ग्राम विचार</h4>
+                                <blockquote class="text-slate-700 italic font-semibold leading-relaxed text-sm md:text-base space-y-1">
+                                    <p>“ऐसें गाव होतां आदर्शपूर्ण। शहराहुनीही नंदनवन।</p>
+                                    <p>सर्वांचे करील आकर्षण। सुंदर जीवन तुकड्या म्हणे...”</p>
+                                </blockquote>
+                                <cite class="block text-xs font-bold text-emerald-700 mt-2 not-italic">— राष्ट्रसंत तुकडोजी महाराज</cite>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Right: Notice Board Tabs & Local Leaders (5 cols) -->
+                    <div class="lg:col-span-5 space-y-6">
+                        
+                        <!-- Tabs for Announcements, Programs & Tenders -->
+                        <div class="bg-white border rounded-2xl shadow-sm overflow-hidden">
+                            <div class="tabs tabs-boxed bg-slate-100 p-2 gap-1 rounded-t-2xl">
+                                <a id="tab-ann" onclick="switchTab('ann')" class="tab tab-active flex-1 font-bold text-xs sm:text-sm">नवीन संदेश</a> 
+                                <a id="tab-prog" onclick="switchTab('prog')" class="tab flex-1 font-bold text-xs sm:text-sm">कार्यक्रम</a> 
+                                <a id="tab-tend" onclick="switchTab('tend')" class="tab flex-1 font-bold text-xs sm:text-sm">निविदा</a>
+                            </div>
+                            <div class="p-6">
+                                <!-- Notice Content -->
+                                <div id="content-ann" class="tab-pane space-y-3.5 text-sm">
+                                    <div class="flex items-center gap-2 border-b pb-2 hover:translate-x-1 transition-transform">
+                                        <i class="fa-solid fa-circle-arrow-right text-emerald-600"></i>
+                                        <a href="#" class="hover:text-emerald-700 font-medium">घरकुल योजना - लाभार्थी यादी १ (२०२५-२६)</a>
+                                    </div>
+                                    <div class="flex items-center gap-2 border-b pb-2 hover:translate-x-1 transition-transform">
+                                        <i class="fa-solid fa-circle-arrow-right text-emerald-600"></i>
+                                        <a href="#" class="hover:text-emerald-700 font-medium">महिला व बालविकास योजना - लाभार्थी यादी २</a>
+                                    </div>
+                                    <div class="flex items-center gap-2 border-b pb-2 hover:translate-x-1 transition-transform">
+                                        <i class="fa-solid fa-circle-arrow-right text-emerald-600"></i>
+                                        <a href="#" class="hover:text-emerald-700 font-medium">अपंग कल्याण निधी ५% योजना - लाभार्थी यादी ३</a>
+                                    </div>
+                                    <div class="flex items-center gap-2 border-b pb-2 hover:translate-x-1 transition-transform">
+                                        <i class="fa-solid fa-circle-arrow-right text-emerald-600"></i>
+                                        <a href="nirnay.html" class="hover:text-emerald-700 font-bold text-emerald-600">पहा: ग्राम सभेचे इतर महत्त्वाचे निर्णय</a>
+                                    </div>
+                                </div>
+
+                                <div id="content-prog" class="tab-pane hidden space-y-3.5 text-sm">
+                                    <div class="flex items-center gap-2 border-b pb-2">
+                                        <i class="fa-solid fa-calendar-check text-[#1f3a5f]"></i>
+                                        <span>१५ ऑगस्ट - स्वातंत्र्य दिन व ग्रामसभा</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 border-b pb-2">
+                                        <i class="fa-solid fa-calendar-check text-[#1f3a5f]"></i>
+                                        <span>२ ऑक्टोबर - महात्मा गांधी जयंती व स्वच्छता अभियान</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 border-b pb-2">
+                                        <i class="fa-solid fa-calendar-check text-[#1f3a5f]"></i>
+                                        <span>२६ जानेवारी - प्रजासत्ताक दिन व क्रीडा स्पर्धा बक्षीस वितरण</span>
+                                    </div>
+                                </div>
+
+                                <div id="content-tend" class="tab-pane hidden space-y-3.5 text-sm">
+                                    <div class="flex items-center gap-2 border-b pb-2">
+                                        <i class="fa-solid fa-file-signature text-amber-600"></i>
+                                        <a href="#" class="hover:text-amber-700 font-medium">निविदा क्र. १ - गावात नवीन सीसी रस्ता बांधकाम</a>
+                                    </div>
+                                    <div class="flex items-center gap-2 border-b pb-2">
+                                        <i class="fa-solid fa-file-signature text-amber-600"></i>
+                                        <a href="#" class="hover:text-amber-700 font-medium">निविदा क्र. २ - नवीन पाणीपुरवठा पाईपलाईन दुरुस्ती</a>
+                                    </div>
+                                    <div class="flex items-center gap-2 border-b pb-2">
+                                        <i class="fa-solid fa-file-signature text-amber-600"></i>
+                                        <a href="#" class="hover:text-amber-700 font-medium">निविदा क्र. ३ - गावात पथदिवे लावणे व सौर ऊर्जेचे साहित्य</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Local Leaders Block (Sarpanch, Upsarpanch & Gram Sevak) -->
+                        <div class="bg-white border rounded-2xl shadow-sm p-6">
+                            <h3 class="text-base font-extrabold text-slate-800 uppercase tracking-wider mb-4 pb-2 border-b text-center">
+                                ग्रामपंचायत प्रमुख
+                            </h3>
+                            
+                            <div class="grid grid-cols-3 gap-2">
+                                <!-- Sarpanch -->
+                                <div class="flex flex-col items-center text-center p-2 bg-slate-50 border rounded-xl shadow-xs">
+                                    <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-emerald-500 mb-2 bg-slate-200">
+                                        <img src="./assets/dummy-profile-pic.jpg" alt="Sunanda Kale" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/150'" loading="lazy"/>
+                                    </div>
+                                    <h4 class="text-slate-800 font-bold text-[10px] sm:text-xs leading-tight">सौ. सुनंदा विनोद काळे</h4>
+                                    <p class="text-[9px] text-slate-500 font-semibold bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded-full mt-1">सरपंच</p>
+                                </div>
+
+                                <!-- Upsarpanch -->
+                                <div class="flex flex-col items-center text-center p-2 bg-slate-50 border rounded-xl shadow-xs">
+                                    <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-emerald-500 mb-2 bg-slate-200">
+                                        <img src="./assets/nandkishormule.jpg" alt="Nandkishor Mule" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/150'" loading="lazy"/>
+                                    </div>
+                                    <h4 class="text-slate-800 font-bold text-[10px] sm:text-xs leading-tight">श्री. नंदकिशोर देवीदास मुळे</h4>
+                                    <p class="text-[9px] text-slate-500 font-semibold bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded-full mt-1">उपसरपंच</p>
+                                </div>
+
+                                <!-- Gram Sevak -->
+                                <div class="flex flex-col items-center text-center p-2 bg-slate-50 border rounded-xl shadow-xs">
+                                    <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-emerald-500 mb-2 bg-slate-200">
+                                        <img src="./assets/dummy-profile-pic.jpg" alt="Vishwanath Vhyavahare" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/150'" loading="lazy"/>
+                                    </div>
+                                    <h4 class="text-slate-800 font-bold text-[10px] sm:text-xs leading-tight">श्री. विश्वनाथ व्यवहारे</h4>
+                                    <p class="text-[9px] text-slate-500 font-semibold bg-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded-full mt-1">ग्रामसेवक</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Weather Info Widget -->
+                        <div class="bg-gradient-to-br from-[#1b3152] to-[#0f1d33] text-white border border-slate-700/50 rounded-2xl p-6 shadow-md relative overflow-hidden">
+                            <!-- Background decoration -->
+                            <div class="absolute -right-8 -bottom-8 w-24 h-24 bg-white/5 rounded-full blur-xl"></div>
+                            
+                            <h3 class="text-sm font-extrabold uppercase tracking-wider mb-4 pb-2 border-b border-white/10 flex items-center justify-between">
+                                <span><i class="fa-solid fa-cloud-sun mr-2 text-yellow-400"></i>गावातील हवामान</span>
+                                <span class="text-[9px] bg-emerald-500/20 text-emerald-300 px-2.5 py-0.5 rounded-full font-bold uppercase tracking-widest animate-pulse">Live</span>
+                            </h3>
+
+                            <div id="weather-widget-content" class="flex items-center justify-between gap-4">
+                                <!-- Skeleton / Loading State -->
+                                <div class="flex items-center gap-4 w-full animate-pulse">
+                                    <div class="w-10 h-10 bg-white/10 rounded-full shrink-0"></div>
+                                    <div class="space-y-2 flex-grow">
+                                        <div class="h-3.5 bg-white/10 rounded w-1/2"></div>
+                                        <div class="h-2.5 bg-white/10 rounded w-3/4"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats & Bank Details Banner -->
+        <section class="py-12 bg-gradient-to-r from-[#1f3a5f] to-[#3a6b5c] text-white shadow-xl">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 divide-y md:divide-y-0 md:divide-x divide-white/10">
+                    
+                    <!-- Col 1: GP at a Glance -->
+                    <div class="space-y-4 pb-6 md:pb-0 md:pr-8">
+                        <h3 class="text-lg font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-2">
+                            <i class="fa-solid fa-list-check"></i>
+                            <span>दृष्टीक्षेपात ग्रामपंचायत</span>
+                        </h3>
+                        <ul class="space-y-2.5 text-sm sm:text-base font-semibold">
+                            <li class="flex justify-between border-b border-white/10 pb-1.5">
+                                <span class="text-white/70">गावाचे क्षेत्रफळ:</span>
+                                <span>४२५.७२ हेक्टर्स</span>
+                            </li>
+                            <li class="flex justify-between border-b border-white/10 pb-1.5">
+                                <span class="text-white/70">एकूण लोकसंख्या (२०११):</span>
+                                <span>९०७</span>
+                            </li>
+                            <li class="flex justify-between border-b border-white/10 pb-1.5">
+                                <span class="text-white/70">साक्षरतेचे प्रमाण:</span>
+                                <span>८१.७० %</span>
+                            </li>
+                            <li class="flex justify-between border-b border-white/10 pb-1.5">
+                                <span class="text-white/70">एकूण कुटुंबे:</span>
+                                <span>२२६ कुटुंबे</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Col 2: Bank Account Details -->
+                    <div class="space-y-4 pt-6 md:pt-0 md:px-8">
+                        <h3 class="text-lg font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-2">
+                            <i class="fa-solid fa-university"></i>
+                            <span>बँक खाते तपशील</span>
+                        </h3>
+                        <p class="text-xs text-white/70 leading-relaxed">ग्रामविकास कामांकरिता व नागरिकांच्या देयकांसाठी अधिकृत बँक खाते तपशील खालीलप्रमाणे आहे:</p>
+                        <ul class="space-y-2.5 text-sm sm:text-base font-semibold">
+                            <li class="flex justify-between border-b border-white/10 pb-1.5">
+                                <span class="text-white/70">बँकेचे नाव:</span>
+                                <span>स्टेट बँक ऑफ इंडिया</span>
+                            </li>
+                            <li class="flex justify-between border-b border-white/10 pb-1.5">
+                                <span class="text-white/70">IFSC कोड:</span>
+                                <span class="tracking-wide">SBIN0009560</span>
+                            </li>
+                            <li class="flex justify-between border-b border-white/10 pb-1.5">
+                                <span class="text-white/70">बँकेचा पत्ता:</span>
+                                <span>शिवणी रोड, मंगरुळपीर</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Col 3: E-Services & Forms -->
+                    <div class="space-y-4 pt-6 md:pt-0 md:pl-8">
+                        <h3 class="text-lg font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-2">
+                            <i class="fa-solid fa-globe"></i>
+                            <span>महत्त्वाच्या ऑनलाईन सेवा</span>
+                        </h3>
+                        <p class="text-xs text-white/70 leading-relaxed">महाराष्ट्र शासनाच्या विविध ऑनलाईन नागरी सेवा प्राप्त करण्यासाठी खालील सेवांवर क्लीक करा:</p>
+                        <div class="grid grid-cols-2 gap-3 mt-4 text-xs font-bold text-center">
+                            <a href="https://aaplesarkar.maharashtra.gov.in" target="_blank" class="bg-white/10 hover:bg-white/20 border border-white/20 py-2 px-3 rounded-lg block transition">आपले सरकार</a>
+                            <a href="https://bhulekh.mahabhumi.gov.in" target="_blank" class="bg-white/10 hover:bg-white/20 border border-white/20 py-2 px-3 rounded-lg block transition">७/१२ उतारा</a>
+                            <a href="https://digitalsatbara.mahabhumi.gov.in/aaplichawdi" target="_blank" class="bg-white/10 hover:bg-white/20 border border-white/20 py-2 px-3 rounded-lg block transition">आपली चावडी</a>
+                            <a href="https://mahadbtmahait.gov.in" target="_blank" class="bg-white/10 hover:bg-white/20 border border-white/20 py-2 px-3 rounded-lg block transition">महाडिबीटी</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Information & Local Places Grid -->
+        <section class="py-12 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <!-- Weekly Market Card -->
+                    <div class="bg-slate-50 border p-5 rounded-2xl shadow-sm hover:shadow-md transition">
+                        <h3 class="text-center font-bold text-slate-800 text-lg border-b pb-2 mb-3">टपाल व बँकिंग</h3>
+                        <p class="text-center text-sm text-slate-600 font-semibold mb-2">जवळच्या टपाल व बँकिंग सेवा:</p>
+                        <div class="bg-emerald-100 text-emerald-800 text-center font-bold px-3 py-2 rounded-xl text-sm">
+                            <p>पोस्ट ऑफिस: ५-१० किमी अंतरावर</p>
+                            <p class="text-xs mt-1 text-slate-600">बँक व एटीएम: > १० किमी (मंगरुळपीर)</p>
+                        </div>
+                    </div>
+
+                    <!-- Tourism Card -->
+                    <div class="bg-slate-50 border p-5 rounded-2xl shadow-sm hover:shadow-md transition">
+                        <h3 class="text-center font-bold text-slate-800 text-lg border-b pb-2 mb-3">महत्त्वाची माहिती</h3>
+                        <ul class="text-xs sm:text-sm text-slate-600 font-semibold space-y-2">
+                            <li class="flex items-start gap-1.5">
+                                <i class="fa-solid fa-circle-info text-emerald-600 mt-1"></i>
+                                <span>पिनकोड: ४४४४०९</span>
+                            </li>
+                            <li class="flex items-start gap-1.5">
+                                <i class="fa-solid fa-circle-info text-emerald-600 mt-1"></i>
+                                <span>तालुका: मंगरुळपीर, जिल्हा: वाशीम</span>
+                            </li>
+                            <li class="flex items-start gap-1.5">
+                                <i class="fa-solid fa-circle-info text-emerald-600 mt-1"></i>
+                                <span>विधानसभा: वाशीम (SC)</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- How to Reach Card -->
+                    <div class="bg-slate-50 border p-5 rounded-2xl shadow-sm hover:shadow-md transition">
+                        <h3 class="text-center font-bold text-slate-800 text-lg border-b pb-2 mb-3">कसे पोहोचाल?</h3>
+                        <ul class="text-xs sm:text-sm text-slate-600 font-semibold space-y-1.5">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-bus text-emerald-600 text-xs"></i>
+                                <span><b>रस्त्याने:</b> मंगरुळपीर ते मसोला बुद्रुक (१९ किमी)</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-train text-emerald-600 text-xs"></i>
+                                <span><b>रेल्वेने:</b> कारंजा रेल्वे स्थानक</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-plane text-emerald-600 text-xs"></i>
+                                <span><b>हवाई मार्ग:</b> अकोला विमानतळ (३५ किमी)</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Healthy Habits Card -->
+                    <div class="bg-slate-50 border p-5 rounded-2xl shadow-sm hover:shadow-md transition">
+                        <h3 class="text-center font-bold text-slate-800 text-lg border-b pb-2 mb-3">निरोगी आरोग्य सवयी</h3>
+                        <ul class="text-xs sm:text-sm text-slate-600 font-semibold space-y-1.5">
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-600 text-xs"></i><span>नियमित व्यायाम करा</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-600 text-xs"></i><span>स्वच्छ पाणी प्या</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-600 text-xs"></i><span>परिसर स्वच्छ ठेवा</span></li>
+                            <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-600 text-xs"></i><span>ओला व सुका कचरा वेगळा ठेवा</span></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Photo Gallery (DaisyUI Carousel/Grid) -->
+        <section class="py-12 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-8 gap-4">
+                    <h3 class="text-xl sm:text-2xl font-extrabold text-[#1f3a5f] uppercase tracking-wider relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-16 after:h-1 after:bg-emerald-600">
+                        छायाचित्र दालन (Gallery)
+                    </h3>
+                    <a href="gallery.html" class="btn btn-sm btn-outline border-emerald-600 text-emerald-700 hover:bg-emerald-600 hover:border-emerald-600 hover:text-white font-bold rounded-lg">सर्व छायाचित्रे पहा</a>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <!-- Photo 1 -->
+                    <div class="relative overflow-hidden rounded-2xl aspect-video group shadow-sm bg-slate-200 border">
+                        <img src="./assets/PM-Awas-Yojana.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" />
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="text-white text-xs sm:text-sm font-bold">मसोला बुद्रुक शिवार</span>
+                        </div>
+                    </div>
+                    <!-- Photo 2 -->
+                    <div class="relative overflow-hidden rounded-2xl aspect-video group shadow-sm bg-slate-200 border">
+                        <img src="./assets/PM-Awas-Yojana.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" loading="lazy" />
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="text-white text-xs sm:text-sm font-bold">आवास योजना</span>
+                        </div>
+                    </div>
+                    <!-- Photo 3 -->
+                    <div class="relative overflow-hidden rounded-2xl aspect-video group shadow-sm bg-slate-200 border">
+                        <img src="./assets/BhavaniMataMandirParwa.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1578319439584-104c94d37305?q=80&w=600&auto=format&fit=crop'" loading="lazy" />
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="text-white text-xs sm:text-sm font-bold">नवनाथ महाराज संस्थान</span>
+                        </div>
+                    </div>
+                    <!-- Photo 4 -->
+                    <div class="relative overflow-hidden rounded-2xl aspect-video group shadow-sm bg-slate-200 border">
+                        <img src="./assets/s-1.png" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1473163928189-364b2c4e1135?q=80&w=600&auto=format&fit=crop'" loading="lazy" />
+                        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                            <span class="text-white text-xs sm:text-sm font-bold">ग्रामसभा आणि नियोजन</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Shared Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Scripts -->
+    <script src="js/navigation.js"></script>
+    <script>
+        // Tab switching logic for notice board
+        function switchTab(tabId) {
+            // Remove active classes
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('tab-active'));
+            document.querySelectorAll('.tab-pane').forEach(p => p.classList.add('hidden'));
+            
+            // Add active class to clicked tab and show corresponding pane
+            document.getElementById('tab-' + tabId).classList.add('tab-active');
+            document.getElementById('content-' + tabId).classList.remove('hidden');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchWeather();
+        });
+
+        async function fetchWeather() {
+            const container = document.getElementById('weather-widget-content');
+            if (!container) return;
+
+            try {
+                const response = await fetch('https://api.open-meteo.com/v1/forecast?latitude=20.25&longitude=77.35&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m');
+                if (!response.ok) throw new Error('API error');
+                
+                const data = await response.json();
+                const current = data.current;
+                
+                const temp = Math.round(current.temperature_2m);
+                const humidity = current.relative_humidity_2m;
+                const wind = current.wind_speed_10m;
+                const code = current.weather_code;
+
+                let conditionText = "हवामान माहिती";
+                let iconClass = "fa-cloud text-slate-300";
+
+                if (code === 0) {
+                    conditionText = "स्वच्छ आकाश";
+                    iconClass = "fa-sun text-yellow-400";
+                } else if (code >= 1 && code <= 3) {
+                    conditionText = "अंशतः ढगाळ";
+                    iconClass = "fa-cloud-sun text-slate-300";
+                } else if (code === 45 || code === 48) {
+                    conditionText = "धुके";
+                    iconClass = "fa-smog text-slate-300";
+                } else if (code >= 51 && code <= 55) {
+                    conditionText = "रिमझिम पाऊस";
+                    iconClass = "fa-cloud-rain text-blue-400";
+                } else if (code >= 61 && code <= 65) {
+                    conditionText = "पाऊस";
+                    iconClass = "fa-cloud-showers-heavy text-blue-400";
+                } else if (code >= 80 && code <= 82) {
+                    conditionText = "पावसाच्या सरी";
+                    iconClass = "fa-cloud-showers-water text-blue-500";
+                } else if (code >= 95) {
+                    conditionText = "वादळी पाऊस";
+                    iconClass = "fa-cloud-bolt text-yellow-300";
+                }
+
+                container.innerHTML = `
+                    <div class="flex items-center gap-4">
+                        <div class="text-4xl shrink-0"><i class="fa-solid ${iconClass}"></i></div>
+                        <div>
+                            <span class="text-3xl font-extrabold text-white">${temp}°C</span>
+                            <span class="text-[11px] font-semibold text-slate-300 block mt-0.5">${conditionText}</span>
+                        </div>
+                    </div>
+                    <div class="text-right text-xs text-slate-300 font-semibold space-y-1">
+                        <div><i class="fa-solid fa-droplet text-blue-400 mr-1.5"></i>आद्रता: <b>${humidity}%</b></div>
+                        <div><i class="fa-solid fa-wind text-teal-400 mr-1.5"></i>वारा: <b>${wind} km/h</b></div>
+                    </div>
+                `;
+            } catch (error) {
+                console.warn('Weather fetch failed, showing offline message:', error);
+                container.innerHTML = `
+                    <div class="flex items-center gap-3 text-xs text-red-200">
+                        <i class="fa-solid fa-circle-exclamation text-lg text-amber-400 shrink-0"></i>
+                        <span>हवामान माहिती लोड करता आली नाही.</span>
+                    </div>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
