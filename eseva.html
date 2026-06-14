@@ -280,7 +280,7 @@
             // Fetch and render statistics from backend
             const loadStats = async () => {
                 try {
-                    const response = await fetch('http://localhost:5001/api/eseva/stats', {
+                    const response = await fetch('http://localhost:5000/api/eseva/stats', {
                         headers: {
                             'X-GP-ID': GP_CONFIG.id
                         }
@@ -313,7 +313,7 @@
                     const formData = new FormData(form);
         
                     try {
-                        const response = await fetch('http://localhost:5001/api/eseva/request', {
+                        const response = await fetch('http://localhost:5000/api/eseva/request', {
                             method: 'POST',
                             headers: {
                                 'X-GP-ID': GP_CONFIG.id
@@ -348,7 +348,7 @@
                     const password = adminLoginForm.querySelector('[name="password"]').value.trim();
         
                     try {
-                        const response = await fetch('http://localhost:5001/api/auth/login', {
+                        const response = await fetch('http://localhost:5000/api/auth/login', {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json'

@@ -167,7 +167,7 @@
             submitBtn.innerHTML = '<i class="fa-solid fa-spinner animate-spin mr-2"></i>नोंदणी होत आहे...';
 
             try {
-                const response = await fetch('http://localhost:5001/api/complaints', {
+                const response = await fetch('http://localhost:5000/api/complaints', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

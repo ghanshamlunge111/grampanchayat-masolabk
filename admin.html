@@ -411,7 +411,7 @@
     <!-- Scripts -->
     <script src="js/navigation.js"></script>
     <script>
-        const API_URL = 'http://localhost:5001/api';
+        const API_URL = 'http://localhost:5000/api';
         let currentUser = null;
         let esevaRequests = [];
         let complaints = [];
@@ -659,8 +659,8 @@
                     <div class="space-y-1">
                         <label class="label font-bold text-xs text-slate-600">नागरिकाने अपलोड केलेले ओळखपत्र:</label>
                         <div class="flex gap-4">
-                            <a href="http://localhost:5001${req.idFrontUrl}" target="_blank" class="flex-1 btn btn-sm btn-outline border-emerald-600 text-emerald-700 font-bold"><i class="fa-solid fa-id-card mr-1"></i>समोरची बाजू (Front)</a>
-                            <a href="http://localhost:5001${req.idBackUrl}" target="_blank" class="flex-1 btn btn-sm btn-outline border-emerald-600 text-emerald-700 font-bold"><i class="fa-solid fa-id-card-clip mr-1"></i>मागील बाजू (Back)</a>
+                            <a href="http://localhost:5000${req.idFrontUrl}" target="_blank" class="flex-1 btn btn-sm btn-outline border-emerald-600 text-emerald-700 font-bold"><i class="fa-solid fa-id-card mr-1"></i>समोरची बाजू (Front)</a>
+                            <a href="http://localhost:5000${req.idBackUrl}" target="_blank" class="flex-1 btn btn-sm btn-outline border-emerald-600 text-emerald-700 font-bold"><i class="fa-solid fa-id-card-clip mr-1"></i>मागील बाजू (Back)</a>
                         </div>
                     </div>
 
@@ -682,7 +682,7 @@
                             <input type="file" id="actionApprovedDoc" accept="application/pdf" class="file-input file-input-bordered file-input-success file-input-sm w-full bg-slate-50 text-slate-800" />
                             ${req.approvedDocUrl ? `
                                 <div class="text-2xs text-slate-500 font-bold mt-1">
-                                    सध्याची फाईल: <a href="http://localhost:5001${req.approvedDocUrl}" target="_blank" class="text-blue-600 hover:underline">प्रमाणपत्र पाहा (View Certificate)</a>
+                                    सध्याची फाईल: <a href="http://localhost:5000${req.approvedDocUrl}" target="_blank" class="text-blue-600 hover:underline">प्रमाणपत्र पाहा (View Certificate)</a>
                                 </div>
                             ` : ''}
                         </div>
@@ -760,7 +760,7 @@
                 return;
             }
 
-            const downloadLink = `http://localhost:5001${req.approvedDocUrl}`;
+            const downloadLink = `http://localhost:5000${req.approvedDocUrl}`;
             
             // Compose Marathi text
             const gpNameText = currentUser.gpName ? `ग्रामपंचायत ${currentUser.gpName}` : 'ग्रामपंचायत';
@@ -1047,7 +1047,7 @@
                         <td class="font-bold text-emerald-700">${r.village}</td>
                         <td class="font-medium text-slate-500">${r.createdAt}</td>
                         <td>
-                            <a href="http://localhost:5001${r.fileUrl}" target="_blank" class="btn btn-xs bg-red-100 hover:bg-red-200 border-none text-red-700 font-bold"><i class="fa-solid fa-file-pdf mr-1"></i>डाऊनलोड</a>
+                            <a href="http://localhost:5000${r.fileUrl}" target="_blank" class="btn btn-xs bg-red-100 hover:bg-red-200 border-none text-red-700 font-bold"><i class="fa-solid fa-file-pdf mr-1"></i>डाऊनलोड</a>
                         </td>
                     </tr>
                 `;

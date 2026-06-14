@@ -127,7 +127,7 @@
             const container = document.getElementById('yojanas-container');
             if (!container) return;
             try {
-                const response = await fetch('http://localhost:5001/api/yojanas?category=Health', {
+                const response = await fetch('http://localhost:5000/api/yojanas?category=Health', {
                     headers: {
                         'X-GP-ID': GP_CONFIG.id
                     }
